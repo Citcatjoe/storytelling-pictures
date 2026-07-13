@@ -36,6 +36,13 @@ type BackgroundConfig = {
   position?: string;
   /** object-position mobile — permet de recadrer l'image sur petit écran (défaut: position desktop) */
   positionMobile?: string;
+  /**
+   * Voile de lisibilité posé sur le FOND pendant que cette section est active.
+   * Il vit avec le fond fixe, et non dans le contenu qui défile: il reste donc ancré
+   * au viewport, sans bord ni fin qui finiraient par entrer dans le champ au scroll.
+   * Il se fond avec le cross-fade, et disparaît sur les sections qui n'en demandent pas.
+   */
+  veil?: boolean;
 };
 
 type RegisterFn = (el: HTMLElement, bg: BackgroundConfig) => () => void;
@@ -59,6 +66,7 @@ interface ImmersiveStoryProps {
 export function ImmersiveStory({ children, className = "", scrim = "light" }: ImmersiveStoryProps) {
   const [backgrounds, setBackgrounds] = useState<BackgroundConfig[]>([]);
   const [activeKey, setActiveKey] = useState<string | null>(null);
+  const [veiled, setVeiled] = useState(false);
   const [mountedKeys, setMountedKeys] = useState<Set<string>>(() => new Set());
   const sectionsRef = useRef(new Map<HTMLElement, BackgroundConfig>());
   const backgroundsRef = useRef<BackgroundConfig[]>([]);
@@ -99,7 +107,12 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
           for (const entry of entries) {
             if (entry.isIntersecting) {
               const cfg = sectionsRef.current.get(entry.target as HTMLElement);
-              if (cfg) activate(bgKey(cfg));
+              if (cfg) {
+                activate(bgKey(cfg));
+                // Le voile suit la SECTION, pas l'image: deux sections peuvent
+                // partager une photo sans partager son voile.
+                setVeiled(!!cfg.veil);
+              }
             }
           }
         },
@@ -109,7 +122,10 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
     observerRef.current?.observe(el);
 
     // La première section enregistrée devient le fond initial
-    if (activeKeyRef.current === null) activate(key);
+    if (activeKeyRef.current === null) {
+      activate(key);
+      setVeiled(!!bg.veil);
+    }
 
     return () => {
       sectionsRef.current.delete(el);
@@ -154,6 +170,15 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
           );
         })}
         {scrimClass && <div className={`absolute inset-0 ${scrimClass}`} />}
+
+        {/* Voile de lisibilité de la section active. Il se fond au même rythme que le
+            cross-fade des images, donc il s'efface en même temps que la photo qu'il
+            servait. */}
+        <div
+          className={`story-veil absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${
+            veiled ? "opacity-100" : "opacity-0"
+          }`}
+        />
       </div>
 
       {/* ===== Contenu à l'avant-plan ===== */}
@@ -186,9 +211,10 @@ interface StorySectionProps {
   /** Ancrage vertical du bloc texte dans la section */
   vAlign?: "center" | "bottom";
   /**
-   * Voile local dégradé: transparent en haut, dense au pied. Contrairement au scrim global
-   * — qui est fixe et ternit toutes les images de la story — il défile avec la section.
-   * L'image respire en haut pendant que le texte posé bas garde sa lisibilité.
+   * Pose un voile de lisibilité sur le FOND tant que cette section est active.
+   * Il est localisé sous le bloc texte (et non étalé sur toute l'image), et vit avec
+   * l'arrière-plan fixe: il ne défile pas, ne montre aucun bord, et s'efface avec le
+   * cross-fade vers la section suivante.
    */
   veil?: boolean;
   id?: string;
@@ -245,8 +271,9 @@ export function StorySection({
       src: image,
       position: imagePosition,
       positionMobile: imagePositionMobile,
+      veil,
     });
-  }, [register, image, imagePosition, imagePositionMobile]);
+  }, [register, image, imagePosition, imagePositionMobile, veil]);
 
   const resolvedTextAlign = textAlign ?? (align === "center" ? "center" : "left");
 
@@ -259,7 +286,6 @@ export function StorySection({
       ref={ref}
       className={`relative flex flex-col px-5 py-24 md:px-[7%] ${V_ALIGN_CLASSES[vAlign]} ${HEIGHT_CLASSES[height]} ${className}`}
     >
-      {veil && <div className="story-veil pointer-events-none" aria-hidden="true" />}
       <div className={`relative flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`}>
         <div
           className={`w-full text-white ${WIDTH_CLASSES[width]} ${variantClasses} text-${resolvedTextAlign} ${contentClassName}`}
