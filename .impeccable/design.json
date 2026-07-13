@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-13T00:00:00.000Z",
+  "title": "Design System: Storytelling — Format immersif photo-first",
+  "extensions": {
+    "colorMeta": {
+      "scene-gold": {
+        "role": "primary",
+        "displayName": "Or de Scène",
+        "canonical": "oklch(0.82 0.16 82)",
+        "tonalRamp": [
+          "oklch(0.30 0.07 82)",
+          "oklch(0.40 0.09 82)",
+          "oklch(0.50 0.12 82)",
+          "oklch(0.60 0.14 82)",
+          "oklch(0.70 0.15 82)",
+          "oklch(0.82 0.16 82)",
+          "oklch(0.89 0.11 82)",
+          "oklch(0.95 0.05 82)"
+        ]
+      },
+      "stage-black": {
+        "role": "neutral",
+        "displayName": "Noir de Salle",
+        "canonical": "#000000",
+        "tonalRamp": [
+          "oklch(0.00 0 0)",
+          "oklch(0.15 0 0)",
+          "oklch(0.25 0 0)",
+          "oklch(0.40 0 0)",
+          "oklch(0.55 0 0)",
+          "oklch(0.70 0 0)",
+          "oklch(0.85 0 0)",
+          "oklch(1.00 0 0)"
+        ]
+      },
+      "ink-white": {
+        "role": "neutral",
+        "displayName": "Blanc d'Encre",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "rgba(255,255,255,0.10)",
+          "rgba(255,255,255,0.20)",
+          "rgba(255,255,255,0.35)",
+          "rgba(255,255,255,0.50)",
+          "rgba(255,255,255,0.65)",
+          "rgba(255,255,255,0.80)",
+          "rgba(255,255,255,0.94)",
+          "rgba(255,255,255,1.00)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Le nom de l'artiste, à l'ouverture. Une seule occurrence par format." },
+      "headline": { "displayName": "Headline", "purpose": "La ligne de sous-titre sous le nom. Doit être écrasée par le display." },
+      "title": { "displayName": "Title", "purpose": "Les intertitres de chapitre." },
+      "body": { "displayName": "Body", "purpose": "Le texte courant, posé nu sur la photographie. Mesure plafonnée à 58–65ch." },
+      "label": { "displayName": "Label", "purpose": "Signatures, dates, repères de navigation, numéros de chapitre." }
+    },
+    "shadows": [
+      {
+        "name": "ombre-de-lecture",
+        "value": "text-shadow: 0 1px 3px rgba(0,0,0,0.85), 0 4px 24px rgba(0,0,0,0.55)",
+        "purpose": "Le SEUL outil d'élévation du système. Posée sur tout texte nu reposant sur une photographie: la première ombre découpe le glyphe, la seconde l'assoit dans un halo. Aucune ombre de conteneur n'existe dans ce système."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "La seule courbe du système. Toute animation décélère ainsi. Bounce et elastic sont prohibés."
+      },
+      {
+        "name": "crossfade",
+        "value": "1400ms",
+        "purpose": "Fondu entre deux photographies de fond. Le voile de lisibilité se fond à la même durée, pour s'effacer avec l'image qu'il servait."
+      },
+      {
+        "name": "ken-burns",
+        "value": "22s (scale 1.03 → 1.11), animation-play-state: paused hors section active",
+        "purpose": "Respiration très lente du fond. La pause hors section fige l'image sortante à son zoom courant: aucun saut pendant le fondu."
+      },
+      {
+        "name": "reveal-hero",
+        "value": "translateY(145% → 0) sous masque overflow:hidden, 1s, décalages 80→660ms",
+        "purpose": "Révélation du nom et montée échelonnée du reste de l'affiche."
+      }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "≤ 640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "2xl", "value": "1536px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Nom d'Affiche",
+      "kind": "custom",
+      "refersTo": "story-name",
+      "description": "Le nom de l'artiste à l'ouverture. Se dévoile derrière un masque; le masque doit être ouvert en haut sinon il tranche le tréma.",
+      "html": "<span class=\"ds-name-mask\"><span class=\"ds-name\">Naïka</span></span>",
+      "css": ".ds-name-mask { display: block; overflow: hidden; font-size: clamp(3.25rem, 13vw, 6rem); padding-top: 0.18em; margin-top: -0.18em; } .ds-name { display: block; color: var(--color-scene, oklch(0.82 0.16 82)); font-family: Poppins, sans-serif; font-size: 1em; font-weight: 900; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; text-shadow: 0 1px 3px rgba(0,0,0,0.85), 0 4px 24px rgba(0,0,0,0.55); animation: ds-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 80ms both; } @keyframes ds-reveal { from { transform: translateY(145%); } to { transform: translateY(0); } } @media (prefers-reduced-motion: reduce) { .ds-name { animation: none; } }"
+    },
+    {
+      "name": "Ligne de Sous-titre",
+      "kind": "custom",
+      "refersTo": "story-tagline",
+      "description": "Le sous-titre sous le nom. Volontairement écrasé par lui (rapport d'échelle 2,5×).",
+      "html": "<span class=\"ds-tagline\">le nouveau joyau<br>de la pop cosmopolite</span>",
+      "css": ".ds-tagline { display: block; margin-top: clamp(0.4rem, 1.2vw, 0.85rem); color: #fff; font-family: Poppins, sans-serif; font-size: clamp(1.35rem, 3.6vw, 2.35rem); font-weight: 400; line-height: 1.2; letter-spacing: -0.012em; text-wrap: balance; text-shadow: 0 1px 3px rgba(0,0,0,0.85), 0 4px 24px rgba(0,0,0,0.55); }"
+    },
+    {
+      "name": "Filet d'Or",
+      "kind": "custom",
+      "refersTo": "story-rule",
+      "description": "Séparateur court entre le titre et le chapô. Se trace de gauche à droite à l'entrée.",
+      "html": "<div class=\"ds-rule\"></div>",
+      "css": ".ds-rule { width: clamp(2.75rem, 7vw, 4.5rem); height: 3px; margin: clamp(1.4rem, 3vw, 2rem) 0 clamp(1.25rem, 2.5vw, 1.6rem); background: var(--color-scene, oklch(0.82 0.16 82)); transform-origin: left center; animation: ds-draw 700ms cubic-bezier(0.16, 1, 0.3, 1) 440ms both; } @keyframes ds-draw { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-rule { animation: none; } }"
+    },
+    {
+      "name": "Texte Courant",
+      "kind": "custom",
+      "refersTo": "story-body",
+      "description": "Paragraphe posé nu sur la photographie. Aucun contenant: la lisibilité vient du voile et de l'ombre de lecture.",
+      "html": "<p class=\"ds-body\">Pendant près de neuf heures, L'illustré a suivi Naïka dans les coulisses de sa première au Montreux Jazz Festival.</p>",
+      "css": ".ds-body { max-width: 58ch; margin: 0; color: rgba(255,255,255,0.94); font-family: Poppins, sans-serif; font-size: clamp(1rem, 1.4vw, 1.2rem); font-weight: 300; line-height: 1.7; text-wrap: pretty; text-shadow: 0 1px 3px rgba(0,0,0,0.85), 0 4px 24px rgba(0,0,0,0.55); }"
+    },
+    {
+      "name": "Signature / Label",
+      "kind": "chip",
+      "refersTo": "story-label",
+      "description": "Ligne de pied: mention éditoriale en or, séparateur, auteur et date en blanc transparent.",
+      "html": "<span class=\"ds-byline\"><span class=\"ds-flag\">Interview exclusive</span><span class=\"ds-sep\"></span><span>L'illustré · 9 juillet 2026</span></span>",
+      "css": ".ds-byline { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.85rem; color: rgba(255,255,255,0.8); font-family: Poppins, sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-shadow: 0 1px 3px rgba(0,0,0,0.85); } .ds-flag { color: var(--color-scene, oklch(0.82 0.16 82)); font-weight: 600; } .ds-sep { width: 1px; height: 0.9em; background: rgba(255,255,255,0.35); }"
+    },
+    {
+      "name": "Repère de Défilement",
+      "kind": "nav",
+      "refersTo": "story-cue",
+      "description": "Invitation à défiler, posée au bout de la ligne de signature. Masquée en tactile, où le geste va de soi. Dérive douce, jamais un rebond.",
+      "html": "<span class=\"ds-cue\"><span>Faites défiler</span><svg class=\"ds-cue-arrow\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 5v14M19 12l-7 7-7-7\"/></svg></span>",
+      "css": ".ds-cue { display: inline-flex; align-items: center; gap: 0.6rem; color: rgba(255,255,255,0.8); font-family: Poppins, sans-serif; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; white-space: nowrap; } .ds-cue-arrow { width: 1rem; height: 1rem; color: var(--color-scene, oklch(0.82 0.16 82)); animation: ds-drift 2.6s cubic-bezier(0.37, 0, 0.63, 1) infinite; } @keyframes ds-drift { 0%, 100% { transform: translateY(-2px); opacity: 0.55; } 50% { transform: translateY(3px); opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-cue-arrow { animation: none; } }"
+    },
+    {
+      "name": "Voile Localisé",
+      "kind": "custom",
+      "refersTo": "story-veil",
+      "description": "Le composant signature du système. Un quart de cercle ancré dans l'angle où le texte se pose, éteint avant le sujet. Vit dans le conteneur de fond FIXE, jamais dans le contenu qui défile.",
+      "html": "<div class=\"ds-veil-demo\"><div class=\"ds-veil\"></div></div>",
+      "css": ".ds-veil-demo { position: relative; height: 220px; background: linear-gradient(120deg, #14407a, #2a1f5e); overflow: hidden; } .ds-veil { position: absolute; inset: 0; background: radial-gradient(ellipse 120% 105% at 0% 100%, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.82) 40%, rgba(0,0,0,0.68) 60%, rgba(0,0,0,0.42) 75%, rgba(0,0,0,0.16) 88%, rgba(0,0,0,0) 100%); transition: opacity 1400ms ease-in-out; } @media (max-width: 767px) { .ds-veil { background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.85) 25%, rgba(0,0,0,0.7) 45%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.22) 75%, rgba(0,0,0,0) 90%); } }"
+    },
+    {
+      "name": "Intertitre de Chapitre",
+      "kind": "custom",
+      "refersTo": "story-title",
+      "description": "Titre de chapitre, précédé de son numéro. Le système de chapitres numérotés est une voix éditoriale délibérée — ne pas le généraliser en surtitre de chaque section.",
+      "html": "<div><p class=\"ds-kicker\">Chapitre 1</p><h2 class=\"ds-title\">Dans les coulisses d'une star</h2></div>",
+      "css": ".ds-kicker { margin: 0 0 1rem; color: rgba(255,255,255,0.8); font-family: Poppins, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; } .ds-title { margin: 0; color: #fff; font-family: Poppins, sans-serif; font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 700; line-height: 1.25; text-wrap: balance; text-shadow: 0 1px 3px rgba(0,0,0,0.85), 0 4px 24px rgba(0,0,0,0.55); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "L'Affiche de Concert",
+    "overview": "La page est une affiche, pas un article illustré. La photographie occupe le plein écran, fixe, et le texte défile devant elle. L'ordre de lecture est inversé par rapport à la presse en ligne ordinaire: on voit d'abord l'image, on lit ensuite. Chaque décision visuelle découle de cette hiérarchie — si un élément de mise en page abîme la photographie, c'est l'élément qui cède, jamais la photographie.\n\nLa typographie est celle d'une affiche de festival: un nom qui claque en très grand, une ligne de sous-titre, un filet, une signature au pied. Le contraste d'échelle est brutal et assumé (rapport 2,5× entre le nom et son sous-titre). L'or de scène est la seule couleur du système; il vient de la lumière des projecteurs et des costumes, pas d'une charte de marque. Tout le reste est blanc sur noir.\n\nLe système rejette explicitement le vocabulaire du composant web: pas de carte, pas de cadre, pas d'ombre portée, pas de verre dépoli. Le texte est posé à même l'image, et sa lisibilité est obtenue par la lumière — un voile localisé sous le bloc de texte — et non par un contenant. Une interface qui pose un panneau translucide devant une photographie de concert avoue qu'elle n'a pas su composer avec elle.",
+    "keyCharacteristics": [
+      "La photographie est le sujet; le texte est son invité.",
+      "Une seule couleur d'accent, tirée de la lumière de scène.",
+      "Aucun contenant: ni carte, ni cadre, ni ombre, ni verre.",
+      "Le contraste d'échelle typographique porte la hiérarchie, pas la décoration.",
+      "Le mouvement est une révélation, jamais un rebond."
+    ],
+    "rules": [
+      { "name": "La Règle de l'Accent Rare", "body": "L'or de scène ne couvre jamais plus de 10 % d'un écran. Il désigne le nom, les filets et les repères. Un paragraphe en or, un titre de chapitre en or, un fond en or: interdits. Sa rareté est ce qui lui donne sa force.", "section": "colors" },
+      { "name": "La Règle du Blanc Transparent", "body": "Pour atténuer un texte, on baisse l'opacité du blanc — jamais on ne choisit un gris. Le gris sur une photographie de scène paraît sale et délavé; le blanc transparent laisse monter la couleur de l'image.", "section": "colors" },
+      { "name": "La Règle des Tokens Morts", "body": "--color-orlatti, --color-accent1, --color-trame sont hérités d'une enquête antérieure et n'appartiennent pas à ce format. Ne jamais les réintroduire.", "section": "colors" },
+      { "name": "La Règle de l'Écart", "body": "Deux niveaux typographiques voisins ne se ressemblent jamais. Si l'on hésite entre deux tailles, c'est qu'elles sont trop proches: creuser l'écart, ou fusionner les niveaux.", "section": "typography" },
+      { "name": "La Règle du Masque", "body": "Le nom se dévoile derrière un masque (overflow: hidden) et non par un fondu. Poppins a un ascendant haut et l'interligne de 0.9 rend la boîte de ligne plus courte que le glyphe — le masque doit être ouvert en haut, sans quoi il tranche le tréma du Ï.", "section": "typography" },
+      { "name": "La Règle du Voile Localisé", "body": "Un voile ne s'étale jamais sur toute la photographie. Il est ancré là où le texte se pose et s'éteint avant le sujet de l'image. Une trame pleine achète la lisibilité au prix de la photographie: c'est un aveu d'échec de composition.", "section": "elevation" },
+      { "name": "La Règle du Voile qui Appartient au Fond", "body": "Le voile vit dans le conteneur d'arrière-plan fixe, jamais dans le contenu qui défile. Posé dans le contenu, il montre ses bords et sa fin entre dans le champ au scroll. Posé sur le fond, il n'a ni bord ni fin, et s'efface au rythme du cross-fade avec la photographie qu'il servait.", "section": "elevation" },
+      { "name": "La Règle du Non-Cadre", "body": "Aucun élément du format ne pose de contenant devant une photographie. Ni carte, ni panneau, ni bordure, ni backdrop-filter. Test d'audit: si l'on peut détourer un rectangle autour d'un bloc de texte, le bloc est de trop.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do poser le texte nu sur la photographie, avec l'ombre de lecture.",
+      "Do localiser chaque voile sous le texte qu'il sert, et le laisser s'éteindre avant le sujet de l'image.",
+      "Do placer les voiles dans le conteneur de fond fixe, jamais dans le contenu qui défile.",
+      "Do réserver l'or de scène au nom, aux filets et aux repères (≤ 10 % de l'écran).",
+      "Do atténuer un texte par transparence du blanc, jamais par un gris.",
+      "Do utiliser une courbe exponentielle sortante (cubic-bezier(0.16, 1, 0.3, 1)) pour toute animation.",
+      "Do fournir une alternative prefers-reduced-motion à chaque animation, sans jamais masquer le contenu par défaut.",
+      "Do creuser le contraste d'échelle typographique jusqu'à ce qu'il soit inconfortable, puis reculer d'un cran."
+    ],
+    "donts": [
+      "Don't poser un panneau de verre dépoli (backdrop-filter) devant une photographie. Le verre était le pattern de ce format; il a été supprimé pour de bonnes raisons et ne doit pas revenir.",
+      "Don't encadrer un bloc de texte: ni carte, ni bordure, ni ombre portée sur un conteneur.",
+      "Don't étaler un voile sur toute la photographie pour gagner en lisibilité. On perd l'image, qui est le sujet.",
+      "Don't utiliser animate-bounce ni aucune courbe élastique. Les objets réels décélèrent.",
+      "Don't peindre du texte avec un dégradé (background-clip: text).",
+      "Don't poser un surtitre en capitales tracées au-dessus de chaque section. Le système de chapitres numérotés est une voix éditoriale délibérée; le généraliser en grammaire de section le viderait de son sens.",
+      "Don't réintroduire --color-orlatti, --color-accent1 ou --color-trame: tokens morts d'une enquête antérieure.",
+      "Don't laisser un texte déborder de son conteneur. Le nom en clamp() doit être testé à 390, 820 et 1440px."
+    ]
+  }
+}
