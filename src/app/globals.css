@@ -1,0 +1,231 @@
+@import "mapbox-gl/dist/mapbox-gl.css";
+@import "tailwindcss";
+
+/* Force Mapbox to fill container even if internal JS calculation is off */
+.mapboxgl-map, 
+.mapboxgl-canvas-container, 
+.mapboxgl-canvas {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Poppins", sans-serif;
+  --font-mono: "Share Tech Mono", monospace;
+  --font-hand: "Caveat", cursive;
+  
+  /* Couleurs personnalisées de l'enquête */
+  --color-orlatti: #009FAB;
+  --color-accent1: #FF4F28;
+  --color-accent2: #E20000;
+  --color-trame: #f7f3ea;
+}
+
+
+
+html {
+  /* Meilleure pratique d'accessibilité... */
+  font-size: 100%;
+  color-scheme: only light;
+}
+
+body {
+  /* background: var(--background); */
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  
+  /* Ligne de base explicite... */
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  p {
+    @apply font-light;
+  }
+}
+
+.lettrine:first-letter
+{
+    font-size: 570% !important;
+    font-weight: 600 !important;
+    float : left !important;
+    margin-top: 5px !important;
+    line-height: 0.7 !important;
+    margin-right: 10px !important;
+}
+
+/* #introduction .lettrine:first-letter {
+    color: black !important;
+    font-size: 650% !important;
+    font-style: normal !important;
+} */
+
+.mapboxgl-ctrl-bottom-right,
+.mapboxgl-ctrl-logo,
+.mapboxgl-ctrl-attrib-inner {
+  display: none !important;
+}
+
+/* Customize the minimize button container */
+[data-rmiz-btn-unzoom] {
+  width: 40px !important;
+  height: 40px !important;
+  background-color: rgba(0, 0, 0, 0.5); /* Change background color */
+  border-radius: 50%;
+  top: 0.75rem !important;    /* Move it further from the top */
+  right: 2.5rem !important;  /* Move it further from the right */
+  
+}
+
+/* Skeleton Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.6s infinite linear;
+}
+
+/* React Medium Image Zoom compatibility with Next.js absolute fill layout */
+.image-fill-container [data-rmiz] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image-fill-container [data-rmiz-content] {
+  width: 100%;
+  height: 100%;
+}
+
+[data-rmiz-modal-img] {
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+/* Customize overlay background for Zoom (dark theme instead of white) */
+[data-rmiz-modal-overlay="hidden"] {
+  background-color: rgba(15, 15, 15, 0) !important;
+}
+[data-rmiz-modal-overlay="visible"] {
+  background-color: rgba(15, 15, 15, 0.9) !important;
+}
+
+/* Keyframes and utility for DetachableBlock entrance */
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Halo pulse animation for nav buttons (LandfillInfographic, RecipeBook) :
+   double onde rouge + légère pulsation d'échelle du bouton */
+@keyframes halo-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(226, 0, 0, 0.65), 0 0 0 0 rgba(226, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.08);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(226, 0, 0, 0), 0 0 0 22px rgba(226, 0, 0, 0);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(226, 0, 0, 0), 0 0 0 0 rgba(226, 0, 0, 0);
+    transform: scale(1);
+  }
+}
+.halo-pulse {
+  animation: halo-glow 1.6s infinite ease-in-out;
+}
+
+/* Custom transition for DetachableBlock to prevent coordinate-transition conflicts */
+.transition-detachable {
+  transition-property: width, height, border-radius, box-shadow, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   ImmersiveStory — format "image first"
+   ========================================================================== */
+
+/* object-position responsive piloté par variables CSS (mobile vs desktop) */
+.story-bg-img {
+  object-position: var(--bg-pos-m, 50% 50%);
+}
+@media (min-width: 768px) {
+  .story-bg-img {
+    object-position: var(--bg-pos, 50% 50%);
+  }
+}
+
+/* Très léger Ken Burns: l'animation vit sur TOUTES les images mais est mise
+   en pause quand l'image n'est pas active. Ainsi, pendant le cross-fade,
+   l'image sortante reste figée à son niveau de zoom courant (aucun saut),
+   et reprend là où elle en était si elle redevient active. */
+@keyframes story-kenburns {
+  from { transform: scale(1.03); }
+  to   { transform: scale(1.11); }
+}
+.story-bg-img {
+  animation: story-kenburns 22s ease-out forwards;
+  animation-play-state: paused;
+  will-change: transform, opacity;
+}
+.story-bg-active {
+  animation-play-state: running;
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-bg-img { animation: none; }
+}
+
+/* Effet "glass" délicat des blocs de texte et de la zone crédits */
+.story-glass {
+  background: rgba(10, 10, 12, 0.35);
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Lisibilité du texte nu posé directement sur l'image */
+.story-text-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 4px 24px rgba(0, 0, 0, 0.55);
+}
+
+
+
+
