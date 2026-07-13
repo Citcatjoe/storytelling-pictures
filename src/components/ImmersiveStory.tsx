@@ -259,7 +259,7 @@ export function StorySection({
       ref={ref}
       className={`relative flex flex-col px-5 py-24 md:px-[7%] ${V_ALIGN_CLASSES[vAlign]} ${HEIGHT_CLASSES[height]} ${className}`}
     >
-      {veil && <div className="story-veil absolute inset-0 pointer-events-none" aria-hidden="true" />}
+      {veil && <div className="story-veil pointer-events-none" aria-hidden="true" />}
       <div className={`relative flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`}>
         <div
           className={`w-full text-white ${WIDTH_CLASSES[width]} ${variantClasses} text-${resolvedTextAlign} ${contentClassName}`}

@@ -96,7 +96,11 @@ export default function Content() {
 
   return (
     <>
-      <article className="relative min-h-screen bg-black text-white">
+      {/* Le body réserve `pt-16` (2xl: `pt-24`) sous le header fixe. Ici le header flotte
+          au-dessus d'une image déjà plein écran (`fixed inset-0`): ce padding ne dégage rien,
+          il ne fait que pousser le contenu vers le bas — le hero en 100svh déborde alors du
+          viewport et son pied glisse hors de l'écran. On le neutralise pour ce format. */}
+      <article className="relative min-h-screen bg-black text-white -mt-16 2xl:-mt-24">
         {/* Schema.org JSON-LD */}
         <script
           type="application/ld+json"
