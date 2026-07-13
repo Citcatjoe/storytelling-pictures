@@ -275,17 +275,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Le masque coupe la ligne pendant qu'elle remonte: le nom se dévoile au lieu
-   d'apparaître. Le padding laisse passer le tréma et les jambages. */
+   d'apparaître.
+   Il porte l'échelle du nom, pour que son `padding-top` s'exprime dans les em du
+   titre: Poppins a un ascender haut et le line-height de 0.9 rend la line-box plus
+   courte que le glyphe, si bien que le tréma du Ï dépasse par le haut et se fait
+   trancher par l'overflow. Le padding lui rend cet air (l'overflow clippe sur la
+   padding-box, la zone reste donc visible) et la marge négative annule le décalage.
+   Pas de padding en bas: le nom est en capitales, aucune jambage n'y descend — et le
+   laisser ouvert y ferait pointer le haut du texte pendant qu'il remonte. */
 .story-hero__name-mask {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.08em;
+  font-size: clamp(3.25rem, 13vw, 6rem);
+  padding-top: 0.18em;
+  margin-top: -0.18em;
 }
 
 .story-hero__name {
   display: block;
   color: var(--color-scene);
-  font-size: clamp(3.25rem, 13vw, 6rem);
+  font-size: 1em;
   font-weight: 900;
   line-height: 0.9;
   letter-spacing: -0.035em;
@@ -397,8 +406,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* 145% et non 105%: le glyphe déborde de sa line-box par le haut (line-height 0.9) et
+   le masque est désormais ouvert en haut pour le tréma. Sous cette course, le sommet
+   des lettres pointerait dans ce padding avant que la révélation ne démarre. */
 @keyframes story-hero-reveal {
-  from { transform: translateY(105%); }
+  from { transform: translateY(145%); }
   to   { transform: translateY(0); }
 }
 
