@@ -183,6 +183,14 @@ interface StorySectionProps {
   width?: "narrow" | "medium" | "wide";
   /** Alignement du texte à l'intérieur du bloc (défaut: left, ou center si align="center") */
   textAlign?: "left" | "center" | "right";
+  /** Ancrage vertical du bloc texte dans la section */
+  vAlign?: "center" | "bottom";
+  /**
+   * Voile local dégradé: transparent en haut, dense au pied. Contrairement au scrim global
+   * — qui est fixe et ternit toutes les images de la story — il défile avec la section.
+   * L'image respire en haut pendant que le texte posé bas garde sa lisibilité.
+   */
+  veil?: boolean;
   id?: string;
   className?: string;
   contentClassName?: string;
@@ -193,6 +201,11 @@ const HEIGHT_CLASSES: Record<NonNullable<StorySectionProps["height"]>, string> =
   short: "min-h-[100svh]",
   normal: "min-h-[150vh]",
   tall: "min-h-[200vh]",
+};
+
+const V_ALIGN_CLASSES: Record<NonNullable<StorySectionProps["vAlign"]>, string> = {
+  center: "justify-center",
+  bottom: "justify-end",
 };
 
 const WIDTH_CLASSES: Record<NonNullable<StorySectionProps["width"]>, string> = {
@@ -216,6 +229,8 @@ export function StorySection({
   height = "normal",
   width = "medium",
   textAlign,
+  vAlign = "center",
+  veil = false,
   id,
   className = "",
   contentClassName = "",
@@ -242,9 +257,10 @@ export function StorySection({
     <section
       id={id}
       ref={ref}
-      className={`relative flex flex-col justify-center px-5 py-24 md:px-[7%] ${HEIGHT_CLASSES[height]} ${className}`}
+      className={`relative flex flex-col px-5 py-24 md:px-[7%] ${V_ALIGN_CLASSES[vAlign]} ${HEIGHT_CLASSES[height]} ${className}`}
     >
-      <div className={`flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`}>
+      {veil && <div className="story-veil absolute inset-0 pointer-events-none" aria-hidden="true" />}
+      <div className={`relative flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`}>
         <div
           className={`w-full text-white ${WIDTH_CLASSES[width]} ${variantClasses} text-${resolvedTextAlign} ${contentClassName}`}
         >
@@ -277,21 +293,24 @@ export function StoryHeading({ children, className = "" }: { children: ReactNode
   );
 }
 
-/** Indicateur de scroll animé (à placer dans la section hero) */
+/**
+ * Repère de scroll. Vit dans le flux du bloc texte (et non en absolute au centre du
+ * viewport), pour se poser au bout de la ligne de signature sans jamais la heurter.
+ */
 export function ScrollCue({ label = "Faites défiler" }: { label?: string }) {
   return (
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/80">
-      <span className="text-[11px] tracking-[0.3em] uppercase">{label}</span>
+    <span className="story-cue">
+      <span>{label}</span>
       <svg
-        className="w-6 h-6 animate-bounce"
+        className="story-cue__arrow"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="1.75"
         viewBox="0 0 24 24"
         aria-hidden="true"
       >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M19 12l-7 7-7-7" />
       </svg>
-    </div>
+    </span>
   );
 }

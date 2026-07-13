@@ -115,26 +115,42 @@ export default function Content() {
             image="images/placeholders/stephan_eicher_2019_a.jpg"
             imagePosition="center 35%"
             imagePositionMobile="center 35%"
-            align="center"
+            align="left"
             variant="plain"
             height="short"
             width="wide"
+            vAlign="bottom"
+            veil
           >
-            <StoryKicker>Interview exclusive · Montreux Jazz Festival</StoryKicker>
-            <h1
-              className="text-4xl md:text-6xl font-bold leading-tight mb-6"
-              dangerouslySetInnerHTML={{ __html: STORY.titleDisplay }}
-            />
-            <p className="text-lg md:text-xl font-light italic leading-relaxed max-w-2xl mx-auto">
+            <h1 className="story-hero__title">
+              <span className="story-hero__name-mask">
+                <span className="story-hero__name">{STORY.heroName}</span>
+              </span>
+              <span
+                className="story-hero__tagline"
+                dangerouslySetInnerHTML={{ __html: STORY.heroTagline }}
+              />
+            </h1>
+
+            <div className="story-hero__rule" aria-hidden="true" />
+
+            <p className="story-hero__lede">
               Pendant près de neuf heures, L&rsquo;illustré a suivi Naïka dans les coulisses
               de sa première au Montreux Jazz Festival. Derrière les paillettes, le portrait
               d&rsquo;une chanteuse mondiale en quête d&rsquo;un chez-soi. Rencontre intime avec
               la jeune artiste franco-haïtienne aux millions d&rsquo;écoutes.
             </p>
-            <p className="mt-6 text-xs md:text-sm tracking-widest uppercase text-white/70">
-              {STORY.author} · {STORY.publicationDisplayDate}
-            </p>
-            <ScrollCue />
+
+            <div className="story-hero__footer">
+              <span className="story-hero__byline">
+                <span className="story-hero__flag">Interview exclusive</span>
+                <span className="story-hero__sep" aria-hidden="true" />
+                <span>
+                  {STORY.author} · {STORY.publicationDisplayDate}
+                </span>
+              </span>
+              <ScrollCue />
+            </div>
           </StorySection>
 
           {/* ==============================================

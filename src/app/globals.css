@@ -26,6 +26,11 @@
   --color-accent1: #FF4F28;
   --color-accent2: #E20000;
   --color-trame: #f7f3ea;
+
+  /* Or de scène — accent du hero: la tenue jaune de Naïka, les strass sous les
+     projecteurs. Complémentaire des magentas/violets des photos de concert, il
+     ressort sur l'image au lieu de s'y fondre. */
+  --color-scene: oklch(0.82 0.16 82);
 }
 
 
@@ -224,6 +229,170 @@ h1, h2, h3, h4, h5, h6 {
 /* Lisibilité du texte nu posé directement sur l'image */
 .story-text-shadow {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 4px 24px rgba(0, 0, 0, 0.55);
+}
+
+/* ==========================================================================
+   Hero "affiche" — premier écran de la story
+   ========================================================================== */
+
+/* Voile local, posé DANS la section (il défile avec elle), par opposition au scrim
+   global qui est fixe. Deux dégradés: une base dense au pied qui porte le texte,
+   et un lavis latéral qui l'ancre à gauche. Le haut reste dégagé: la photo respire. */
+.story-veil {
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.74) 24%,
+      rgba(0, 0, 0, 0.36) 48%,
+      rgba(0, 0, 0, 0.06) 72%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.18) 38%,
+      rgba(0, 0, 0, 0) 68%
+    );
+}
+
+.story-hero__title {
+  margin: 0;
+}
+
+/* Le masque coupe la ligne pendant qu'elle remonte: le nom se dévoile au lieu
+   d'apparaître. Le padding laisse passer le tréma et les jambages. */
+.story-hero__name-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.story-hero__name {
+  display: block;
+  color: var(--color-scene);
+  font-size: clamp(3.25rem, 13vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  animation: story-hero-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 80ms both;
+}
+
+.story-hero__tagline {
+  display: block;
+  margin-top: clamp(0.4rem, 1.2vw, 0.85rem);
+  color: #fff;
+  font-size: clamp(1.35rem, 3.6vw, 2.35rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+  animation: story-hero-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) 260ms both;
+}
+
+.story-hero__rule {
+  width: clamp(2.75rem, 7vw, 4.5rem);
+  height: 3px;
+  margin: clamp(1.4rem, 3vw, 2rem) 0 clamp(1.25rem, 2.5vw, 1.6rem);
+  background: var(--color-scene);
+  transform-origin: left center;
+  animation: story-hero-draw 700ms cubic-bezier(0.16, 1, 0.3, 1) 440ms both;
+}
+
+.story-hero__lede {
+  max-width: 58ch;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.7;
+  text-wrap: pretty;
+  animation: story-hero-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) 540ms both;
+}
+
+.story-hero__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem 2rem;
+  max-width: 58ch;
+  margin-top: clamp(1.6rem, 3.5vw, 2.4rem);
+  animation: story-hero-rise 900ms cubic-bezier(0.16, 1, 0.3, 1) 660ms both;
+}
+
+.story-hero__byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.story-hero__flag {
+  color: var(--color-scene);
+  font-weight: 600;
+}
+
+.story-hero__sep {
+  width: 1px;
+  height: 0.9em;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.story-cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.story-cue__arrow {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-scene);
+  animation: story-cue-drift 2.6s cubic-bezier(0.37, 0, 0.63, 1) infinite;
+}
+
+@keyframes story-hero-reveal {
+  from { transform: translateY(105%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes story-hero-rise {
+  from { transform: translateY(1.1rem); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes story-hero-draw {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+@keyframes story-cue-drift {
+  0%, 100% { transform: translateY(-2px); opacity: 0.55; }
+  50%      { transform: translateY(3px); opacity: 1; }
+}
+
+/* Sans animation, aucun état de base n'est masqué: le hero s'affiche entier d'emblée. */
+@media (prefers-reduced-motion: reduce) {
+  .story-hero__name,
+  .story-hero__tagline,
+  .story-hero__rule,
+  .story-hero__lede,
+  .story-hero__footer,
+  .story-cue__arrow {
+    animation: none;
+  }
 }
 
 
