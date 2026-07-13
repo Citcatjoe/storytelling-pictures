@@ -114,11 +114,15 @@ export default function Content() {
           {/* ==============================================
               HERO — titre + chapô
               ============================================== */}
+          {/* Naïka est cadrée à droite, le halo de projecteur en bas à gauche: le bloc
+              de texte se pose dans le vide de l'image, sans jamais couvrir le sujet.
+              En mobile, le crop est massif (portrait sur une photo 3:2) — on décale
+              donc vers elle pour ne pas garder que du fond bleu. */}
           <StorySection
             id="hero"
-            image="images/placeholders/stephan_eicher_2019_a.jpg"
-            imagePosition="center 35%"
-            imagePositionMobile="center 35%"
+            image="images/naika/_F2_1047.webp"
+            imagePosition="center 38%"
+            imagePositionMobile="68% 35%"
             align="left"
             variant="plain"
             height="short"
