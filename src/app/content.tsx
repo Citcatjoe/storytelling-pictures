@@ -533,6 +533,20 @@ export default function Content() {
             </p>
           </StorySection>
 
+          {/* ==============================================
+              SORTIE — dernier fond, tenu jusqu'aux crédits
+              ============================================== */}
+          <StorySection
+            id="sortie"
+            image="images/naika/IL29_NAIKA_MJF_1__F2_9759-FINAL.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="center 30%"
+            align="center"
+            height="short"
+          >
+            <></>
+          </StorySection>
+
         </ImmersiveStory>
 
         {/* ==============================================
