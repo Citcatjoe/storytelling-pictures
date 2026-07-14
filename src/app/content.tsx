@@ -164,9 +164,9 @@ export default function Content() {
               OUVERTURE — le crépuscule, la loge
               ============================================== */}
           <StorySection
-            image="images/placeholders/noir_desir_2022_b.jpg"
-            imagePosition="center 30%"
-            imagePositionMobile="55% 30%"
+            image="images/naika/_F3_4602.webp"
+            imagePosition="70% 60%"
+            imagePositionMobile="65% 55%"
             align="left"
           >
             <p className={P}>
@@ -179,9 +179,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/noir_desir_2022_x.jpg"
-            imagePosition="left center"
-            imagePositionMobile="20% center"
+            image="images/naika/_F2_9834.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="45% 35%"
             align="right"
           >
             <p className={P}>
@@ -194,9 +194,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/stromae_2014_c.jpg"
-            imagePosition="center 25%"
-            imagePositionMobile="center 25%"
+            image="images/naika/IL29_NAIKA_MJF_2__F2_9917.webp"
+            imagePosition="center 30%"
+            imagePositionMobile="40% 30%"
             align="left"
           >
             <p className={P}>
@@ -214,9 +214,9 @@ export default function Content() {
               ============================================== */}
           <StorySection
             id="coulisses"
-            image="images/placeholders/charles_trenet_1989_b.jpg"
-            imagePosition="center center"
-            imagePositionMobile="40% center"
+            image="images/naika/_F3_4504.webp"
+            imagePosition="center 40%"
+            imagePositionMobile="center 40%"
             align="center"
             width="wide"
             height="tall"
@@ -240,9 +240,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/ravi_shankar_2005_a.jpg"
-            imagePosition="center 30%"
-            imagePositionMobile="75% 30%"
+            image="images/naika/_F3_4626.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="60% 35%"
             align="left"
           >
             <p className={P}>
@@ -256,9 +256,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/jamel_debbouze_2004_x.jpg"
-            imagePosition="center 30%"
-            imagePositionMobile="70% 30%"
+            image="images/naika/_F3_4767.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="65% 35%"
             align="left"
           >
             <p className={P}>
@@ -274,9 +274,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/stephan_eicher_2019_b.jpg"
-            imagePosition="center center"
-            imagePositionMobile="45% center"
+            image="images/naika/_F3_5264.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="40% 35%"
             align="right"
           >
             <p className={P}>
@@ -292,9 +292,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/stromae_2014_a.jpg"
-            imagePosition="center 40%"
-            imagePositionMobile="60% 40%"
+            image="images/naika/IL29_NAIKA_MJF_6__F3_5591.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="center 35%"
             align="center"
           >
             <p className={P}>
@@ -309,9 +309,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/joan_baez_1982_a.jpg"
+            image="images/naika/_F3_5676.webp"
             imagePosition="center 30%"
-            imagePositionMobile="35% 30%"
+            imagePositionMobile="45% 30%"
             align="right"
           >
             <p className={P}>
@@ -329,9 +329,9 @@ export default function Content() {
               ============================================== */}
           <StorySection
             id="chez-soi"
-            image="images/placeholders/ravi_shankar_2005_c.jpg"
-            imagePosition="left center"
-            imagePositionMobile="15% center"
+            image="images/naika/_F3_5183.webp"
+            imagePosition="center 30%"
+            imagePositionMobile="55% 30%"
             align="right"
             width="wide"
             height="tall"
@@ -356,9 +356,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/paul_simon_1991.jpg"
-            imagePosition="center 25%"
-            imagePositionMobile="center 25%"
+            image="images/naika/_F3_5341.webp"
+            imagePosition="center 30%"
+            imagePositionMobile="center 30%"
             align="center"
           >
             <p className={P}>
@@ -370,9 +370,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/stromae_2014_f.jpg"
-            imagePosition="center 30%"
-            imagePositionMobile="60% 30%"
+            image="images/naika/_F3_4864.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="65% 35%"
             align="left"
           >
             <p className={P}>
@@ -386,9 +386,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/stromae_2014_e.jpg"
-            imagePosition="center 40%"
-            imagePositionMobile="30% 40%"
+            image="images/naika/_F3_4686.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="35% 35%"
             align="right"
           >
             <p className={P}>
@@ -406,9 +406,9 @@ export default function Content() {
               ============================================== */}
           <StorySection
             id="galere"
-            image="images/placeholders/mano_negra_1989.jpg"
-            imagePosition="center 30%"
-            imagePositionMobile="center 30%"
+            image="images/naika/_F3_4507.webp"
+            imagePosition="center 50%"
+            imagePositionMobile="center 50%"
             align="center"
             width="wide"
             height="tall"
@@ -430,9 +430,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/jamel_debbouze_2004_a.jpg"
-            imagePosition="center 30%"
-            imagePositionMobile="30% 30%"
+            image="images/naika/_F3_4526.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="35% 35%"
             align="right"
           >
             <p className={P}>
@@ -447,9 +447,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/noir_desir_2022_a.jpg"
-            imagePosition="center 30%"
-            imagePositionMobile="45% 30%"
+            image="images/naika/_F3_5478.webp"
+            imagePosition="center 45%"
+            imagePositionMobile="65% 45%"
             align="left"
           >
             <p className={P}>
@@ -463,9 +463,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/placeholders/stromae_2014_d.jpg"
-            imagePosition="center 35%"
-            imagePositionMobile="70% 35%"
+            image="images/naika/_F3_5917.webp"
+            imagePosition="center 30%"
+            imagePositionMobile="60% 30%"
             align="left"
           >
             <p className={P}>
@@ -485,9 +485,9 @@ export default function Content() {
               ============================================== */}
           <StorySection
             id="epilogue"
-            image="images/placeholders/joan_baez_1982_x.jpg"
-            imagePosition="left center"
-            imagePositionMobile="15% center"
+            image="images/naika/_F3_6438.webp"
+            imagePosition="center 40%"
+            imagePositionMobile="center 45%"
             align="right"
           >
             <p className={P}>
@@ -512,13 +512,6 @@ export default function Content() {
             ============================================== */}
         <div className="relative z-10 px-4 pb-16">
           <Credits theme="glass" items={STORY.credits.filter(credit => credit.inCredits)} />
-
-          <div className="story-glass p-4 mt-6 w-full max-w-[672px] mx-auto">
-            <p className="font-mono text-xs text-white/60">
-              Images d&rsquo;illustration provisoires (placeholders) — à remplacer par la
-              série photo de l&rsquo;interview.
-            </p>
-          </div>
         </div>
 
       </article>
