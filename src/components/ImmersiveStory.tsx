@@ -128,12 +128,19 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   // rester ancrée au même coin sans jamais se désynchroniser du texte.
   const isHeroActive = backgrounds.length > 0 && activeKey === bgKey(backgrounds[0]);
 
+  // Le scrim ambiant assombrissait aussi le haut du viewport. On retire cette
+  // partie haute (le bas reste, il sert la lisibilité) — mais seulement hors
+  // hero: l'ouverture garde son dégradé d'origine, inchangé.
   const scrimClass =
     scrim === "none"
       ? null
       : scrim === "medium"
-      ? "bg-gradient-to-b from-black/50 via-black/25 to-black/60"
-      : "bg-gradient-to-b from-black/40 via-black/10 to-black/50";
+      ? isHeroActive
+        ? "bg-gradient-to-b from-black/50 via-black/25 to-black/60"
+        : "bg-gradient-to-b from-transparent via-black/25 to-black/60"
+      : isHeroActive
+      ? "bg-gradient-to-b from-black/40 via-black/10 to-black/50"
+      : "bg-gradient-to-b from-transparent via-black/10 to-black/50";
 
   return (
     <StoryContext.Provider value={register}>
