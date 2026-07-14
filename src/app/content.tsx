@@ -124,7 +124,6 @@ export default function Content() {
             imagePosition="center 38%"
             imagePositionMobile="68% 35%"
             align="left"
-            variant="plain"
             height="short"
             width="wide"
             vAlign="bottom"

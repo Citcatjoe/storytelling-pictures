@@ -23,11 +23,24 @@ import {
 //
 // Usage:
 //   <ImmersiveStory>
-//     <StorySection image="images/placeholders/x.jpg" align="left" variant="panel">
+//     <StorySection image="images/placeholders/x.jpg" align="left">
 //       <p>…</p>
 //     </StorySection>
 //   </ImmersiveStory>
 // ---------------------------------------------------------------------------
+
+/**
+ * Point d'ancrage du voile localisé, dérivé de la position du bloc de texte
+ * (`align`-`vAlign`) qu'il sert: le voile hante toujours le coin ou le bord
+ * où le texte se pose, jamais le centre géométrique de l'écran.
+ */
+type VeilAnchor =
+  | "left-bottom"
+  | "right-bottom"
+  | "center-bottom"
+  | "left-center"
+  | "right-center"
+  | "center-center";
 
 type BackgroundConfig = {
   /** Chemin de l'image (relatif à /public), ex: "images/placeholders/stromae_2014_a.jpg" */
@@ -43,6 +56,8 @@ type BackgroundConfig = {
    * Il se fond avec le cross-fade, et disparaît sur les sections qui n'en demandent pas.
    */
   veil?: boolean;
+  /** Ancrage du voile localisé (voir VeilAnchor), ignoré si `veil` est faux. */
+  veilAnchor?: VeilAnchor;
 };
 
 type RegisterFn = (el: HTMLElement, bg: BackgroundConfig) => () => void;
@@ -67,6 +82,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   const [backgrounds, setBackgrounds] = useState<BackgroundConfig[]>([]);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [veiled, setVeiled] = useState(false);
+  const [veilAnchor, setVeilAnchor] = useState<VeilAnchor | null>(null);
   const [mountedKeys, setMountedKeys] = useState<Set<string>>(() => new Set());
   const sectionsRef = useRef(new Map<HTMLElement, BackgroundConfig>());
   const backgroundsRef = useRef<BackgroundConfig[]>([]);
@@ -112,6 +128,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
                 // Le voile suit la SECTION, pas l'image: deux sections peuvent
                 // partager une photo sans partager son voile.
                 setVeiled(!!cfg.veil);
+                setVeilAnchor(cfg.veil ? cfg.veilAnchor ?? null : null);
               }
             }
           }
@@ -125,6 +142,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
     if (activeKeyRef.current === null) {
       activate(key);
       setVeiled(!!bg.veil);
+      setVeilAnchor(bg.veil ? bg.veilAnchor ?? null : null);
     }
 
     return () => {
@@ -178,6 +196,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
           className={`story-veil absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${
             veiled ? "opacity-100" : "opacity-0"
           }`}
+          data-anchor={veilAnchor ?? "left-bottom"}
         />
       </div>
 
@@ -200,8 +219,6 @@ interface StorySectionProps {
   imagePositionMobile?: string;
   /** Position du bloc texte en desktop (mobile: toujours centré) */
   align?: "left" | "center" | "right";
-  /** Habillage du bloc texte: "glass" (défaut) ou "plain" (texte nu, ex: hero) */
-  variant?: "glass" | "plain";
   /** Hauteur de la section = espace de respiration entre les blocs */
   height?: "short" | "normal" | "tall";
   /** Largeur max du bloc texte */
@@ -211,10 +228,12 @@ interface StorySectionProps {
   /** Ancrage vertical du bloc texte dans la section */
   vAlign?: "center" | "bottom";
   /**
-   * Pose un voile de lisibilité sur le FOND tant que cette section est active.
-   * Il est localisé sous le bloc texte (et non étalé sur toute l'image), et vit avec
-   * l'arrière-plan fixe: il ne défile pas, ne montre aucun bord, et s'efface avec le
-   * cross-fade vers la section suivante.
+   * Pose un voile de lisibilité sur le FOND tant que cette section est active (défaut:
+   * activé — le texte est nu sur la photo, ce voile est ce qui le rend lisible). Il est
+   * localisé sous le bloc texte (ancré sur `align`/`vAlign`, jamais étalé sur toute
+   * l'image), et vit avec l'arrière-plan fixe: il ne défile pas, ne montre aucun bord,
+   * et s'efface avec le cross-fade vers la section suivante. Ne le désactiver que si
+   * la photo n'a aucun texte à protéger.
    */
   veil?: boolean;
   id?: string;
@@ -251,12 +270,11 @@ export function StorySection({
   imagePosition,
   imagePositionMobile,
   align = "center",
-  variant = "glass",
   height = "normal",
   width = "medium",
   textAlign,
   vAlign = "center",
-  veil = false,
+  veil = true,
   id,
   className = "",
   contentClassName = "",
@@ -265,6 +283,11 @@ export function StorySection({
   const register = useContext(StoryContext);
   const ref = useRef<HTMLElement>(null);
 
+  // Le voile hante le coin/bord où le bloc de texte se pose — jamais le centre
+  // géométrique de l'écran — donc son ancrage se dérive directement de la même
+  // position (`align`/`vAlign`) que celle du texte qu'il sert.
+  const veilAnchor = `${align}-${vAlign}` as VeilAnchor;
+
   useEffect(() => {
     if (!register || !ref.current) return;
     return register(ref.current, {
@@ -272,13 +295,11 @@ export function StorySection({
       position: imagePosition,
       positionMobile: imagePositionMobile,
       veil,
+      veilAnchor,
     });
-  }, [register, image, imagePosition, imagePositionMobile, veil]);
+  }, [register, image, imagePosition, imagePositionMobile, veil, veilAnchor]);
 
   const resolvedTextAlign = textAlign ?? (align === "center" ? "center" : "left");
-
-  const variantClasses =
-    variant === "glass" ? "story-glass p-6 md:p-9" : "story-text-shadow";
 
   return (
     <section
@@ -288,7 +309,7 @@ export function StorySection({
     >
       <div className={`relative flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`}>
         <div
-          className={`w-full text-white ${WIDTH_CLASSES[width]} ${variantClasses} text-${resolvedTextAlign} ${contentClassName}`}
+          className={`w-full text-white ${WIDTH_CLASSES[width]} story-text-shadow text-${resolvedTextAlign} ${contentClassName}`}
         >
           {children}
         </div>
@@ -301,22 +322,14 @@ export function StorySection({
 // Petits éléments d'habillage réutilisables
 // ---------------------------------------------------------------------------
 
-/** Surtitre / étiquette (ex: «Interview exclusive») */
+/** Repère de chapitre («Chapitre 1», «Chapitre 2»…) — jamais un surtitre générique. */
 export function StoryKicker({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <p className={`text-xs md:text-sm font-semibold tracking-[0.25em] uppercase text-white/80 mb-4 ${className}`}>
-      {children}
-    </p>
-  );
+  return <p className={`story-kicker ${className}`}>{children}</p>;
 }
 
 /** Intertitre de chapitre */
 export function StoryHeading({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <h2 className={`text-3xl md:text-5xl font-bold leading-tight mb-6 ${className}`}>
-      {children}
-    </h2>
-  );
+  return <h2 className={`story-heading ${className}`}>{children}</h2>;
 }
 
 /**
