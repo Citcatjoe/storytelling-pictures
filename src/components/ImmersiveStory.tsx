@@ -65,6 +65,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   const activeKeyRef = useRef<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const imgElsRef = useRef(new Map<string, HTMLImageElement>());
+  const everActivatedRef = useRef(new Set<string>());
 
   // Active une image: cross-fade + montage progressif (image courante,
   // précédente et suivante — la suivante est ainsi préchargée à l'avance)
@@ -124,18 +125,37 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
 
   useEffect(() => () => observerRef.current?.disconnect(), []);
 
-  // L'image active reprend le Ken Burns depuis son tout début (échelle 1.03),
-  // jamais depuis le point où elle avait été mise en pause la fois précédente:
-  // une image déjà vue (on remonte, ou deux sections la partagent) ne doit pas
-  // réapparaître déjà à moitié zoomée. Le reset se fait juste avant le fondu
-  // d'entrée (opacité encore quasi nulle), donc invisible pour le lecteur.
+  // Une image RÉACTIVÉE (on remonte, ou deux sections la partagent) reprend le
+  // Ken Burns depuis son tout début (échelle 1.03) plutôt que depuis le point où
+  // elle avait été mise en pause — sans quoi elle réapparaîtrait déjà à moitié
+  // zoomée, sans plus grand-chose à montrer.
+  //
+  // On ne le fait QUE sur une réactivation (`everActivatedRef`), jamais sur une
+  // première apparition — qui démarre déjà à 1.03 naturellement, donc n'a rien à
+  // corriger. Et on évite `offsetWidth`/`getBoundingClientRect` pour forcer le
+  // reflow: cette lecture synchronise un recalcul de layout de TOUTE la page, ce
+  // qui fait visiblement clignoter le header (fixed + backdrop-blur) à chaque
+  // déclenchement. Un double rAF obtient le même effet de "reset" sans jamais
+  // forcer de reflow synchrone.
   useEffect(() => {
     if (!activeKey) return;
+    const alreadySeen = everActivatedRef.current.has(activeKey);
+    everActivatedRef.current.add(activeKey);
+    if (!alreadySeen) return;
+
     const node = imgElsRef.current.get(activeKey);
     if (!node) return;
     node.style.animation = "none";
-    void node.offsetWidth; // force le reflow qui applique le "none"
-    node.style.animation = "";
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => {
+        node.style.animation = "";
+      });
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
+    };
   }, [activeKey]);
 
   // Le voile "quart de cercle" n'existe que pour l'ouverture: elle seule occupe
