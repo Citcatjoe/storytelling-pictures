@@ -19,7 +19,7 @@ import {
 //
 // Chaque <StorySection> déclare son image de fond: quand la section atteint
 // le centre du viewport, l'arrière-plan transitionne vers cette image.
-// Implémentation 100% native (IntersectionObserver), zéro dépendance.
+// Implémentation 100% native (scroll + getBoundingClientRect), zéro dépendance.
 //
 // Usage:
 //   <ImmersiveStory>
@@ -63,11 +63,11 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   const sectionsRef = useRef(new Map<HTMLElement, BackgroundConfig>());
   const backgroundsRef = useRef<BackgroundConfig[]>([]);
   const activeKeyRef = useRef<string | null>(null);
-  const observerRef = useRef<IntersectionObserver | null>(null);
 
   // Active une image: cross-fade + montage progressif (image courante,
   // précédente et suivante — la suivante est ainsi préchargée à l'avance)
   const activate = useCallback((key: string) => {
+    if (activeKeyRef.current === key) return;
     activeKeyRef.current = key;
     setActiveKey(key);
     setMountedKeys((prev) => {
@@ -81,6 +81,40 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
     });
   }, []);
 
+  // Détection déterministe: à chaque scroll, on identifie LA section dont le
+  // rectangle couvre la ligne horizontale médiane du viewport, et on active
+  // son image. Les sections s'empilent sans espace dans le flux du document,
+  // donc exactement une section couvre toujours cette ligne (sauf tout en
+  // haut/bas de page, géré par le repli "plus proche"). Remplace l'ancien
+  // IntersectionObserver à bande de 10%: avec plusieurs entrées simultanées
+  // (scroll rapide, allers-retours), l'ordre de traitement des entries ne
+  // garantissait pas de retenir la section réellement au centre — d'où des
+  // désynchronisations occasionnelles texte / image observées en usage.
+  const recomputeActive = useCallback(() => {
+    if (typeof window === "undefined" || sectionsRef.current.size === 0) return;
+    const centerY = window.innerHeight / 2;
+    let hitKey: string | null = null;
+    let closestKey: string | null = null;
+    let closestDist = Infinity;
+
+    for (const [el, cfg] of sectionsRef.current) {
+      const rect = el.getBoundingClientRect();
+      const key = bgKey(cfg);
+      if (rect.top <= centerY && rect.bottom >= centerY) {
+        hitKey = key;
+        break;
+      }
+      const dist = centerY < rect.top ? rect.top - centerY : centerY - rect.bottom;
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestKey = key;
+      }
+    }
+
+    const next = hitKey ?? closestKey;
+    if (next) activate(next);
+  }, [activate]);
+
   const register = useCallback<RegisterFn>((el, bg) => {
     sectionsRef.current.set(el, bg);
 
@@ -91,55 +125,53 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
       setBackgrounds(backgroundsRef.current);
     }
 
-    // Observer unique: déclenche quand une section traverse la bande
-    // centrale du viewport (10% de hauteur autour du centre)
-    if (!observerRef.current && typeof window !== "undefined") {
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting) {
-              const cfg = sectionsRef.current.get(entry.target as HTMLElement);
-              if (cfg) {
-                activate(bgKey(cfg));
-              }
-            }
-          }
-        },
-        { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
-      );
-    }
-    observerRef.current?.observe(el);
-
     // La première section enregistrée devient le fond initial
     if (activeKeyRef.current === null) {
       activate(key);
     }
+    recomputeActive();
 
     return () => {
       sectionsRef.current.delete(el);
-      observerRef.current?.unobserve(el);
     };
-  }, [activate]);
+  }, [activate, recomputeActive]);
 
-  useEffect(() => () => observerRef.current?.disconnect(), []);
+  // Écoute unique scroll/resize, cadencée par requestAnimationFrame pour ne
+  // recalculer qu'une fois par frame peu importe le nombre d'événements.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let ticking = false;
+    const onScrollOrResize = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        recomputeActive();
+      });
+    };
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+    };
+  }, [recomputeActive]);
 
   // Le voile "quart de cercle" n'existe que pour l'ouverture: elle seule occupe
   // exactement un écran (jamais de défilement interne), ce qui lui permet de
   // rester ancrée au même coin sans jamais se désynchroniser du texte.
   const isHeroActive = backgrounds.length > 0 && activeKey === bgKey(backgrounds[0]);
 
-  // Le scrim ambiant assombrissait aussi le haut du viewport. On retire cette
-  // partie haute (le bas reste, il sert la lisibilité) — mais seulement hors
-  // hero: l'ouverture garde son dégradé d'origine, inchangé.
+  // Le scrim ambiant assombrissait aussi le haut du viewport — y compris sur
+  // l'ouverture, où un premier passage n'avait retiré ce haut que hors hero.
+  // Le haut d'une image ne doit jamais être terni, même légèrement: seul le
+  // bas s'assombrit (lisibilité du texte), sur toutes les sections sans
+  // exception.
   const scrimClass =
     scrim === "none"
       ? null
       : scrim === "medium"
-      ? isHeroActive
-        ? "bg-gradient-to-b from-black/50 via-black/25 to-black/60"
-        : "bg-gradient-to-b from-transparent via-black/25 to-black/60"
-      : isHeroActive
-      ? "bg-gradient-to-b from-black/40 via-black/10 to-black/50"
+      ? "bg-gradient-to-b from-transparent via-black/25 to-black/60"
       : "bg-gradient-to-b from-transparent via-black/10 to-black/50";
 
   return (
@@ -157,7 +189,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
               alt=""
               draggable={false}
               decoding="async"
-              className={`story-bg-img absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
+              className={`story-bg-img absolute inset-0 h-full w-full object-cover transition-opacity duration-[1000ms] ease-in-out ${
                 isActive ? "opacity-100" : "opacity-0"
               }`}
               style={
@@ -173,7 +205,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
 
         {/* Voile de l'ouverture: quart de cercle ancré bas-gauche, propre au hero. */}
         <div
-          className={`story-hero-veil absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${
+          className={`story-hero-veil absolute inset-0 transition-opacity duration-[1000ms] ease-in-out ${
             isHeroActive ? "opacity-100" : "opacity-0"
           }`}
           aria-hidden="true"
@@ -236,6 +268,17 @@ const ALIGN_CLASSES: Record<NonNullable<StorySectionProps["align"]>, string> = {
   right: "md:justify-end",
 };
 
+// Toujours à gauche en mobile (le jeu centre/droite n'a de sens qu'en desktop,
+// où le bloc de texte partage l'espace avec la photo) — desktop reprend
+// l'alignement résolu. Classes Tailwind littérales (pas de `text-${x}`
+// interpolé): un template dynamique n'est jamais vu par le scanner de Tailwind
+// et ne génère aucune règle CSS.
+const TEXT_ALIGN_CLASSES: Record<NonNullable<StorySectionProps["textAlign"]>, string> = {
+  left: "text-left md:text-left",
+  center: "text-left md:text-center",
+  right: "text-left md:text-right",
+};
+
 export function StorySection({
   image,
   imagePosition,
@@ -272,7 +315,7 @@ export function StorySection({
     >
       <div className={`relative flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`}>
         <div
-          className={`w-full text-white ${WIDTH_CLASSES[width]} story-text-shadow text-${resolvedTextAlign} ${contentClassName}`}
+          className={`w-full text-white ${WIDTH_CLASSES[width]} story-text-shadow ${TEXT_ALIGN_CLASSES[resolvedTextAlign]} ${contentClassName}`}
         >
           {children}
         </div>

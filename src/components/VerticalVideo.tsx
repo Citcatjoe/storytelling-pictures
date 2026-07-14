@@ -220,7 +220,7 @@ export function VerticalVideo({
               className={`pointer-events-auto cursor-pointer w-28 h-12 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg border border-transparent ${
                 isPlaying 
                   ? "bg-white/20 hover:bg-white/30 backdrop-blur-md text-white border-white/20" 
-                  : "bg-accent2 text-white hover:bg-accent2/90 shadow-[0_8px_20px_rgba(226,0,0,0.35)]"
+                  : "bg-[var(--color-scene)] text-black hover:brightness-95 shadow-[0_8px_20px_rgba(247,184,40,0.4)]"
               }`}
               aria-label={isPlaying ? "Pause" : "Play"}
             >
@@ -257,7 +257,7 @@ export function VerticalVideo({
           >
             <div className="w-full h-1.5 bg-white/25 transition-all duration-200 group-hover/progress:h-3">
               <div 
-                className="h-full bg-accent2 transition-all duration-75 ease-out" 
+                className="h-full bg-[var(--color-scene)] transition-all duration-75 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>

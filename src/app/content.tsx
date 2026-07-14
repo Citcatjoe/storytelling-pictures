@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { STORY, ABSOLUTE_SOCIAL_URL } from "@/config/variables";
 import { Header } from "@/components/Header";
 import { Credits } from "@/components/Credits";
+import { ReadingProgress } from "@/components/ReadingProgress";
+import { VerticalVideo } from "@/components/VerticalVideo";
 import {
   ImmersiveStory,
   StorySection,
@@ -108,6 +110,7 @@ export default function Content() {
         />
 
         <Header theme="dark" />
+        <ReadingProgress />
 
         <ImmersiveStory scrim="light">
 
@@ -165,7 +168,7 @@ export default function Content() {
           <StorySection
             image="images/naika/_F3_5615.webp"
             imagePosition="70% 60%"
-            imagePositionMobile="65% 55%"
+            imagePositionMobile="60% 55%"
             align="left"
           >
             <p className={P}>
@@ -179,8 +182,8 @@ export default function Content() {
 
           <StorySection
             image="images/naika/_F2_1040.webp"
-            imagePosition="center 35%"
-            imagePositionMobile="45% 35%"
+            imagePosition="left 35%"
+            imagePositionMobile="56% 35%"
             align="left"
           >
             <p className={P}>
@@ -194,8 +197,8 @@ export default function Content() {
 
           <StorySection
             image="images/naika/_F2_0021.webp"
-            imagePosition="center 30%"
-            imagePositionMobile="40% 30%"
+            imagePosition="left 30%"
+            imagePositionMobile="55% 30%"
             align="left"
           >
             <p className={P}>
@@ -214,8 +217,8 @@ export default function Content() {
           <StorySection
             id="coulisses"
             image="images/naika/_F3_4504.webp"
-            imagePosition="center 40%"
-            imagePositionMobile="center 40%"
+            imagePosition="left bottom"
+            imagePositionMobile="46% bottom"
             align="left"
             width="wide"
           >
@@ -232,7 +235,7 @@ export default function Content() {
             image="images/naika/_F3_4543.webp"
             imagePosition="center 35%"
             imagePositionMobile="65% 35%"
-            align="right"
+            align="left"
           >
             <p className={P}>
               Les musiciens répétaient. Seuls les échos du soundcheck répondaient au clapotis
@@ -250,8 +253,8 @@ export default function Content() {
 
           <StorySection
             image="images/naika/_F3_4626.webp"
-            imagePosition="center 35%"
-            imagePositionMobile="60% 35%"
+            imagePosition="left 35%"
+            imagePositionMobile="53% 35%"
             align="left"
           >
             <p className={P}>
@@ -265,9 +268,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_4767.webp"
-            imagePosition="center 35%"
-            imagePositionMobile="65% 35%"
+            image="images/naika/_F3_4686.webp"
+            imagePosition="left 35%"
+            imagePositionMobile="62% 35%"
             align="left"
           >
             <p className={P}>
@@ -282,11 +285,26 @@ export default function Content() {
             </p>
           </StorySection>
 
+          {/* ==============================================
+              VIDÉO — la foule filme, extrait vertical
+              ============================================== */}
           <StorySection
-            image="images/naika/_F3_5264.webp"
+            image="images/naika/_F3_6028.jpg"
+            imagePosition="center 40%"
+            imagePositionMobile="center 40%"
+            align="center"
+          >
+            <VerticalVideo
+              videoSrc="https://cdn.jwplayer.com/manifests/JvMjkvQm.m3u8"
+              poster="images/naika/vignette.png"
+            />
+          </StorySection>
+
+          <StorySection
+            image="images/naika/_F3_4896.webp"
             imagePosition="center 35%"
-            imagePositionMobile="40% 35%"
-            align="right"
+            imagePositionMobile="80% 35%"
+            align="left"
           >
             <p className={P}>
               Sa loge n&rsquo;a rien de spectaculaire: des miroirs cerclés d&rsquo;ampoules,
@@ -301,10 +319,10 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/IL29_NAIKA_MJF_6__F3_5591.webp"
+           image="images/naika/_F3_4896.webp"
             imagePosition="center 35%"
-            imagePositionMobile="center 35%"
-            align="center"
+            imagePositionMobile="80% 35%"
+            align="left"
           >
             <p className={P}>
               Marta, sa manageuse, anticipe le moindre besoin. Raf orchestre les déplacements
@@ -318,10 +336,10 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_5676.webp"
+            image="images/naika/_F3_5206.webp"
             imagePosition="center 30%"
-            imagePositionMobile="45% 30%"
-            align="right"
+            imagePositionMobile="78% 30%"
+            align="left"
           >
             <p className={P}>
               Ici, personne n&rsquo;a l&rsquo;air de diriger. Pourtant, chacun connaît sa place.
@@ -338,9 +356,9 @@ export default function Content() {
               ============================================== */}
           <StorySection
             id="chez-soi"
-            image="images/naika/_F3_5183.webp"
+            image="images/naika/_F3_5427.webp"
             imagePosition="center 30%"
-            imagePositionMobile="55% 30%"
+            imagePositionMobile="65% 30%"
             align="left"
             width="wide"
           >
@@ -355,9 +373,9 @@ export default function Content() {
 
           <StorySection
             image="images/naika/_F2_9839.webp"
-            imagePosition="center 30%"
-            imagePositionMobile="55% 30%"
-            align="right"
+            imagePosition="left center"
+            imagePositionMobile="58% 30%"
+            align="left"
           >
             <p className={P}>
               Son soutien à la Palestine, explique-t-elle, naît de l&rsquo;effroi que lui
@@ -374,9 +392,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_5341.webp"
+            image="images/naika/_F3_5478.webp"
             imagePosition="center 30%"
-            imagePositionMobile="center 30%"
+            imagePositionMobile="40% 30%"
             align="center"
           >
             <p className={P}>
@@ -388,10 +406,10 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_4864.webp"
-            imagePosition="center 35%"
-            imagePositionMobile="65% 35%"
-            align="left"
+            image="images/naika/_F2_0419.webp"
+            imagePosition="right 35%"
+            imagePositionMobile="41% 35%"
+            align="right"
           >
             <p className={P}>
               La trentaine entamée, les rêves sont restés ceux de l&rsquo;enfant qu&rsquo;elle
@@ -404,10 +422,10 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_4686.webp"
-            imagePosition="center 35%"
-            imagePositionMobile="35% 35%"
-            align="right"
+            image="images/naika/_F3_6045.webp"
+            imagePosition="right top"
+            imagePositionMobile="87% 35%"
+            align="left"
           >
             <p className={P}>
               Casablanca il y a deux jours. Montreux aujourd&rsquo;hui. Paris dès demain.
@@ -424,11 +442,11 @@ export default function Content() {
               ============================================== */}
           <StorySection
             id="galere"
-            image="images/naika/_F3_4507.webp"
-            imagePosition="center 50%"
-            imagePositionMobile="center 50%"
-            align="left"
-            width="wide"
+            image="images/naika/_F3_5951.webp"
+            imagePosition="right 50%"
+            imagePositionMobile="30% 50%"
+            align="right"
+            //width="wide"
           >
             <StoryKicker>Chapitre 3</StoryKicker>
             <StoryHeading>Avant le succès, la galère</StoryHeading>
@@ -440,9 +458,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_4560.webp"
-            imagePosition="center 30%"
-            imagePositionMobile="65% 30%"
+            image="images/naika/_F3_5877.webp"
+            imagePosition="right 30%"
+            imagePositionMobile="35% 30%"
             align="right"
           >
             <p className={P}>
@@ -458,10 +476,10 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_4526.webp"
-            imagePosition="center 35%"
-            imagePositionMobile="35% 35%"
-            align="right"
+            image="images/naika/_F3_6215.webp"
+            imagePosition="left 35%"
+            imagePositionMobile="70% 35%"
+            align="left"
           >
             <p className={P}>
               Le déclic? Son titre Sauce, sorti en 2021, est repéré par Apple qui
@@ -475,9 +493,9 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F3_5478.webp"
+            image="images/naika/_F3_6177.webp"
             imagePosition="center 45%"
-            imagePositionMobile="65% 45%"
+            imagePositionMobile="52% 45%"
             align="left"
           >
             <p className={P}>
@@ -492,9 +510,9 @@ export default function Content() {
 
           <StorySection
             image="images/naika/_F3_5917.webp"
-            imagePosition="center 30%"
-            imagePositionMobile="60% 30%"
-            align="left"
+            imagePosition="right 30%"
+            imagePositionMobile="35% 30%"
+            align="right"
           >
             <p className={P}>
               Derrière son micro fleuri, il ne reste plus que Naïka. Les premières notes
@@ -515,7 +533,7 @@ export default function Content() {
             id="epilogue"
             image="images/naika/_F3_6438.webp"
             imagePosition="center 40%"
-            imagePositionMobile="center 45%"
+            imagePositionMobile="55% 45%"
             align="right"
           >
             <p className={P}>
@@ -539,8 +557,8 @@ export default function Content() {
           <StorySection
             id="sortie"
             image="images/naika/IL29_NAIKA_MJF_1__F2_9759-FINAL.webp"
-            imagePosition="center 35%"
-            imagePositionMobile="center 30%"
+            imagePosition="right 35%"
+            imagePositionMobile="56% 30%"
             align="center"
             height="short"
           >

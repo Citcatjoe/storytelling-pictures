@@ -1,2 +1,678 @@
-[00:00:00.668] Server  LOG      ✓ Ready in 488ms
-[00:00:04.657] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:00.520] Server  LOG      ✓ Ready in 366ms
+[00:00:03.499] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.614] Browser LOG     Error in fetch URL : https://cdn.cookielaw.org/consent/d57e5842-f42f-46bc-a4ea-4a82bd82322c/019980d9-ee6c-759e-9076-176b497d5024/fr.json Exception :TypeError: Failed to fetch
+[00:00:03.614] Browser LOG     Error in fetch URL : https://cdn.cookielaw.org/vendorlist/iab2V2Data.json Exception :TypeError: Failed to fetch
+[00:00:16.666] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:20.440] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:37.276] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:26.585] Server  LOG      ✓ Compiled in 42ms
+[00:09:30.071] Server  LOG      ✓ Compiled in 37ms
+[00:09:33.932] Server  LOG      ✓ Compiled in 37ms
+[00:09:40.714] Server  LOG      ✓ Compiled in 29ms
+[00:09:49.300] Server  LOG      ✓ Compiled in 34ms
+[00:09:55.001] Server  LOG      ✓ Compiled in 28ms
+[00:10:01.576] Server  LOG      ✓ Compiled in 30ms
+[00:10:10.118] Server  LOG      ✓ Compiled in 32ms
+[00:10:10.199] Browser ERROR   uncaughtError: ReferenceError: variantClasses is not defined
+[00:10:18.552] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:10:18.602] Server  LOG      ✓ Compiled in 44ms
+[00:10:18.685] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:26.770] Server  LOG      ✓ Compiled in 44ms
+[00:10:47.503] Server  LOG      ✓ Compiled in 133ms
+[00:10:57.164] Server  LOG      ✓ Compiled in 123ms
+[00:13:07.201] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:14.709] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:17.714] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:22.933] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:31.047] Server  LOG      ✓ Compiled in 39ms
+[00:46:43.358] Server  LOG      ✓ Compiled in 35ms
+[00:46:54.692] Server  LOG      ✓ Compiled in 33ms
+[00:47:02.281] Server  LOG      ✓ Compiled in 34ms
+[00:47:02.383] Browser ERROR   ./src/components/ImmersiveStory.tsx:237:1
+Parsing ecmascript source code failed
+  235 |     </StoryContext.Provider>
+  236 |   );
+> 237 | }
+      | ^
+  238 |
+  239 | // ---------------------------------------------------------------------------
+  240 | // StorySection — un "moment" de la story lié à une image de fond
+
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+
+Import trace:
+  Server Component:
+    ./src/components/ImmersiveStory.tsx
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[00:47:27.625] Server  LOG      ✓ Compiled in 30ms
+[00:47:34.374] Server  LOG      ✓ Compiled in 31ms
+[00:48:36.202] Server  LOG      ✓ Compiled in 129ms
+[00:49:14.266] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:51.557] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:56:28.436] Server  LOG      ✓ Compiled in 52ms
+[00:57:31.611] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:06.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:54.931] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:23.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:30.357] Server  LOG      ✓ Compiled in 36ms
+[01:04:45.805] Server  LOG      ✓ Compiled in 34ms
+[01:05:00.196] Server  LOG      ✓ Compiled in 33ms
+[01:05:41.798] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:05:57.303] Server  LOG      ✓ Compiled in 128ms
+[01:06:33.587] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:12:43.426] Server  LOG      ✓ Compiled in 40ms
+[01:12:57.382] Server  LOG      ✓ Compiled in 31ms
+[01:13:12.587] Server  LOG      ✓ Compiled in 33ms
+[01:13:58.912] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:27.690] Server  LOG      ✓ Compiled in 118ms
+[01:16:43.430] Server  LOG      ✓ Compiled in 33ms
+[01:16:43.531] Browser ERROR   uncaughtError: ReferenceError: imgElsRef is not defined
+[01:16:43.531] Browser ERROR   uncaughtError: ReferenceError: imgElsRef is not defined
+[01:16:43.531] Browser ERROR   uncaughtError: ReferenceError: imgElsRef is not defined
+[01:16:58.152] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:16:58.209] Server  LOG      ✓ Compiled in 29ms
+[01:16:58.297] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:16:58.407] Browser ERROR   uncaughtError: ReferenceError: imgElsRef is not defined
+[01:16:58.407] Browser ERROR   uncaughtError: ReferenceError: imgElsRef is not defined
+[01:16:58.407] Browser ERROR   uncaughtError: ReferenceError: imgElsRef is not defined
+[01:17:07.324] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:17:07.370] Server  LOG      ✓ Compiled in 31ms
+[01:17:07.422] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:29:49.058] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:38:44.176] Server  LOG      ✓ Compiled in 123ms
+[01:39:03.702] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:55:23.972] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:55:32.162] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:09:04.637] Server  LOG      ✓ Compiled in 125ms
+[02:09:28.772] Server  LOG      ✓ Compiled in 40ms
+[02:10:16.450] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:10:21.250] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:11:51.418] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:11:54.990] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:14:20.083] Server  LOG      ✓ Compiled in 264ms
+[02:14:20.184] Server  LOG      ✓ Compiled in 94ms
+[02:19:29.645] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:30.732] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:32.012] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:33.002] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:19:34.009] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:24:20.897] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:37:39.026] Server  LOG      ✓ Compiled in 41ms
+[02:38:22.150] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:12:22.336] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:28:35.305] Server  LOG      ✓ Compiled in 152ms
+[03:28:46.407] Server  LOG      ✓ Compiled in 151ms
+[03:29:23.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:29:28.795] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:34:28.387] Server  LOG      ✓ Compiled in 66ms
+[03:34:31.179] Server  LOG      ✓ Compiled in 42ms
+[03:34:54.825] Server  LOG      ✓ Compiled in 41ms
+[03:35:41.082] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:36:17.176] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:37:01.477] Server  LOG      ✓ Compiled in 59ms
+[03:37:10.190] Server  LOG      ✓ Compiled in 39ms
+[03:37:15.531] Server  LOG      ✓ Compiled in 37ms
+[03:37:25.473] Server  LOG      ✓ Compiled in 43ms
+[03:37:25.525] Browser ERROR   The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [] [()=>{
+            if (("TURBOPACK compile-time value", "object") === "undefined" || sectionsRef.current.size === 0) return;
+            const centerY = window.innerHeight / 2;
+            let hitKey = null;
+            let closestKey = null;
+            let closestDist = Infinity;
+            for (const [el, cfg] of sectionsRef.current){
+                const rect = el.getBoundingClientRect();
+                const key = bgKey(cfg);
+                if (rect.top <= centerY && rect.bottom >= centerY) {
+                    hitKey = key;
+                    break;
+                }
+                const dist = centerY < rect.top ? rect.top - centerY : centerY - rect.bottom;
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closestKey = key;
+                }
+            }
+            const next = hitKey ?? closestKey;
+            if (next) activate(next);
+        }]
+[03:37:40.982] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:37:48.524] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.350] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.351] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.620] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:48.951] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.310] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.664] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:49.665] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.215] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.505] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:50.506] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.135] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.634] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:51.884] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.253] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:53.803] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.249] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:38:54.773] Browser ERROR   uncaughtError: ReferenceError: recomputeRef is not defined
+[03:39:58.144] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:40:23.302] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:40:36.895] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:40:56.111] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:46:45.579] Server  LOG      ✓ Compiled in 40ms
+[03:47:06.699] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:50:26.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:26:47.501] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:34:14.430] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:34:17.128] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:34:21.798] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:47:45.956] Server  LOG      ✓ Compiled in 130ms
+[04:47:57.240] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[04:49:54.520] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:01:51.108] Server  LOG      ✓ Compiled in 38ms
+[05:02:33.062] Server  LOG      ✓ Compiled in 53ms
+[05:03:11.683] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:04:21.643] Server  LOG      ✓ Compiled in 141ms
+[05:05:12.915] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:05:34.528] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:06:19.827] Server  LOG      ✓ Compiled in 126ms
+[05:06:31.892] Server  LOG      ✓ Compiled in 142ms
+[05:06:45.129] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:06:50.837] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:07:33.904] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:08:04.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:08:30.277] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:09:25.041] Server  LOG      ✓ Compiled in 64ms
+[05:09:33.528] Server  LOG      ✓ Compiled in 33ms
+[05:10:03.201] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:10:04.633] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:13:02.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:13:47.908] Server  LOG      ✓ Compiled in 140ms
+[05:14:10.265] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:14:40.068] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:14:55.738] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:15:13.602] Server  LOG      ✓ Compiled in 148ms
+[05:21:54.830] Server  LOG      ✓ Compiled in 38ms
+[05:22:20.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:22:23.986] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:22:26.882] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:22:29.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:22:55.253] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:22:58.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:23:01.217] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:23:04.133] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[05:23:35.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:32:16.704] Server  ERROR    ⨯ ReferenceError: VerticalVideo is not defined
+[06:32:16.717] Server  ERROR    ⨯ ReferenceError: VerticalVideo is not defined
+[06:32:16.829] Browser ERROR   uncaughtError: ReferenceError: VerticalVideo is not defined
+[06:32:17.748] Browser ERROR   uncaughtError: ReferenceError: VerticalVideo is not defined
+[06:32:26.295] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:32:26.329] Server  LOG      ✓ Compiled in 0ms
+[06:32:57.271] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:36:44.515] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[06:47:03.271] Server  LOG      ✓ Compiled in 63ms
+[06:47:15.553] Server  LOG      ✓ Compiled in 45ms
+[06:47:44.291] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[07:03:11.782] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

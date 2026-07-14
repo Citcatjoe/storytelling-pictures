@@ -198,7 +198,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Effet "glass" délicat des blocs de texte et de la zone crédits */
 .story-glass {
-  background: rgba(10, 10, 12, 0.35);
+  background: rgba(8, 8, 10, 0.72);
   backdrop-filter: blur(14px) saturate(1.15);
   -webkit-backdrop-filter: blur(14px) saturate(1.15);
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -209,6 +209,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Lisibilité du texte nu posé directement sur l'image */
 .story-text-shadow {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 4px 24px rgba(0, 0, 0, 0.55);
+}
+
+/* Corps de texte — même principe de typographie fluide que le hero
+   (story-hero__lede): un clamp() lié au vw plutôt que des paliers Tailwind par
+   breakpoint, pour que la taille suive le viewport en continu. */
+.story-p {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
 }
 
 /* Repère de chapitre («Chapitre 1»…): un des rares usages autorisés de l'or de scène
@@ -269,17 +276,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* En mobile le bloc texte du hero occupe toute la largeur: un quart de cercle
    n'y couvrirait qu'une colonne. Le voile y redevient une base, qui s'éteint
-   bien avant le sujet. */
+   bien avant le sujet. Resserré pour suivre l'empreinte réduite du bloc de
+   texte (titre/tagline/chapô compactés plus bas): la trame ne doit couvrir
+   que le texte, pas les deux tiers de l'écran. */
 @media (max-width: 767px) {
   .story-hero-veil {
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.85) 25%,
-      rgba(0, 0, 0, 0.7) 45%,
-      rgba(0, 0, 0, 0.5) 60%,
-      rgba(0, 0, 0, 0.22) 75%,
-      rgba(0, 0, 0, 0) 90%
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.78) 18%,
+      rgba(0, 0, 0, 0.55) 34%,
+      rgba(0, 0, 0, 0.28) 48%,
+      rgba(0, 0, 0, 0) 62%
     );
   }
 }
@@ -417,6 +425,44 @@ h1, h2, h3, h4, h5, h6 {
 
   .story-cue {
     display: none;
+  }
+}
+
+/* L'empreinte du bloc de texte de l'ouverture (titre + tagline + chapô) était
+   trop importante en mobile, forçant une trame noire très étendue derrière lui
+   (cf. .story-hero-veil ci-dessus). On compacte tailles et marges — le voile
+   suit puisqu'il est calé sur cette même empreinte. */
+@media (max-width: 767px) {
+  .story-hero__name-mask {
+    font-size: clamp(2.25rem, 11vw, 2.75rem);
+  }
+
+  .story-hero__tagline {
+    margin-top: 0.3rem;
+    font-size: clamp(1.05rem, 4.6vw, 1.35rem);
+    line-height: 1.2;
+  }
+
+  .story-hero__rule {
+    margin: 0.85rem 0 0.75rem;
+  }
+
+  .story-hero__lede {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .story-hero__footer {
+    margin-top: 1rem;
+  }
+
+  /* La section hero reprend le padding-bottom générique (py-24, 6rem) des
+     StorySection — pensé pour espacer des blocs empilés, pas pour un bloc
+     ancré en bas d'un écran unique (vAlign="bottom"). Résultat: ~96px de vide
+     entre la signature et le bord de l'écran. Sélecteur d'ID pour gagner sur
+     la classe Tailwind générée sans toucher au padding-top. */
+  #hero {
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
   }
 }
 

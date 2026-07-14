@@ -125,9 +125,14 @@ export function Header({ theme = "light" }: HeaderProps) {
             : "bg-white border-b border-gray-100"
         } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <div className="flex items-center space-x-2">
+        <a
+          href="https://www.blick.ch/fr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center space-x-2"
+        >
           <BlickLogo color={dark ? "#ffffff" : (STORY.logoColor || "black")} />
-        </div>
+        </a>
         <button
           onClick={() => setIsOpen(true)}
           className={`w-10 h-10 flex items-center justify-center rounded-full cursor-pointer transition-colors ${

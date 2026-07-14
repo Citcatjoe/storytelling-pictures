@@ -9,6 +9,10 @@
 __turbopack_context__.s([
     "ABSOLUTE_SOCIAL_URL",
     ()=>ABSOLUTE_SOCIAL_URL,
+    "ABSOLUTE_SOCIAL_URL_4X3",
+    ()=>ABSOLUTE_SOCIAL_URL_4X3,
+    "ABSOLUTE_SOCIAL_URL_SQUARE",
+    ()=>ABSOLUTE_SOCIAL_URL_SQUARE,
     "STORY",
     ()=>STORY
 ]);
@@ -18,8 +22,13 @@ const STORY = {
     metaTitle: "Montreux Jazz: dans les coulisses de Naïka, joyau de la pop cosmopolite",
     ogTitle: "Naïka, le nouveau joyau de la pop cosmopolite",
     titleDisplay: "Naïka,<br>le nouveau joyau<br>de la pop cosmopolite",
+    // Hero "affiche" de l'ImmersiveStory: le nom porte l'affiche, la tagline le sous-titre.
+    // À garder cohérent avec `title`. `titleDisplay` reste la version d'un seul bloc,
+    // utilisée par les héros du catalogue (Hero, Hero2).
+    heroName: "Naïka",
+    heroTagline: "le nouveau joyau<br>de la pop cosmopolite",
     description: "Pendant près de neuf heures, L'illustré a suivi Naïka dans les coulisses de sa première au Montreux Jazz Festival. Rencontre intime avec la chanteuse franco-haïtienne aux millions d'écoutes.",
-    author: "L'illustré",
+    author: "Antoine Hürlimann",
     publicationDate: "2026-07-09",
     publicationDisplayDate: "9 juillet 2026",
     // URLs
@@ -27,15 +36,20 @@ const STORY = {
     url: "https://storytelling.blick.ch/fr/2026/naika-montreux-jazz-festival/",
     // Nom de l'image dans le dossier 'public' (ex: "social.jpg")
     socialImageFilename: "images/social.jpg",
+    // Recadrages additionnels de la même photo (mêmes sujet/cadrage), pour le
+    // tableau "image" du JSON-LD: Google recommande plusieurs ratios (16:9/1.91:1,
+    // 4:3, 1:1) pour maximiser les formats de carte sur Discover.
+    socialImageFilename4x3: "images/social-4x3.jpg",
+    socialImageFilenameSquare: "images/social-1x1.jpg",
     // Crédits de fin d'article
     credits: [
         {
-            name: "L'illustré",
+            name: "Blick Suisse romande",
             produces: "Production",
             inCredits: true
         },
         {
-            name: "L'illustré",
+            name: "Antoine Hürlimann",
             isAuthor: true,
             inCredits: true,
             job: "Journaliste",
@@ -43,7 +57,7 @@ const STORY = {
             img: null
         },
         {
-            name: "À compléter",
+            name: "Valentin Flauraud",
             isAuthor: false,
             inCredits: true,
             job: "Photographe",
@@ -67,7 +81,11 @@ const STORY = {
     twitterHandle: "@Blick_fr",
     faviconBaseUrl: "https://storytelling.blick.ch/fr/__is_embed_somewhere/favicon"
 };
-const ABSOLUTE_SOCIAL_URL = `${STORY.url.replace(/\/$/, "")}/${STORY.socialImageFilename}`;
+// Helpers calculés automatiquement (ne pas toucher)
+const STORY_BASE_URL = STORY.url.replace(/\/$/, "");
+const ABSOLUTE_SOCIAL_URL = `${STORY_BASE_URL}/${STORY.socialImageFilename}`;
+const ABSOLUTE_SOCIAL_URL_4X3 = `${STORY_BASE_URL}/${STORY.socialImageFilename4x3}`;
+const ABSOLUTE_SOCIAL_URL_SQUARE = `${STORY_BASE_URL}/${STORY.socialImageFilenameSquare}`;
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -215,13 +233,16 @@ function Header({ theme = "light" }) {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
                 className: `fixed top-0 left-0 right-0 h-16 flex items-center justify-between px-4 md:px-6 z-40 transition-transform duration-300 ease-in-out ${dark ? "bg-black/40 backdrop-blur-md border-b border-white/10" : "bg-white border-b border-gray-100"} ${isVisible ? "translate-y-0" : "-translate-y-full"}`,
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                        href: "https://www.blick.ch/fr/",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
                         className: "flex items-center space-x-2",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(BlickLogo, {
                             color: dark ? "#ffffff" : __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$variables$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["STORY"].logoColor || "black"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 129,
+                            lineNumber: 134,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
@@ -238,12 +259,12 @@ function Header({ theme = "light" }) {
                             className: "w-8 h-8"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.tsx",
-                            lineNumber: 137,
+                            lineNumber: 142,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Header.tsx",
-                        lineNumber: 131,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this)
                 ]
@@ -264,7 +285,7 @@ function Header({ theme = "light" }) {
                                 children: "Partager"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 148,
+                                lineNumber: 153,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -277,18 +298,18 @@ function Header({ theme = "light" }) {
                                     className: "w-8 h-8"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 149,
+                                lineNumber: 154,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Header.tsx",
-                        lineNumber: 147,
+                        lineNumber: 152,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -336,12 +357,12 @@ function Header({ theme = "light" }) {
                                             className: "w-9 h-9 opacity-80 group-hover:opacity-100 transition-opacity"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Header.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 182,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 176,
+                                        lineNumber: 181,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -349,24 +370,24 @@ function Header({ theme = "light" }) {
                                         children: item.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.tsx",
-                                        lineNumber: 179,
+                                        lineNumber: 184,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, idx, true, {
                                 fileName: "[project]/src/components/Header.tsx",
-                                lineNumber: 169,
+                                lineNumber: 174,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/Header.tsx",
-                        lineNumber: 160,
+                        lineNumber: 165,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Header.tsx",
-                lineNumber: 141,
+                lineNumber: 146,
                 columnNumber: 7
             }, this)
         ]
@@ -414,11 +435,11 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
     const sectionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map());
     const backgroundsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
     const activeKeyRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const observerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
     // Active une image: cross-fade + montage progressif (image courante,
     // précédente et suivante — la suivante est ainsi préchargée à l'avance)
     const activate = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "ImmersiveStory.useCallback[activate]": (key)=>{
+            if (activeKeyRef.current === key) return;
             activeKeyRef.current = key;
             setActiveKey(key);
             setMountedKeys({
@@ -436,6 +457,41 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
             }["ImmersiveStory.useCallback[activate]"]);
         }
     }["ImmersiveStory.useCallback[activate]"], []);
+    // Détection déterministe: à chaque scroll, on identifie LA section dont le
+    // rectangle couvre la ligne horizontale médiane du viewport, et on active
+    // son image. Les sections s'empilent sans espace dans le flux du document,
+    // donc exactement une section couvre toujours cette ligne (sauf tout en
+    // haut/bas de page, géré par le repli "plus proche"). Remplace l'ancien
+    // IntersectionObserver à bande de 10%: avec plusieurs entrées simultanées
+    // (scroll rapide, allers-retours), l'ordre de traitement des entries ne
+    // garantissait pas de retenir la section réellement au centre — d'où des
+    // désynchronisations occasionnelles texte / image observées en usage.
+    const recomputeActive = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "ImmersiveStory.useCallback[recomputeActive]": ()=>{
+            if (("TURBOPACK compile-time value", "object") === "undefined" || sectionsRef.current.size === 0) return;
+            const centerY = window.innerHeight / 2;
+            let hitKey = null;
+            let closestKey = null;
+            let closestDist = Infinity;
+            for (const [el, cfg] of sectionsRef.current){
+                const rect = el.getBoundingClientRect();
+                const key = bgKey(cfg);
+                if (rect.top <= centerY && rect.bottom >= centerY) {
+                    hitKey = key;
+                    break;
+                }
+                const dist = centerY < rect.top ? rect.top - centerY : centerY - rect.bottom;
+                if (dist < closestDist) {
+                    closestDist = dist;
+                    closestKey = key;
+                }
+            }
+            const next = hitKey ?? closestKey;
+            if (next) activate(next);
+        }
+    }["ImmersiveStory.useCallback[recomputeActive]"], [
+        activate
+    ]);
     const register = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "ImmersiveStory.useCallback[register]": (el, bg)=>{
             sectionsRef.current.set(el, bg);
@@ -450,42 +506,62 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
                 ];
                 setBackgrounds(backgroundsRef.current);
             }
-            // Observer unique: déclenche quand une section traverse la bande
-            // centrale du viewport (10% de hauteur autour du centre)
-            if (!observerRef.current && ("TURBOPACK compile-time value", "object") !== "undefined") {
-                observerRef.current = new IntersectionObserver({
-                    "ImmersiveStory.useCallback[register]": (entries)=>{
-                        for (const entry of entries){
-                            if (entry.isIntersecting) {
-                                const cfg = sectionsRef.current.get(entry.target);
-                                if (cfg) activate(bgKey(cfg));
-                            }
-                        }
-                    }
-                }["ImmersiveStory.useCallback[register]"], {
-                    rootMargin: "-45% 0px -45% 0px",
-                    threshold: 0
-                });
-            }
-            observerRef.current?.observe(el);
             // La première section enregistrée devient le fond initial
-            if (activeKeyRef.current === null) activate(key);
+            if (activeKeyRef.current === null) {
+                activate(key);
+            }
+            recomputeActive();
             return ({
                 "ImmersiveStory.useCallback[register]": ()=>{
                     sectionsRef.current.delete(el);
-                    observerRef.current?.unobserve(el);
                 }
             })["ImmersiveStory.useCallback[register]"];
         }
     }["ImmersiveStory.useCallback[register]"], [
-        activate
+        activate,
+        recomputeActive
     ]);
+    // Écoute unique scroll/resize, cadencée par requestAnimationFrame pour ne
+    // recalculer qu'une fois par frame peu importe le nombre d'événements.
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "ImmersiveStory.useEffect": ()=>({
-                "ImmersiveStory.useEffect": ()=>observerRef.current?.disconnect()
-            })["ImmersiveStory.useEffect"]
-    }["ImmersiveStory.useEffect"], []);
-    const scrimClass = scrim === "none" ? null : scrim === "medium" ? "bg-gradient-to-b from-black/50 via-black/25 to-black/60" : "bg-gradient-to-b from-black/40 via-black/10 to-black/50";
+        "ImmersiveStory.useEffect": ()=>{
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
+            let ticking = false;
+            const onScrollOrResize = {
+                "ImmersiveStory.useEffect.onScrollOrResize": ()=>{
+                    if (ticking) return;
+                    ticking = true;
+                    requestAnimationFrame({
+                        "ImmersiveStory.useEffect.onScrollOrResize": ()=>{
+                            ticking = false;
+                            recomputeActive();
+                        }
+                    }["ImmersiveStory.useEffect.onScrollOrResize"]);
+                }
+            }["ImmersiveStory.useEffect.onScrollOrResize"];
+            window.addEventListener("scroll", onScrollOrResize, {
+                passive: true
+            });
+            window.addEventListener("resize", onScrollOrResize);
+            return ({
+                "ImmersiveStory.useEffect": ()=>{
+                    window.removeEventListener("scroll", onScrollOrResize);
+                    window.removeEventListener("resize", onScrollOrResize);
+                }
+            })["ImmersiveStory.useEffect"];
+        }
+    }["ImmersiveStory.useEffect"], [
+        recomputeActive
+    ]);
+    // Le voile "quart de cercle" n'existe que pour l'ouverture: elle seule occupe
+    // exactement un écran (jamais de défilement interne), ce qui lui permet de
+    // rester ancrée au même coin sans jamais se désynchroniser du texte.
+    const isHeroActive = backgrounds.length > 0 && activeKey === bgKey(backgrounds[0]);
+    // Le scrim ambiant assombrissait aussi le haut du viewport. On retire cette
+    // partie haute (le bas reste, il sert la lisibilité) — mais seulement hors
+    // hero: l'ouverture garde son dégradé d'origine, inchangé.
+    const scrimClass = scrim === "none" ? null : scrim === "medium" ? isHeroActive ? "bg-gradient-to-b from-black/50 via-black/25 to-black/60" : "bg-gradient-to-b from-transparent via-black/25 to-black/60" : isHeroActive ? "bg-gradient-to-b from-black/40 via-black/10 to-black/50" : "bg-gradient-to-b from-transparent via-black/10 to-black/50";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(StoryContext.Provider, {
         value: register,
         children: [
@@ -502,14 +578,14 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
                             alt: "",
                             draggable: false,
                             decoding: "async",
-                            className: `story-bg-img absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${isActive ? "opacity-100 story-bg-active" : "opacity-0"}`,
+                            className: `story-bg-img absolute inset-0 h-full w-full object-cover transition-opacity duration-[1000ms] ease-in-out ${isActive ? "opacity-100" : "opacity-0"}`,
                             style: {
                                 "--bg-pos": bg.position ?? "50% 50%",
                                 "--bg-pos-m": bg.positionMobile ?? bg.position ?? "50% 50%"
                             }
                         }, key, false, {
                             fileName: "[project]/src/components/ImmersiveStory.tsx",
-                            lineNumber: 138,
+                            lineNumber: 188,
                             columnNumber: 13
                         }, this);
                     }),
@@ -517,13 +593,21 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
                         className: `absolute inset-0 ${scrimClass}`
                     }, void 0, false, {
                         fileName: "[project]/src/components/ImmersiveStory.tsx",
-                        lineNumber: 156,
+                        lineNumber: 206,
                         columnNumber: 24
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: `story-hero-veil absolute inset-0 transition-opacity duration-[1000ms] ease-in-out ${isHeroActive ? "opacity-100" : "opacity-0"}`,
+                        "aria-hidden": "true"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ImmersiveStory.tsx",
+                        lineNumber: 209,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 132,
+                lineNumber: 182,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -531,22 +615,26 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 160,
+                lineNumber: 218,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 130,
+        lineNumber: 180,
         columnNumber: 5
     }, this);
 }
-_s(ImmersiveStory, "Bkb3DBIOSkRa5cRMny9FjnsDUBI=");
+_s(ImmersiveStory, "EjksM9l3QRCDlUVn/6FSnpzCPd0=");
 _c = ImmersiveStory;
 const HEIGHT_CLASSES = {
     short: "min-h-[100svh]",
     normal: "min-h-[150vh]",
     tall: "min-h-[200vh]"
+};
+const V_ALIGN_CLASSES = {
+    center: "justify-center",
+    bottom: "justify-end"
 };
 const WIDTH_CLASSES = {
     narrow: "max-w-md",
@@ -558,7 +646,7 @@ const ALIGN_CLASSES = {
     center: "md:justify-center",
     right: "md:justify-end"
 };
-function StorySection({ image, imagePosition, imagePositionMobile, align = "center", variant = "glass", height = "normal", width = "medium", textAlign, id, className = "", contentClassName = "", children }) {
+function StorySection({ image, imagePosition, imagePositionMobile, align = "center", height = "normal", width = "medium", textAlign, vAlign = "center", id, className = "", contentClassName = "", children }) {
     _s1();
     const register = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(StoryContext);
     const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -578,93 +666,108 @@ function StorySection({ image, imagePosition, imagePositionMobile, align = "cent
         imagePositionMobile
     ]);
     const resolvedTextAlign = textAlign ?? (align === "center" ? "center" : "left");
-    const variantClasses = variant === "glass" ? "story-glass p-6 md:p-9" : "story-text-shadow";
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: id,
         ref: ref,
-        className: `relative flex flex-col justify-center px-5 py-24 md:px-[7%] ${HEIGHT_CLASSES[height]} ${className}`,
+        className: `relative flex flex-col px-5 py-24 md:px-[7%] ${V_ALIGN_CLASSES[vAlign]} ${HEIGHT_CLASSES[height]} ${className}`,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: `flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`,
+            className: `relative flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`,
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `w-full text-white ${WIDTH_CLASSES[width]} ${variantClasses} text-${resolvedTextAlign} ${contentClassName}`,
+                className: `w-full text-white ${WIDTH_CLASSES[width]} story-text-shadow text-left md:text-${resolvedTextAlign} ${contentClassName}`,
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 248,
+                lineNumber: 308,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/ImmersiveStory.tsx",
-            lineNumber: 247,
+            lineNumber: 307,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 242,
+        lineNumber: 302,
         columnNumber: 5
     }, this);
 }
 _s1(StorySection, "mG+P6h6lFoBju9kWkLFbsJibia0=");
 _c1 = StorySection;
 function StoryKicker({ children, className = "" }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-        className: `text-xs md:text-sm font-semibold tracking-[0.25em] uppercase text-white/80 mb-4 ${className}`,
-        children: children
-    }, void 0, false, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: `story-kicker-group ${className}`,
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "story-kicker",
+                children: children
+            }, void 0, false, {
+                fileName: "[project]/src/components/ImmersiveStory.tsx",
+                lineNumber: 330,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "story-kicker__rule",
+                "aria-hidden": "true"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ImmersiveStory.tsx",
+                lineNumber: 331,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 265,
+        lineNumber: 329,
         columnNumber: 5
     }, this);
 }
 _c2 = StoryKicker;
 function StoryHeading({ children, className = "" }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-        className: `text-3xl md:text-5xl font-bold leading-tight mb-6 ${className}`,
+        className: `story-heading ${className}`,
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 274,
-        columnNumber: 5
+        lineNumber: 338,
+        columnNumber: 10
     }, this);
 }
 _c3 = StoryHeading;
 function ScrollCue({ label = "Faites défiler" }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/80",
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+        className: "story-cue",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-[11px] tracking-[0.3em] uppercase",
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 284,
+                lineNumber: 348,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                className: "w-6 h-6 animate-bounce",
+                className: "story-cue__arrow",
                 fill: "none",
                 stroke: "currentColor",
-                strokeWidth: "2",
+                strokeWidth: "1.75",
                 viewBox: "0 0 24 24",
                 "aria-hidden": "true",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                     strokeLinecap: "round",
                     strokeLinejoin: "round",
-                    d: "M19 9l-7 7-7-7"
+                    d: "M12 5v14M19 12l-7 7-7-7"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ImmersiveStory.tsx",
-                    lineNumber: 293,
+                    lineNumber: 357,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 285,
+                lineNumber: 349,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 283,
+        lineNumber: 347,
         columnNumber: 5
     }, this);
 }

@@ -15,21 +15,42 @@ type Credit = {
 
 export const STORY = {
   // Infos générales
+  //
+  // 5 champs "titre" ci-dessous, chacun avec un rôle et un usage précis:
+  //
+  // - title: le titre "de référence". Sert de repli (fallback) partout où
+  //   metaTitle/ogTitle ne sont pas définis, et c'est LUI (jamais metaTitle)
+  //   qu'utilisent le JSON-LD (headline), le partage par e-mail/Twitter du
+  //   Header, et l'alt de l'image sociale. À garder toujours renseigné.
+  // - metaTitle: surcharge SEO. Affiché dans l'onglet du navigateur (<title>)
+  //   et le résultat Google — peut différer de `title` pour placer des
+  //   mots-clés (ex: "Montreux Jazz" ici) sans alourdir le titre éditorial.
+  //   Laisser vide pour retomber sur `title`.
+  // - ogTitle: surcharge réseaux sociaux. Titre affiché dans la carte de
+  //   partage Facebook/Twitter/LinkedIn (Open Graph + Twitter Card). Laisser
+  //   vide pour retomber sur `title`.
+  // - titleDisplay: UNIQUEMENT pour les héros du catalogue (composants
+  //   Hero/Hero2, non utilisés par cette page) — version un seul bloc avec
+  //   des <br> pour forcer les retours à la ligne. Sans effet ici.
+  // - heroName / heroTagline ci-dessous: ce que le hero RÉELLEMENT affiché
+  //   sur cette page (ImmersiveStory) utilise.
   title: "Naïka, le nouveau joyau de la pop cosmopolite",
-  metaTitle: "Montreux Jazz: dans les coulisses de Naïka, joyau de la pop cosmopolite",
-  ogTitle: "Naïka, le nouveau joyau de la pop cosmopolite",
+  metaTitle: "Naïka: interview exclusive au Montreux Jazz Festival",
+  ogTitle: "Rencontre avec Naïka au Montreux Jazz Festival",
   titleDisplay: "Naïka,<br>le nouveau joyau<br>de la pop cosmopolite",
 
-  // Hero "affiche" de l'ImmersiveStory: le nom porte l'affiche, la tagline le sous-titre.
-  // À garder cohérent avec `title`. `titleDisplay` reste la version d'un seul bloc,
-  // utilisée par les héros du catalogue (Hero, Hero2).
+  // Hero "affiche" de l'ImmersiveStory (le vrai hero de cette page): heroName
+  // porte l'affiche (gros nom en majuscules), heroTagline le sous-titre juste
+  // en dessous (accepte le HTML, notamment <br>). À garder cohérent avec
+  // `title` ci-dessus, mais ce sont ces deux champs-ci, pas `titleDisplay`,
+  // qui pilotent ce que le lecteur voit à l'ouverture.
   heroName: "Naïka",
   heroTagline: "le nouveau joyau<br>de la pop cosmopolite",
 
-  description: "Pendant près de neuf heures, L'illustré a suivi Naïka dans les coulisses de sa première au Montreux Jazz Festival. Rencontre intime avec la chanteuse franco-haïtienne aux millions d'écoutes.",
-  author: "L'illustré",
-  publicationDate: "2026-07-09", // Format YYYY-MM-DD (utile pour Schema.org)
-  publicationDisplayDate: "9 juillet 2026",
+  description: "Neuf heures en coulisses avec Naïka avant sa première au Montreux Jazz Festival. Rencontre avec la chanteuse franco-haïtienne aux millions d'écoutes.",
+  author: "Antoine Hürlimann",
+  publicationDate: "2026-07-17", // Format YYYY-MM-DD (utile pour Schema.org)
+  publicationDisplayDate: "17 juillet 2026",
 
   // URLs
   // L'URL finale où sera hébergé le projet (Important pour le SEO Facebook/Twitter)
@@ -38,11 +59,17 @@ export const STORY = {
   // Nom de l'image dans le dossier 'public' (ex: "social.jpg")
   socialImageFilename: "images/social.jpg",
 
+  // Recadrages additionnels de la même photo (mêmes sujet/cadrage), pour le
+  // tableau "image" du JSON-LD: Google recommande plusieurs ratios (16:9/1.91:1,
+  // 4:3, 1:1) pour maximiser les formats de carte sur Discover.
+  socialImageFilename4x3: "images/social-4x3.jpg",
+  socialImageFilenameSquare: "images/social-1x1.jpg",
+
   // Crédits de fin d'article
   credits: <Credit[]>[
-    { name: "L'illustré", produces: "Production", inCredits: true },
-    { name: "L'illustré", isAuthor: true, inCredits: true, job: "Journaliste", produces: "Texte", img: null },
-    { name: "À compléter", isAuthor: false, inCredits: true, job: "Photographe", produces: "Photos", img: null },
+    { name: "Blick Suisse romande", produces: "Production", inCredits: true },
+    { name: "Antoine Hürlimann", isAuthor: true, inCredits: true, job: "Journaliste", produces: "Texte", img: null },
+    { name: "Valentin Flauraud", isAuthor: false, inCredits: true, job: "Photographe", produces: "Photos", img: null },
     { name: "César Greppin", isAuthor: false, inCredits: true, job: "Développement", produces: "Format web", img: "cesar-greppin.jpg" }
   ],
 
@@ -56,5 +83,8 @@ export const STORY = {
   faviconBaseUrl: "https://storytelling.blick.ch/fr/__is_embed_somewhere/favicon",
 };
 
-// Helper calculé automatiquement (ne pas toucher)
-export const ABSOLUTE_SOCIAL_URL = `${STORY.url.replace(/\/$/, "")}/${STORY.socialImageFilename}`;
+// Helpers calculés automatiquement (ne pas toucher)
+const STORY_BASE_URL = STORY.url.replace(/\/$/, "");
+export const ABSOLUTE_SOCIAL_URL = `${STORY_BASE_URL}/${STORY.socialImageFilename}`;
+export const ABSOLUTE_SOCIAL_URL_4X3 = `${STORY_BASE_URL}/${STORY.socialImageFilename4x3}`;
+export const ABSOLUTE_SOCIAL_URL_SQUARE = `${STORY_BASE_URL}/${STORY.socialImageFilenameSquare}`;
