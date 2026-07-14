@@ -196,29 +196,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Très léger Ken Burns: l'animation vit sur TOUTES les images mais est mise
-   en pause quand l'image n'est pas active — l'image sortante reste ainsi figée
-   à son niveau de zoom courant pendant le cross-fade, sans saut. Si une image
-   redevient active plus tard (on remonte dans le récit), ImmersiveStory relance
-   l'animation depuis son tout début (voir le useEffect sur `activeKey`) au lieu
-   de reprendre où elle avait été mise en pause — sans quoi elle réapparaîtrait
-   déjà à moitié zoomée, sans plus rien à montrer. */
-@keyframes story-kenburns {
-  from { transform: scale(1.03); }
-  to   { transform: scale(1.11); }
-}
-.story-bg-img {
-  animation: story-kenburns 22s ease-out forwards;
-  animation-play-state: paused;
-  will-change: transform, opacity;
-}
-.story-bg-active {
-  animation-play-state: running;
-}
-@media (prefers-reduced-motion: reduce) {
-  .story-bg-img { animation: none; }
-}
-
 /* Effet "glass" délicat des blocs de texte et de la zone crédits */
 .story-glass {
   background: rgba(10, 10, 12, 0.35);

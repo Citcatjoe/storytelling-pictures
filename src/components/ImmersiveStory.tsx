@@ -14,8 +14,8 @@ import {
 // ---------------------------------------------------------------------------
 // 🎬 ImmersiveStory — format "image first"
 //
-// Un fond d'écran fixe (plein viewport) qui cross-fade + léger Ken Burns
-// au fil du scroll, et des sections de texte qui défilent à l'avant-plan.
+// Un fond d'écran fixe (plein viewport) qui cross-fade au fil du scroll,
+// et des sections de texte qui défilent à l'avant-plan.
 //
 // Chaque <StorySection> déclare son image de fond: quand la section atteint
 // le centre du viewport, l'arrière-plan transitionne vers cette image.
@@ -64,8 +64,6 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   const backgroundsRef = useRef<BackgroundConfig[]>([]);
   const activeKeyRef = useRef<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const imgElsRef = useRef(new Map<string, HTMLImageElement>());
-  const everActivatedRef = useRef(new Set<string>());
 
   // Active une image: cross-fade + montage progressif (image courante,
   // précédente et suivante — la suivante est ainsi préchargée à l'avance)
@@ -125,39 +123,6 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
 
   useEffect(() => () => observerRef.current?.disconnect(), []);
 
-  // Une image RÉACTIVÉE (on remonte, ou deux sections la partagent) reprend le
-  // Ken Burns depuis son tout début (échelle 1.03) plutôt que depuis le point où
-  // elle avait été mise en pause — sans quoi elle réapparaîtrait déjà à moitié
-  // zoomée, sans plus grand-chose à montrer.
-  //
-  // On ne le fait QUE sur une réactivation (`everActivatedRef`), jamais sur une
-  // première apparition — qui démarre déjà à 1.03 naturellement, donc n'a rien à
-  // corriger. Et on évite `offsetWidth`/`getBoundingClientRect` pour forcer le
-  // reflow: cette lecture synchronise un recalcul de layout de TOUTE la page, ce
-  // qui fait visiblement clignoter le header (fixed + backdrop-blur) à chaque
-  // déclenchement. Un double rAF obtient le même effet de "reset" sans jamais
-  // forcer de reflow synchrone.
-  useEffect(() => {
-    if (!activeKey) return;
-    const alreadySeen = everActivatedRef.current.has(activeKey);
-    everActivatedRef.current.add(activeKey);
-    if (!alreadySeen) return;
-
-    const node = imgElsRef.current.get(activeKey);
-    if (!node) return;
-    node.style.animation = "none";
-    let raf2 = 0;
-    const raf1 = requestAnimationFrame(() => {
-      raf2 = requestAnimationFrame(() => {
-        node.style.animation = "";
-      });
-    });
-    return () => {
-      cancelAnimationFrame(raf1);
-      cancelAnimationFrame(raf2);
-    };
-  }, [activeKey]);
-
   // Le voile "quart de cercle" n'existe que pour l'ouverture: elle seule occupe
   // exactement un écran (jamais de défilement interne), ce qui lui permet de
   // rester ancrée au même coin sans jamais se désynchroniser du texte.
@@ -181,16 +146,12 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
           return (
             <img
               key={key}
-              ref={(el) => {
-                if (el) imgElsRef.current.set(key, el);
-                else imgElsRef.current.delete(key);
-              }}
               src={bg.src}
               alt=""
               draggable={false}
               decoding="async"
               className={`story-bg-img absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
-                isActive ? "opacity-100 story-bg-active" : "opacity-0"
+                isActive ? "opacity-100" : "opacity-0"
               }`}
               style={
                 {
