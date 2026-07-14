@@ -216,13 +216,13 @@ export default function Content() {
             image="images/naika/_F3_4504.webp"
             imagePosition="center 40%"
             imagePositionMobile="center 40%"
-            align="center"
+            align="left"
             width="wide"
             height="tall"
           >
             <StoryKicker>Chapitre 1</StoryKicker>
             <StoryHeading>Dans les coulisses d&rsquo;une star</StoryHeading>
-            <p className={`${P} md:text-left`}>
+            <p className={P}>
               Plus tôt dans l&rsquo;après-midi, à 15h20, la même femme foulait cette scène en
               jean bleu, blouse blanche presque transparente, tongs aux pieds et queue-de-cheval.
               Le Montreux Jazz Lab était alors vide. Les musiciens répétaient. Seuls les échos
@@ -331,7 +331,7 @@ export default function Content() {
             image="images/naika/_F3_5183.webp"
             imagePosition="center 30%"
             imagePositionMobile="55% 30%"
-            align="right"
+            align="left"
             width="wide"
             height="tall"
           >
@@ -408,13 +408,13 @@ export default function Content() {
             image="images/naika/_F3_4507.webp"
             imagePosition="center 50%"
             imagePositionMobile="center 50%"
-            align="center"
+            align="left"
             width="wide"
             height="tall"
           >
             <StoryKicker>Chapitre 3</StoryKicker>
             <StoryHeading>Avant le succès, la galère</StoryHeading>
-            <p className={`${P} md:text-left`}>
+            <p className={P}>
               Avant les salles combles, il y eut les bars presque vides. Les mariages.
               Les casinos. Les soirées d&rsquo;entreprise. Un soir, à Los Angeles, elles
               étaient deux dans le public. Ses deux colocataires. «On était plus nombreux sur
