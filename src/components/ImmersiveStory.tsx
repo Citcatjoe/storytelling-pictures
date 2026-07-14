@@ -30,17 +30,14 @@ import {
 // ---------------------------------------------------------------------------
 
 /**
- * Point d'ancrage du voile localisé, dérivé de la position du bloc de texte
- * (`align`-`vAlign`) qu'il sert: le voile hante toujours le coin ou le bord
- * où le texte se pose, jamais le centre géométrique de l'écran.
+ * Ancrage HORIZONTAL du voile localisé (même valeur que `align`): le voile
+ * hante toujours le bord où le bloc de texte se pose, jamais le centre
+ * géométrique de l'écran. L'ancrage vertical, lui, n'est plus une valeur
+ * statique — voir `registerVeilTarget` plus bas: il suit en continu la
+ * position réelle du texte à l'écran pendant qu'il défile, comme une
+ * poursuite de scène qui reste braquée sur l'artiste.
  */
-type VeilAnchor =
-  | "left-bottom"
-  | "right-bottom"
-  | "center-bottom"
-  | "left-center"
-  | "right-center"
-  | "center-center";
+type VeilAnchorX = "left" | "center" | "right";
 
 type BackgroundConfig = {
   /** Chemin de l'image (relatif à /public), ex: "images/placeholders/stromae_2014_a.jpg" */
@@ -56,13 +53,16 @@ type BackgroundConfig = {
    * Il se fond avec le cross-fade, et disparaît sur les sections qui n'en demandent pas.
    */
   veil?: boolean;
-  /** Ancrage du voile localisé (voir VeilAnchor), ignoré si `veil` est faux. */
-  veilAnchor?: VeilAnchor;
+  /** Ancrage horizontal du voile localisé (voir VeilAnchorX), ignoré si `veil` est faux. */
+  veilAnchor?: VeilAnchorX;
 };
 
 type RegisterFn = (el: HTMLElement, bg: BackgroundConfig) => () => void;
+/** Enregistre le bloc de texte réel d'une section pour le suivi vertical du voile. */
+type RegisterVeilTargetFn = (el: HTMLElement) => () => void;
 
 const StoryContext = createContext<RegisterFn | null>(null);
+const VeilTrackContext = createContext<RegisterVeilTargetFn | null>(null);
 
 const bgKey = (bg: BackgroundConfig) =>
   `${bg.src}|${bg.position ?? ""}|${bg.positionMobile ?? ""}`;
@@ -82,12 +82,14 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   const [backgrounds, setBackgrounds] = useState<BackgroundConfig[]>([]);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [veiled, setVeiled] = useState(false);
-  const [veilAnchor, setVeilAnchor] = useState<VeilAnchor | null>(null);
+  const [veilAnchor, setVeilAnchor] = useState<VeilAnchorX | null>(null);
   const [mountedKeys, setMountedKeys] = useState<Set<string>>(() => new Set());
   const sectionsRef = useRef(new Map<HTMLElement, BackgroundConfig>());
   const backgroundsRef = useRef<BackgroundConfig[]>([]);
   const activeKeyRef = useRef<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const veilElRef = useRef<HTMLDivElement>(null);
+  const veilTextObserverRef = useRef<IntersectionObserver | null>(null);
 
   // Active une image: cross-fade + montage progressif (image courante,
   // précédente et suivante — la suivante est ainsi préchargée à l'avance)
@@ -151,7 +153,34 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
     };
   }, [activate]);
 
-  useEffect(() => () => observerRef.current?.disconnect(), []);
+  // Poursuite de scène: suit la position verticale réelle du bloc de texte actif
+  // pendant qu'il défile, et l'écrit directement sur --veil-y (hors React, pour
+  // ne provoquer aucun re-render aux ~10 franchissements de seuil par section).
+  // CSS interpole ensuite ces valeurs en douceur (voir @property --veil-y).
+  const registerVeilTarget = useCallback<RegisterVeilTargetFn>((el) => {
+    if (!veilTextObserverRef.current && typeof window !== "undefined") {
+      const thresholds = Array.from({ length: 11 }, (_, i) => i / 10);
+      veilTextObserverRef.current = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            const rect = entry.boundingClientRect;
+            const vh = window.innerHeight || 1;
+            const centerPercent = ((rect.top + rect.bottom) / 2 / vh) * 100;
+            const clamped = Math.min(100, Math.max(0, centerPercent));
+            veilElRef.current?.style.setProperty("--veil-y", `${clamped.toFixed(1)}%`);
+          }
+        },
+        { threshold: thresholds }
+      );
+    }
+    veilTextObserverRef.current?.observe(el);
+    return () => veilTextObserverRef.current?.unobserve(el);
+  }, []);
+
+  useEffect(() => () => {
+    observerRef.current?.disconnect();
+    veilTextObserverRef.current?.disconnect();
+  }, []);
 
   const scrimClass =
     scrim === "none"
@@ -162,6 +191,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
 
   return (
     <StoryContext.Provider value={register}>
+    <VeilTrackContext.Provider value={registerVeilTarget}>
       {/* ===== Arrière-plan fixe ===== */}
       <div className="fixed inset-0 z-0 overflow-hidden bg-black" aria-hidden="true">
         {backgrounds.map((bg) => {
@@ -193,15 +223,17 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
             cross-fade des images, donc il s'efface en même temps que la photo qu'il
             servait. */}
         <div
+          ref={veilElRef}
           className={`story-veil absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${
             veiled ? "opacity-100" : "opacity-0"
           }`}
-          data-anchor={veilAnchor ?? "left-bottom"}
+          data-anchor-x={veilAnchor ?? "left"}
         />
       </div>
 
       {/* ===== Contenu à l'avant-plan ===== */}
       <div className={`relative z-10 ${className}`}>{children}</div>
+    </VeilTrackContext.Provider>
     </StoryContext.Provider>
   );
 }
@@ -229,11 +261,11 @@ interface StorySectionProps {
   vAlign?: "center" | "bottom";
   /**
    * Pose un voile de lisibilité sur le FOND tant que cette section est active (défaut:
-   * activé — le texte est nu sur la photo, ce voile est ce qui le rend lisible). Il est
-   * localisé sous le bloc texte (ancré sur `align`/`vAlign`, jamais étalé sur toute
-   * l'image), et vit avec l'arrière-plan fixe: il ne défile pas, ne montre aucun bord,
-   * et s'efface avec le cross-fade vers la section suivante. Ne le désactiver que si
-   * la photo n'a aucun texte à protéger.
+   * activé — le texte est nu sur la photo, ce voile est ce qui le rend lisible). Il vit
+   * dans l'arrière-plan fixe (jamais de bord visible, jamais de fin qui entrerait dans
+   * le champ au scroll), mais sa position VERTICALE suit en continu celle du bloc de
+   * texte réel à l'écran — une poursuite de scène braquée sur le texte, pas une tache
+   * figée dans un coin. Ne le désactiver que si la photo n'a aucun texte à protéger.
    */
   veil?: boolean;
   id?: string;
@@ -281,12 +313,9 @@ export function StorySection({
   children,
 }: StorySectionProps) {
   const register = useContext(StoryContext);
+  const registerVeilTarget = useContext(VeilTrackContext);
   const ref = useRef<HTMLElement>(null);
-
-  // Le voile hante le coin/bord où le bloc de texte se pose — jamais le centre
-  // géométrique de l'écran — donc son ancrage se dérive directement de la même
-  // position (`align`/`vAlign`) que celle du texte qu'il sert.
-  const veilAnchor = `${align}-${vAlign}` as VeilAnchor;
+  const textRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!register || !ref.current) return;
@@ -295,9 +324,19 @@ export function StorySection({
       position: imagePosition,
       positionMobile: imagePositionMobile,
       veil,
-      veilAnchor,
+      // Ancrage horizontal statique (même bord que le texte); l'ancrage vertical
+      // est tracké en continu par le useEffect ci-dessous, pas déclaré ici.
+      veilAnchor: align,
     });
-  }, [register, image, imagePosition, imagePositionMobile, veil, veilAnchor]);
+  }, [register, image, imagePosition, imagePositionMobile, veil, align]);
+
+  // Le voile suit la position verticale RÉELLE du bloc de texte à l'écran — pas
+  // celle, statique, de son ancrage `vAlign` — puisque dans une section plus
+  // haute que le viewport, ce bloc traverse l'écran de bas en haut au scroll.
+  useEffect(() => {
+    if (!registerVeilTarget || !textRef.current || !veil) return;
+    return registerVeilTarget(textRef.current);
+  }, [registerVeilTarget, veil]);
 
   const resolvedTextAlign = textAlign ?? (align === "center" ? "center" : "left");
 
@@ -309,6 +348,7 @@ export function StorySection({
     >
       <div className={`relative flex w-full max-w-screen-2xl mx-auto justify-center ${ALIGN_CLASSES[align]}`}>
         <div
+          ref={textRef}
           className={`w-full text-white ${WIDTH_CLASSES[width]} story-text-shadow text-${resolvedTextAlign} ${contentClassName}`}
         >
           {children}

@@ -255,114 +255,66 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   Hero "affiche" — premier écran de la story
+   Voile localisé — poursuite de scène
    ========================================================================== */
 
-/* Voile de lisibilité du hero. Il vit avec le FOND FIXE, pas dans le contenu qui
-   défile: il reste donc collé au viewport, ne montre aucun bord, et n'a pas de fin
-   qui finirait par entrer dans le champ au scroll. Son opacité se fond avec le
-   cross-fade des images (voir ImmersiveStory).
+/* Le voile est une ellipse de lumière (inversée: d'ombre) qui reste braquée sur le
+   bloc de texte actif. Son bord horizontal (--veil-x/--veil-w/--veil-h) est statique,
+   fixé par l'ancrage `align` de la section (voir [data-anchor-x] plus bas). Sa position
+   VERTICALE (--veil-y) est en revanche pilotée en continu par ImmersiveStory: elle suit
+   la position réelle à l'écran du bloc de texte pendant qu'il défile — jamais fixe —
+   comme une poursuite de concert qui reste sur l'artiste plutôt qu'un projecteur figé
+   dans un coin. Enregistrer --veil-y comme propriété animable permet à la transition
+   ci-dessous d'interpoler en douceur entre deux positions successives. */
+@property --veil-y {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 100%;
+}
 
-   Desktop: un quart de cercle ancré dans le coin bas-gauche, là où le texte se pose.
-   Il n'étale rien sur le reste de la photo — le sujet, cadré en haut à droite, garde
-   toute sa lumière. Une trame pleine protégerait le texte au prix de l'image; ici
-   l'image est le sujet. */
-/* Ancré par défaut au coin bas-gauche (composition du hero). Les autres ancrages
-   (voir VeilAnchor dans ImmersiveStory.tsx) sont posés par les sélecteurs
-   [data-anchor] ci-dessous, qui héritent tous de cette même forme de dégradé. */
 .story-veil {
+  --veil-x: 0%;
+  --veil-w: 95%;
+  --veil-h: 120%;
+  transition: opacity 1400ms ease-in-out, --veil-y 220ms linear;
   background: radial-gradient(
-    ellipse 120% 105% at 0% 100%,
+    ellipse var(--veil-w) var(--veil-h) at var(--veil-x) var(--veil-y),
     rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.82) 40%,
-    rgba(0, 0, 0, 0.68) 60%,
-    rgba(0, 0, 0, 0.42) 75%,
-    rgba(0, 0, 0, 0.16) 88%,
+    rgba(0, 0, 0, 0.78) 38%,
+    rgba(0, 0, 0, 0.58) 58%,
+    rgba(0, 0, 0, 0.32) 74%,
+    rgba(0, 0, 0, 0.12) 87%,
     rgba(0, 0, 0, 0) 100%
   );
 }
 
-/* Ancrages desktop du voile localisé, dérivés de la position (`align`-`vAlign`) du
-   bloc de texte qu'il sert. Les coins (bas-gauche/bas-droite) reprennent la forme du
-   hero, qui déborde volontairement de deux bords. Les ancrages de bord (gauche/droite
-   centrés verticalement) et le centre gardent la même intention — s'éteindre avant
-   d'atteindre le sujet de la photo — avec une ellipse resserrée pour ne pas noyer
-   l'image entière quand le texte n'est pas dans un coin. */
-@media (min-width: 768px) {
-  .story-veil[data-anchor="right-bottom"] {
-    background: radial-gradient(
-      ellipse 120% 105% at 100% 100%,
-      rgba(0, 0, 0, 0.88) 0%,
-      rgba(0, 0, 0, 0.82) 40%,
-      rgba(0, 0, 0, 0.68) 60%,
-      rgba(0, 0, 0, 0.42) 75%,
-      rgba(0, 0, 0, 0.16) 88%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
+.story-veil[data-anchor-x="right"] {
+  --veil-x: 100%;
+}
 
-  .story-veil[data-anchor="center-bottom"] {
-    background: radial-gradient(
-      ellipse 85% 90% at 50% 100%,
-      rgba(0, 0, 0, 0.85) 0%,
-      rgba(0, 0, 0, 0.78) 35%,
-      rgba(0, 0, 0, 0.6) 55%,
-      rgba(0, 0, 0, 0.32) 72%,
-      rgba(0, 0, 0, 0.1) 86%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
+/* Ancrage central: ellipse plus resserrée pour ne pas noyer toute la photo quand le
+   texte n'est pas casé contre un bord. */
+.story-veil[data-anchor-x="center"] {
+  --veil-x: 50%;
+  --veil-w: 62%;
+  --veil-h: 88%;
+}
 
-  .story-veil[data-anchor="left-center"] {
-    background: radial-gradient(
-      ellipse 78% 130% at 0% 50%,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.74) 35%,
-      rgba(0, 0, 0, 0.55) 55%,
-      rgba(0, 0, 0, 0.3) 72%,
-      rgba(0, 0, 0, 0.1) 86%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-
-  .story-veil[data-anchor="right-center"] {
-    background: radial-gradient(
-      ellipse 78% 130% at 100% 50%,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.74) 35%,
-      rgba(0, 0, 0, 0.55) 55%,
-      rgba(0, 0, 0, 0.3) 72%,
-      rgba(0, 0, 0, 0.1) 86%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-
-  .story-veil[data-anchor="center-center"] {
-    background: radial-gradient(
-      ellipse 60% 58% at 50% 50%,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.68) 40%,
-      rgba(0, 0, 0, 0.46) 62%,
-      rgba(0, 0, 0, 0.22) 80%,
-      rgba(0, 0, 0, 0) 100%
-    );
+/* En mobile le bloc texte occupe toute la largeur quel que soit son ancrage desktop:
+   l'ellipse s'élargit pour couvrir toute la largeur de l'écran, mais reste pilotée par
+   le même --veil-y — elle continue donc de suivre le texte de bas en haut au scroll,
+   ce que ne permettait pas l'ancien dégradé plein-écran statique. */
+@media (max-width: 767px) {
+  .story-veil {
+    --veil-x: 50%;
+    --veil-w: 170%;
+    --veil-h: 110%;
   }
 }
 
-/* En mobile le bloc texte occupe toute la largeur, quel que soit son ancrage desktop:
-   un quart de cercle ou une ellipse centrée n'y couvriraient qu'une colonne. Le voile
-   y redevient uniformément une base, qui s'éteint bien avant le sujet. */
-@media (max-width: 767px) {
+@media (prefers-reduced-motion: reduce) {
   .story-veil {
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.85) 25%,
-      rgba(0, 0, 0, 0.7) 45%,
-      rgba(0, 0, 0, 0.5) 60%,
-      rgba(0, 0, 0, 0.22) 75%,
-      rgba(0, 0, 0, 0) 90%
-    );
+    transition: opacity 1400ms ease-in-out;
   }
 }
 
