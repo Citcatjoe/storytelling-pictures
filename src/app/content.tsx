@@ -127,7 +127,6 @@ export default function Content() {
             height="short"
             width="wide"
             vAlign="bottom"
-            veil
           >
             <h1 className="story-hero__title">
               <span className="story-hero__name-mask">
