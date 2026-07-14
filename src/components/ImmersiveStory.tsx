@@ -64,6 +64,7 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   const backgroundsRef = useRef<BackgroundConfig[]>([]);
   const activeKeyRef = useRef<string | null>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const imgElsRef = useRef(new Map<string, HTMLImageElement>());
 
   // Active une image: cross-fade + montage progressif (image courante,
   // précédente et suivante — la suivante est ainsi préchargée à l'avance)
@@ -123,6 +124,25 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
 
   useEffect(() => () => observerRef.current?.disconnect(), []);
 
+  // L'image active reprend le Ken Burns depuis son tout début (échelle 1.03),
+  // jamais depuis le point où elle avait été mise en pause la fois précédente:
+  // une image déjà vue (on remonte, ou deux sections la partagent) ne doit pas
+  // réapparaître déjà à moitié zoomée. Le reset se fait juste avant le fondu
+  // d'entrée (opacité encore quasi nulle), donc invisible pour le lecteur.
+  useEffect(() => {
+    if (!activeKey) return;
+    const node = imgElsRef.current.get(activeKey);
+    if (!node) return;
+    node.style.animation = "none";
+    void node.offsetWidth; // force le reflow qui applique le "none"
+    node.style.animation = "";
+  }, [activeKey]);
+
+  // Le voile "quart de cercle" n'existe que pour l'ouverture: elle seule occupe
+  // exactement un écran (jamais de défilement interne), ce qui lui permet de
+  // rester ancrée au même coin sans jamais se désynchroniser du texte.
+  const isHeroActive = backgrounds.length > 0 && activeKey === bgKey(backgrounds[0]);
+
   const scrimClass =
     scrim === "none"
       ? null
@@ -141,6 +161,10 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
           return (
             <img
               key={key}
+              ref={(el) => {
+                if (el) imgElsRef.current.set(key, el);
+                else imgElsRef.current.delete(key);
+              }}
               src={bg.src}
               alt=""
               draggable={false}
@@ -158,6 +182,14 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
           );
         })}
         {scrimClass && <div className={`absolute inset-0 ${scrimClass}`} />}
+
+        {/* Voile de l'ouverture: quart de cercle ancré bas-gauche, propre au hero. */}
+        <div
+          className={`story-hero-veil absolute inset-0 transition-opacity duration-[1400ms] ease-in-out ${
+            isHeroActive ? "opacity-100" : "opacity-0"
+          }`}
+          aria-hidden="true"
+        />
       </div>
 
       {/* ===== Contenu à l'avant-plan ===== */}

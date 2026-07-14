@@ -197,9 +197,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Très léger Ken Burns: l'animation vit sur TOUTES les images mais est mise
-   en pause quand l'image n'est pas active. Ainsi, pendant le cross-fade,
-   l'image sortante reste figée à son niveau de zoom courant (aucun saut),
-   et reprend là où elle en était si elle redevient active. */
+   en pause quand l'image n'est pas active — l'image sortante reste ainsi figée
+   à son niveau de zoom courant pendant le cross-fade, sans saut. Si une image
+   redevient active plus tard (on remonte dans le récit), ImmersiveStory relance
+   l'animation depuis son tout début (voir le useEffect sur `activeKey`) au lieu
+   de reprendre où elle avait été mise en pause — sans quoi elle réapparaîtrait
+   déjà à moitié zoomée, sans plus rien à montrer. */
 @keyframes story-kenburns {
   from { transform: scale(1.03); }
   to   { transform: scale(1.11); }
@@ -252,6 +255,41 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.25;
   text-wrap: balance;
+}
+
+/* Voile de l'ouverture — quart de cercle ancré au coin bas-gauche, là où le
+   bloc de texte du hero se pose. Propre au hero: c'est la seule section qui
+   occupe exactement un écran (jamais de défilement interne), ce qui lui permet
+   de rester ancrée au même coin sans jamais se désynchroniser du texte — voir
+   ImmersiveStory (isHeroActive). Il n'étale rien sur le reste de la photo: le
+   sujet, cadré en haut à droite, garde toute sa lumière. */
+.story-hero-veil {
+  background: radial-gradient(
+    ellipse 120% 105% at 0% 100%,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.82) 40%,
+    rgba(0, 0, 0, 0.68) 60%,
+    rgba(0, 0, 0, 0.42) 75%,
+    rgba(0, 0, 0, 0.16) 88%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* En mobile le bloc texte du hero occupe toute la largeur: un quart de cercle
+   n'y couvrirait qu'une colonne. Le voile y redevient une base, qui s'éteint
+   bien avant le sujet. */
+@media (max-width: 767px) {
+  .story-hero-veil {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.85) 25%,
+      rgba(0, 0, 0, 0.7) 45%,
+      rgba(0, 0, 0, 0.5) 60%,
+      rgba(0, 0, 0, 0.22) 75%,
+      rgba(0, 0, 0, 0) 90%
+    );
+  }
 }
 
 .story-hero__title {
