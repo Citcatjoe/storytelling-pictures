@@ -163,7 +163,7 @@ export default function Content() {
               OUVERTURE — le crépuscule, la loge
               ============================================== */}
           <StorySection
-            image="images/naika/_F3_4602.webp"
+            image="images/naika/_F3_5615.webp"
             imagePosition="70% 60%"
             imagePositionMobile="65% 55%"
             align="left"
@@ -178,10 +178,10 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/_F2_9834.webp"
+            image="images/naika/_F2_1040.webp"
             imagePosition="center 35%"
             imagePositionMobile="45% 35%"
-            align="right"
+            align="left"
           >
             <p className={P}>
               Naïka ferme les yeux. Les voix s&rsquo;éteignent d&rsquo;elles-mêmes. Une brève
@@ -193,7 +193,7 @@ export default function Content() {
           </StorySection>
 
           <StorySection
-            image="images/naika/IL29_NAIKA_MJF_2__F2_9917.webp"
+            image="images/naika/_F2_0021.webp"
             imagePosition="center 30%"
             imagePositionMobile="40% 30%"
             align="left"
@@ -218,23 +218,33 @@ export default function Content() {
             imagePositionMobile="center 40%"
             align="left"
             width="wide"
-            height="tall"
           >
             <StoryKicker>Chapitre 1</StoryKicker>
             <StoryHeading>Dans les coulisses d&rsquo;une star</StoryHeading>
             <p className={P}>
               Plus tôt dans l&rsquo;après-midi, à 15h20, la même femme foulait cette scène en
               jean bleu, blouse blanche presque transparente, tongs aux pieds et queue-de-cheval.
-              Le Montreux Jazz Lab était alors vide. Les musiciens répétaient. Seuls les échos
-              du soundcheck répondaient au clapotis du Léman. Pendant près de neuf heures ce
-              mardi 7 juillet, du premier accord jusqu&rsquo;à son retour en loge après le
-              concert, L&rsquo;illustré a suivi en exclusivité Naïka dans les coulisses de sa
-              première au Montreux Jazz Festival. À 31 ans, Naïka est un joyau de la pop
-              cosmopolite. Plus de trois millions d&rsquo;auditeurs mensuels sur Spotify et
-              1,3 million d&rsquo;abonnés sur Instagram. Un premier album, Eclesia, et un tube,
-              One Track Mind, hymne féministe aux accents caribéens devenu viral qui lui a
-              offert une renommée internationale. En français, en anglais comme en créole
-              haïtien, elle chante une identité à l&rsquo;image de son parcours: multiple.
+              Le Montreux Jazz Lab était alors vide.
+            </p>
+          </StorySection>
+
+          <StorySection
+            image="images/naika/_F3_4543.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="65% 35%"
+            align="right"
+          >
+            <p className={P}>
+              Les musiciens répétaient. Seuls les échos du soundcheck répondaient au clapotis
+              du Léman. Pendant près de neuf heures ce mardi 7 juillet, du premier accord
+              jusqu&rsquo;à son retour en loge après le concert, L&rsquo;illustré a suivi en
+              exclusivité Naïka dans les coulisses de sa première au Montreux Jazz Festival.
+              À 31 ans, Naïka est un joyau de la pop cosmopolite. Plus de trois millions
+              d&rsquo;auditeurs mensuels sur Spotify et 1,3 million d&rsquo;abonnés sur
+              Instagram. Un premier album, Eclesia, et un tube, One Track Mind, hymne féministe
+              aux accents caribéens devenu viral qui lui a offert une renommée internationale.
+              En français, en anglais comme en créole haïtien, elle chante une identité à
+              l&rsquo;image de son parcours: multiple.
             </p>
           </StorySection>
 
@@ -333,24 +343,33 @@ export default function Content() {
             imagePositionMobile="55% 30%"
             align="left"
             width="wide"
-            height="tall"
           >
             <StoryKicker>Chapitre 2</StoryKicker>
             <StoryHeading>À la recherche de son chez-soi</StoryHeading>
             <p className={P}>
               Une maquilleuse s&rsquo;approche. «Tu veux des paillettes?» Les yeux de Naïka
               brillent. «Bien sûr! On est à Montreux.» Cette «hypersensible» aux hautes
-              murailles ne tarde pourtant pas à se confier à nous. Son soutien à la Palestine,
-              explique-t-elle, naît de l&rsquo;effroi que lui inspire la violence du monde.
-              Une phrase revient presque sans qu&rsquo;elle y pense. «Chez moi, ce sont les
-              autres.» Sa mère haïtienne d&rsquo;origine libanaise et palestino-syrienne lui a
-              transmis le goût de la mode. Créatrice de vêtements, elle l&rsquo;emmenait chaque
-              jour après l&rsquo;école dans sa boutique. Les tissus devenaient des terrains de
-              jeu, les cabines d&rsquo;essayage des coulisses avant l&rsquo;heure. Plus loin
-              encore, en Haïti, ses grands-parents tenaient un magasin de tissus. Entre les
-              rouleaux d&rsquo;étoffe, la petite fille découpait, assemblait, imaginait des
-              costumes avant d&rsquo;organiser des défilés et de petits concerts devant toute
-              la famille.
+              murailles ne tarde pourtant pas à se confier à nous.
+            </p>
+          </StorySection>
+
+          <StorySection
+            image="images/naika/_F2_9839.webp"
+            imagePosition="center 30%"
+            imagePositionMobile="55% 30%"
+            align="right"
+          >
+            <p className={P}>
+              Son soutien à la Palestine, explique-t-elle, naît de l&rsquo;effroi que lui
+              inspire la violence du monde. Une phrase revient presque sans qu&rsquo;elle y
+              pense. «Chez moi, ce sont les autres.» Sa mère haïtienne d&rsquo;origine
+              libanaise et palestino-syrienne lui a transmis le goût de la mode. Créatrice de
+              vêtements, elle l&rsquo;emmenait chaque jour après l&rsquo;école dans sa
+              boutique. Les tissus devenaient des terrains de jeu, les cabines d&rsquo;essayage
+              des coulisses avant l&rsquo;heure. Plus loin encore, en Haïti, ses grands-parents
+              tenaient un magasin de tissus. Entre les rouleaux d&rsquo;étoffe, la petite fille
+              découpait, assemblait, imaginait des costumes avant d&rsquo;organiser des défilés
+              et de petits concerts devant toute la famille.
             </p>
           </StorySection>
 
@@ -410,21 +429,31 @@ export default function Content() {
             imagePositionMobile="center 50%"
             align="left"
             width="wide"
-            height="tall"
           >
             <StoryKicker>Chapitre 3</StoryKicker>
             <StoryHeading>Avant le succès, la galère</StoryHeading>
             <p className={P}>
               Avant les salles combles, il y eut les bars presque vides. Les mariages.
               Les casinos. Les soirées d&rsquo;entreprise. Un soir, à Los Angeles, elles
-              étaient deux dans le public. Ses deux colocataires. «On était plus nombreux sur
-              scène que dans la salle.» Elle en rit aujourd&rsquo;hui. Ce soir-là pourtant,
-              elle a chanté comme si une foule immense se dressait devant elle. Sur son
-              avant-bras, trois lettres résument cette époque. DIY. Do It Yourself, autrement
-              dit «fais-le toi-même». Elle tourne ses clips, fabrique ses décors, imagine ses
-              costumes. Pour sa première tournée, elle peint pendant trois jours l&rsquo;immense
-              toile qui lui servira de fond de scène. «Traverser toutes ces étapes, ça
-              m&rsquo;a rendue plus forte et plus déterminée», appuie-t-elle.
+              étaient deux dans le public. Ses deux colocataires.
+            </p>
+          </StorySection>
+
+          <StorySection
+            image="images/naika/_F3_4560.webp"
+            imagePosition="center 30%"
+            imagePositionMobile="65% 30%"
+            align="right"
+          >
+            <p className={P}>
+              «On était plus nombreux sur scène que dans la salle.» Elle en rit
+              aujourd&rsquo;hui. Ce soir-là pourtant, elle a chanté comme si une foule immense
+              se dressait devant elle. Sur son avant-bras, trois lettres résument cette
+              époque. DIY. Do It Yourself, autrement dit «fais-le toi-même». Elle tourne ses
+              clips, fabrique ses décors, imagine ses costumes. Pour sa première tournée,
+              elle peint pendant trois jours l&rsquo;immense toile qui lui servira de fond de
+              scène. «Traverser toutes ces étapes, ça m&rsquo;a rendue plus forte et plus
+              déterminée», appuie-t-elle.
             </p>
           </StorySection>
 
