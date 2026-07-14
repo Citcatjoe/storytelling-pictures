@@ -242,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
    sujet, cadré en haut à droite, garde toute sa lumière. */
 .story-hero-veil {
   background: radial-gradient(
-    ellipse 120% 105% at 0% 100%,
+    ellipse 108% 95% at 0% 100%,
     rgba(0, 0, 0, 0.88) 0%,
     rgba(0, 0, 0, 0.82) 40%,
     rgba(0, 0, 0, 0.68) 60%,
