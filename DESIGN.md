@@ -21,10 +21,10 @@ typography:
     letterSpacing: "-0.012em"
   title:
     fontFamily: "Poppins, sans-serif"
-    fontSize: "clamp(1.875rem, 4vw, 3rem)"
-    fontWeight: 700
-    lineHeight: 1.25
-    letterSpacing: "normal"
+    fontSize: "clamp(2.25rem, 5.5vw, 4rem)"
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.01em"
   body:
     fontFamily: "Poppins, sans-serif"
     fontSize: "clamp(1rem, 1.4vw, 1.2rem)"
@@ -112,9 +112,9 @@ Une palette de deux valeurs et un accent : le noir de salle, le blanc d'encre, e
 ### Hierarchy
 - **Display** (900, `clamp(3.25rem, 13vw, 6rem)`, interligne 0.9, approche −0.035em, capitales) : le nom de l'artiste, à l'ouverture. Une seule fois par format. C'est l'affiche.
 - **Headline** (400, `clamp(1.35rem, 3.6vw, 2.35rem)`, interligne 1.2) : la ligne de sous-titre sous le nom. Elle doit être écrasée par le display — le rapport de 2,5× est le cœur de la hiérarchie.
-- **Title** (700, `clamp(1.875rem, 4vw, 3rem)`, interligne 1.25) : les intertitres de chapitre.
+- **Title** (800, `clamp(2.25rem, 5.5vw, 4rem)`, interligne 1.05, approche −0.01em) : les intertitres de chapitre. Amplifié depuis 700/`clamp(1.875rem, 4vw, 3rem)` — l'ancien réglage se lisait comme un h2 ordinaire plutôt qu'un moment de l'affiche ; l'écart avec le Body devait être aussi net que celui du Display sur la Headline.
 - **Body** (300, `clamp(1rem, 1.4vw, 1.2rem)`, interligne 1.7) : le texte courant. Mesure plafonnée à 58–65ch. L'interligne est généreux : du texte clair sur fond sombre lit plus léger qu'il ne l'est et réclame de l'air.
-- **Label** (500–600, 0.65–0.7rem, approche 0.2–0.28em, capitales) : signatures, dates, repères de navigation, numéros de chapitre.
+- **Label** (500–600, 0.65–0.7rem, approche 0.2–0.28em, capitales) : signatures, dates, repères de navigation. Le repère de chapitre (« Chapitre 1 ») pousse jusqu'à 0.75rem/700 et se termine par un filet d'or de 2.5rem — voir Composants — qui le lie au Title suivant en un seul bloc, plutôt que deux lignes de texte isolées.
 
 ### Named Rules
 
@@ -163,6 +163,12 @@ Le composant signature. Une pile d'images en `position: fixed` couvrant le viewp
 ### L'Affiche (hero)
 - **Composition :** le nom en très grand, la ligne de sous-titre, un filet d'or, le chapô, une ligne de signature au pied. Le tout ancré en bas, dans l'angle laissé libre par la photographie.
 - **Entrée :** révélation par masque pour le nom, montée échelonnée pour le reste (80 → 660 ms).
+
+### Le Repère de Chapitre (StoryKicker + StoryHeading)
+Le seul autre endroit du format où l'or de scène apparaît hors hero — reprend son langage à plus petite échelle.
+- **Composition :** le kicker (« Chapitre 1 ») en or, suivi d'un filet d'or de `2.5rem`, puis le Title en dessous. Les trois se lisent comme un seul bloc, jamais comme deux lignes de texte indépendantes.
+- **Pourquoi le filet :** sans lui, le kicker et le titre étaient deux affirmations isolées ; il les lie visuellement exactement comme le filet du hero lie le nom au chapô.
+- **Chaque chapitre est scindé en deux `StorySection`** : la tête (kicker + titre + un quart du texte, qui plante le décor et porte sa propre photo) et un module de continuation juste après (le reste du texte, sa propre photo). Ça réduit l'empreinte du bloc à l'écran, surtout en mobile, plutôt que de tout entasser dans une seule section haute.
 
 ### Header
 - Barre fixe de 64px, translucide (`bg-black/40` + flou), qui flotte au-dessus de la photographie. **Le padding que le body réserve sous lui doit être neutralisé dans ce format** : la photographie couvre déjà le plein écran, ce padding ne dégage rien et fait déborder le premier écran hors du viewport.
