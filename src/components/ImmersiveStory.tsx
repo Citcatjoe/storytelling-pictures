@@ -278,9 +278,18 @@ export function StorySection({
 // Petits éléments d'habillage réutilisables
 // ---------------------------------------------------------------------------
 
-/** Repère de chapitre («Chapitre 1», «Chapitre 2»…) — jamais un surtitre générique. */
+/**
+ * Repère de chapitre («Chapitre 1», «Chapitre 2»…) — jamais un surtitre générique.
+ * Le filet d'or qui le suit lie kicker et titre en un seul bloc "affiche", comme
+ * au hero.
+ */
 export function StoryKicker({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <p className={`story-kicker ${className}`}>{children}</p>;
+  return (
+    <div className={`story-kicker-group ${className}`}>
+      <p className="story-kicker">{children}</p>
+      <span className="story-kicker__rule" aria-hidden="true" />
+    </div>
+  );
 }
 
 /** Intertitre de chapitre */
