@@ -38,7 +38,33 @@ type BackgroundConfig = {
   positionMobile?: string;
 };
 
-type RegisterFn = (el: HTMLElement, bg: BackgroundConfig) => () => void;
+/**
+ * Voile d'angle facultatif posé sur l'image de fond, pour la lisibilité du texte
+ * qui passe dessus (images claires). Il vit dans la couche fixe: il ne défile
+ * pas, c'est le texte qui le traverse.
+ */
+export type StoryVeil = "none" | "left" | "right";
+
+const VEIL_SIDES = ["left", "right"] as const;
+
+/**
+ * Ce qu'une section déclare au conteneur. L'image et le voile sont deux axes
+ * distincts: deux sections peuvent partager une image et demander des voiles
+ * différents (cf. content.tsx). Le voile reste donc hors de `BackgroundConfig`,
+ * qui sert d'identité au montage des <img> et ne doit pas se dédoubler pour une
+ * raison de voile — deux <img> du même fichier se cross-faderaient l'un dans
+ * l'autre et creuseraient un trou de luminosité à mi-transition.
+ */
+type SectionConfig = {
+  bg: BackgroundConfig;
+  veil: StoryVeil;
+  veilStr: number;
+};
+
+/** La force du voile pilote son opacité: hors de [0,1] elle ne veut rien dire. */
+const clampStr = (v: number) => (Number.isFinite(v) ? Math.min(Math.max(v, 0), 1) : 1);
+
+type RegisterFn = (el: HTMLElement, cfg: SectionConfig) => () => void;
 
 const StoryContext = createContext<RegisterFn | null>(null);
 
@@ -59,14 +85,23 @@ interface ImmersiveStoryProps {
 export function ImmersiveStory({ children, className = "", scrim = "light" }: ImmersiveStoryProps) {
   const [backgrounds, setBackgrounds] = useState<BackgroundConfig[]>([]);
   const [activeKey, setActiveKey] = useState<string | null>(null);
+  const [activeVeil, setActiveVeil] = useState<StoryVeil>("none");
+  const [activeVeilStr, setActiveVeilStr] = useState(1);
   const [mountedKeys, setMountedKeys] = useState<Set<string>>(() => new Set());
-  const sectionsRef = useRef(new Map<HTMLElement, BackgroundConfig>());
+  const sectionsRef = useRef(new Map<HTMLElement, SectionConfig>());
   const backgroundsRef = useRef<BackgroundConfig[]>([]);
   const activeKeyRef = useRef<string | null>(null);
 
-  // Active une image: cross-fade + montage progressif (image courante,
-  // précédente et suivante — la suivante est ainsi préchargée à l'avance)
-  const activate = useCallback((key: string) => {
+  // Active une section: son voile, puis son image (cross-fade + montage
+  // progressif — image courante, précédente et suivante, la suivante étant
+  // ainsi préchargée à l'avance).
+  const activate = useCallback((cfg: SectionConfig) => {
+    // Avant le court-circuit sur l'image: deux sections voisines peuvent
+    // partager une image et ne différer que par leur voile — côté ou force.
+    setActiveVeil(cfg.veil);
+    setActiveVeilStr(cfg.veilStr);
+
+    const key = bgKey(cfg.bg);
     if (activeKeyRef.current === key) return;
     activeKeyRef.current = key;
     setActiveKey(key);
@@ -93,41 +128,40 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   const recomputeActive = useCallback(() => {
     if (typeof window === "undefined" || sectionsRef.current.size === 0) return;
     const centerY = window.innerHeight / 2;
-    let hitKey: string | null = null;
-    let closestKey: string | null = null;
+    let hit: SectionConfig | null = null;
+    let closest: SectionConfig | null = null;
     let closestDist = Infinity;
 
     for (const [el, cfg] of sectionsRef.current) {
       const rect = el.getBoundingClientRect();
-      const key = bgKey(cfg);
       if (rect.top <= centerY && rect.bottom >= centerY) {
-        hitKey = key;
+        hit = cfg;
         break;
       }
       const dist = centerY < rect.top ? rect.top - centerY : centerY - rect.bottom;
       if (dist < closestDist) {
         closestDist = dist;
-        closestKey = key;
+        closest = cfg;
       }
     }
 
-    const next = hitKey ?? closestKey;
+    const next = hit ?? closest;
     if (next) activate(next);
   }, [activate]);
 
-  const register = useCallback<RegisterFn>((el, bg) => {
-    sectionsRef.current.set(el, bg);
+  const register = useCallback<RegisterFn>((el, cfg) => {
+    sectionsRef.current.set(el, cfg);
 
     // Liste ordonnée (ordre du document) des images uniques
-    const key = bgKey(bg);
+    const key = bgKey(cfg.bg);
     if (!backgroundsRef.current.some((b) => bgKey(b) === key)) {
-      backgroundsRef.current = [...backgroundsRef.current, bg];
+      backgroundsRef.current = [...backgroundsRef.current, cfg.bg];
       setBackgrounds(backgroundsRef.current);
     }
 
     // La première section enregistrée devient le fond initial
     if (activeKeyRef.current === null) {
-      activate(key);
+      activate(cfg);
     }
     recomputeActive();
 
@@ -177,7 +211,13 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
   return (
     <StoryContext.Provider value={register}>
       {/* ===== Arrière-plan fixe ===== */}
-      <div className="fixed inset-0 z-0 overflow-hidden bg-black" aria-hidden="true">
+      {/* h-lvh (et non inset-0): sur mobile, le bord bas d'un élément fixed
+          suit la hauteur dynamique du viewport (barres du navigateur qui se
+          rétractent au scroll). Comme l'image est en object-cover contrainte
+          par la hauteur, chaque variation re-zoomait l'image. Une hauteur
+          figée au grand viewport (100lvh) rend le fond totalement immobile;
+          barres visibles, son bas déborde simplement sous elles. */}
+      <div className="fixed inset-x-0 top-0 z-0 h-lvh overflow-hidden bg-black" aria-hidden="true">
         {backgrounds.map((bg) => {
           const key = bgKey(bg);
           if (!mountedKeys.has(key)) return null;
@@ -202,6 +242,22 @@ export function ImmersiveStory({ children, className = "", scrim = "light" }: Im
           );
         })}
         {scrimClass && <div className={`absolute inset-0 ${scrimClass}`} />}
+
+        {/* Voiles d'angle facultatifs (props `veil` / `veilStr` des StorySection).
+            Les deux coins sont toujours montés et pilotés par l'opacité: le
+            passage gauche→droite se fond alors de lui-même, sans cas particulier,
+            et le retour à "none" n'est qu'une extinction.
+            La force se branche sur ce même canal — une variation de dosage entre
+            deux sections d'un même côté se fond donc comme le reste, sans code
+            dédié. D'où l'opacité en style inline: elle est continue, là où les
+            paliers de Tailwind ne le sont pas. */}
+        {VEIL_SIDES.map((side) => (
+          <div
+            key={side}
+            className={`story-veil story-veil--${side} absolute inset-0 transition-opacity duration-[1000ms] ease-in-out`}
+            style={{ opacity: activeVeil === side ? activeVeilStr : 0 }}
+          />
+        ))}
 
         {/* Voile de l'ouverture: quart de cercle ancré bas-gauche, propre au hero. */}
         <div
@@ -229,6 +285,19 @@ interface StorySectionProps {
   imagePosition?: string;
   /** object-position mobile — pour recadrer le sujet sur petit écran */
   imagePositionMobile?: string;
+  /**
+   * Voile noir circulaire posé dans un angle bas de l'image, pour rattraper la
+   * lisibilité du texte sur une photo claire. Fixe (il ne défile pas avec la
+   * section) et facultatif — à n'allumer que là où l'image l'exige.
+   */
+  veil?: StoryVeil;
+  /**
+   * Force du voile, de 0 (éteint) à 1 (pleine densité du dégradé). Se dose au
+   * cas par cas: chaque photo a sa propre luminosité, et depuis que le scrim
+   * ambiant est à "none" le voile est le seul assombrissement de la section.
+   * Sans effet si `veil="none"`. Défaut: 1.
+   */
+  veilStr?: number;
   /** Position du bloc texte en desktop (mobile: toujours centré) */
   align?: "left" | "center" | "right";
   /** Hauteur de la section = espace de respiration entre les blocs */
@@ -283,6 +352,8 @@ export function StorySection({
   image,
   imagePosition,
   imagePositionMobile,
+  veil = "none",
+  veilStr = 1,
   align = "center",
   height = "normal",
   width = "medium",
@@ -299,11 +370,15 @@ export function StorySection({
   useEffect(() => {
     if (!register || !ref.current) return;
     return register(ref.current, {
-      src: image,
-      position: imagePosition,
-      positionMobile: imagePositionMobile,
+      bg: {
+        src: image,
+        position: imagePosition,
+        positionMobile: imagePositionMobile,
+      },
+      veil,
+      veilStr: clampStr(veilStr),
     });
-  }, [register, image, imagePosition, imagePositionMobile]);
+  }, [register, image, imagePosition, imagePositionMobile, veil, veilStr]);
 
   const resolvedTextAlign = textAlign ?? (align === "center" ? "center" : "left");
 

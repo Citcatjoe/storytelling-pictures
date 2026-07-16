@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Lisibilité du texte nu posé directement sur l'image */
 .story-text-shadow {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 4px 24px rgba(0, 0, 0, 0.55);
+  /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 4px 24px rgba(0, 0, 0, 0.55); */
 }
 
 /* Corps de texte — même principe de typographie fluide que le hero
@@ -243,13 +243,25 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-scene);
 }
 
-/* Intertitre de chapitre — même famille que le nom du hero, avec une graisse et une
-   échelle nettement plus affirmées qu'un simple h2: la hiérarchie se joue entre le
-   hero (display, 900) et ce niveau (800), pas entre ce niveau et le corps du texte. */
+/* Intertitre — il relance la lecture au fil du texte, il n'ouvre pas un chapitre.
+   Un précédent réglage le tenait à l'échelle d'un titre (jusqu'à 4rem), en jouant
+   sa hiérarchie contre le hero plutôt que contre le corps du texte: à 64px pour un
+   corps à 18px, il était plus proche du nom du hero (96px) que de la matière qu'il
+   annonce, sans aucun palier entre les deux.
+   Il se cale donc sur un barreau qui existe déjà — la tagline du hero (2.35rem) —
+   plutôt que sur une valeur inventée: ~2x le corps de texte, soit le rapport d'un
+   intertitre. La graisse (800) est conservée: c'est elle, désormais, qui le pose.
+
+   Le coefficient vw est dimensionné pour que le terme fluide gouverne bel et bien
+   le mobile: un premier réglage (3.4vw) n'y valait que ~13px à 390px, donc très
+   sous le plancher, qui prenait alors la main et figeait 28px d'ExtraBold contre
+   un corps à 16px. Un clamp dont le plancher gouverne le mobile n'est pas fluide,
+   c'est un palier déguisé. À 6vw le terme mène de 360px à ~630px (23px→37.6px),
+   et le plafond couvre seul le desktop — inchangé. */
 .story-heading {
   margin: 0 0 1.75rem;
   color: #fff;
-  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  font-size: clamp(1.35rem, 6vw, 2.35rem);
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.01em;
@@ -288,6 +300,71 @@ h1, h2, h3, h4, h5, h6 {
       rgba(0, 0, 0, 0.55) 34%,
       rgba(0, 0, 0, 0.28) 48%,
       rgba(0, 0, 0, 0) 62%
+    );
+  }
+}
+
+/* Voile d'angle des sections (props `veil` / `veilStr` de StorySection) — cousin
+   du voile d'ouverture ci-dessus: même géométrie de quart de cercle, mais au
+   service de la seule lisibilité sur photo claire. Il ne remplace pas
+   .story-hero-veil, qui relève de la mise en scène et garde son propre réglage.
+
+   Cette base est un PLAFOND, pas un réglage nominal: `veilStr` ne fait que
+   multiplier son opacité, il est purement soustractif. Une base trop douce
+   priverait donc de marge les images les plus claires — d'où une base franche
+   (0.92), que chaque section adoucit ensuite via `veilStr`. L'opacité mettant
+   à l'échelle tous les stops uniformément, adoucir une base forte équivaut
+   exactement à peindre une base faible: rien à y perdre.
+
+   L'étendue (--veil-extent) est dimensionnée sur la mise en page, pas à l'œil:
+   le bloc de texte étant toujours ancré du même côté et centré verticalement,
+   son milieu tombait à ~78% du rayon de l'ellipse d'origine (78%/72%) — soit
+   dans la frange du dégradé, à ~0.29 d'alpha, quand le coin jouissait de 0.92:
+   le texte était à côté du voile, pas dessous. L'étendue actuelle le ramène à
+   ~63% du rayon (~0.52 d'alpha).
+   C'est bien la géométrie qui règle cela et jamais `veilStr`: la force multiplie
+   la courbe, elle ne déplace pas le texte dessous. */
+.story-veil {
+  pointer-events: none;
+
+  /* Les deux côtés ne diffèrent que par l'ancrage de l'ellipse. Étendue et
+     stops sont donc mis en facteur ici: le fignolage se fait en un seul
+     endroit, et gauche/droite ne peuvent plus diverger — ce qui est déjà
+     arrivé, un côté ayant été élargi sans l'autre, laissant les sections
+     `right` illisibles sur photo claire alors que les `left` allaient bien. */
+  --veil-extent: 90% 90%;
+  --veil-stops:
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.83) 38%,
+    rgba(0, 0, 0, 0.61) 58%,
+    rgba(0, 0, 0, 0.35) 74%,
+    rgba(0, 0, 0, 0.12) 88%,
+    rgba(0, 0, 0, 0) 100%;
+}
+
+.story-veil--left {
+  background: radial-gradient(ellipse var(--veil-extent) at 0% 100%, var(--veil-stops));
+}
+
+.story-veil--right {
+  background: radial-gradient(ellipse var(--veil-extent) at 100% 100%, var(--veil-stops));
+}
+
+/* Même raison qu'au hero: en mobile le bloc texte occupe toute la largeur, un
+   voile d'angle n'en couvrirait qu'une colonne. Les deux côtés retombent donc
+   sur une base commune — gauche et droite n'ont plus de sens à cette largeur.
+   Mise à l'échelle du même facteur que le desktop, pour qu'un `veilStr` donné
+   veuille dire la même chose sur les deux. Point de départ à fignoler. */
+@media (max-width: 767px) {
+  .story-veil--left,
+  .story-veil--right {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.71) 20%,
+      rgba(0, 0, 0, 0.47) 38%,
+      rgba(0, 0, 0, 0.21) 52%,
+      rgba(0, 0, 0, 0) 66%
     );
   }
 }

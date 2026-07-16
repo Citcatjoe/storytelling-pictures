@@ -1946,6 +1946,10 @@ a.mapboxgl-ctrl-logo.mapboxgl-compact {
     height: 100%;
   }
 
+  .h-lvh {
+    height: 100lvh;
+  }
+
   .h-px {
     height: 1px;
   }
@@ -5849,10 +5853,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 8px 40px #00000059;
 }
 
-.story-text-shadow {
-  text-shadow: 0 1px 3px #000000d9, 0 4px 24px #0000008c;
-}
-
 .story-p {
   font-size: clamp(1rem, 1.4vw, 1.2rem);
 }
@@ -5883,7 +5883,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.01em;
   text-wrap: balance;
   margin: 0 0 1.75rem;
-  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  font-size: clamp(1.35rem, 6vw, 2.35rem);
   font-weight: 800;
   line-height: 1.05;
 }
@@ -5895,6 +5895,26 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 767px) {
   .story-hero-veil {
     background: linear-gradient(to top, #000000d9 0%, #000000c7 18%, #0000008c 34%, #00000047 48%, #0000 62%);
+  }
+}
+
+.story-veil {
+  pointer-events: none;
+  --veil-extent: 90% 90%;
+  --veil-stops: #000000eb 0%, #000000d4 38%, #0000009c 58%, #00000059 74%, #0000001f 88%, #0000 100%;
+}
+
+.story-veil--left {
+  background: radial-gradient(ellipse var(--veil-extent) at 0% 100%, var(--veil-stops));
+}
+
+.story-veil--right {
+  background: radial-gradient(ellipse var(--veil-extent) at 100% 100%, var(--veil-stops));
+}
+
+@media (max-width: 767px) {
+  .story-veil--left, .story-veil--right {
+    background: linear-gradient(to top, #000000d9 0%, #000000b5 20%, #00000078 38%, #00000036 52%, #0000 66%);
   }
 }
 

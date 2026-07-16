@@ -963,22 +963,35 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 "use client";
 ;
+const VEIL_SIDES = [
+    "left",
+    "right"
+];
+/** La force du voile pilote son opacité: hors de [0,1] elle ne veut rien dire. */ const clampStr = (v)=>Number.isFinite(v) ? Math.min(Math.max(v, 0), 1) : 1;
 const StoryContext = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])(null);
 const bgKey = (bg)=>`${bg.src}|${bg.position ?? ""}|${bg.positionMobile ?? ""}`;
 function ImmersiveStory({ children, className = "", scrim = "light" }) {
     _s();
     const [backgrounds, setBackgrounds] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [activeKey, setActiveKey] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [activeVeil, setActiveVeil] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("none");
+    const [activeVeilStr, setActiveVeilStr] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(1);
     const [mountedKeys, setMountedKeys] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
         "ImmersiveStory.useState": ()=>new Set()
     }["ImmersiveStory.useState"]);
     const sectionsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(new Map());
     const backgroundsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])([]);
     const activeKeyRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    // Active une image: cross-fade + montage progressif (image courante,
-    // précédente et suivante — la suivante est ainsi préchargée à l'avance)
+    // Active une section: son voile, puis son image (cross-fade + montage
+    // progressif — image courante, précédente et suivante, la suivante étant
+    // ainsi préchargée à l'avance).
     const activate = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
-        "ImmersiveStory.useCallback[activate]": (key)=>{
+        "ImmersiveStory.useCallback[activate]": (cfg)=>{
+            // Avant le court-circuit sur l'image: deux sections voisines peuvent
+            // partager une image et ne différer que par leur voile — côté ou force.
+            setActiveVeil(cfg.veil);
+            setActiveVeilStr(cfg.veilStr);
+            const key = bgKey(cfg.bg);
             if (activeKeyRef.current === key) return;
             activeKeyRef.current = key;
             setActiveKey(key);
@@ -1010,45 +1023,44 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
         "ImmersiveStory.useCallback[recomputeActive]": ()=>{
             if (("TURBOPACK compile-time value", "object") === "undefined" || sectionsRef.current.size === 0) return;
             const centerY = window.innerHeight / 2;
-            let hitKey = null;
-            let closestKey = null;
+            let hit = null;
+            let closest = null;
             let closestDist = Infinity;
             for (const [el, cfg] of sectionsRef.current){
                 const rect = el.getBoundingClientRect();
-                const key = bgKey(cfg);
                 if (rect.top <= centerY && rect.bottom >= centerY) {
-                    hitKey = key;
+                    hit = cfg;
                     break;
                 }
                 const dist = centerY < rect.top ? rect.top - centerY : centerY - rect.bottom;
                 if (dist < closestDist) {
                     closestDist = dist;
-                    closestKey = key;
+                    closest = cfg;
                 }
             }
-            const next = hitKey ?? closestKey;
+            const next = hit ?? closest;
             if (next) activate(next);
         }
     }["ImmersiveStory.useCallback[recomputeActive]"], [
         activate
     ]);
     const register = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
-        "ImmersiveStory.useCallback[register]": (el, bg)=>{
-            sectionsRef.current.set(el, bg);
+        "ImmersiveStory.useCallback[register]": (el, cfg)=>{
+            sectionsRef.current.set(el, cfg);
             // Liste ordonnée (ordre du document) des images uniques
-            const key = bgKey(bg);
+            const key = bgKey(cfg.bg);
             if (!backgroundsRef.current.some({
                 "ImmersiveStory.useCallback[register]": (b)=>bgKey(b) === key
             }["ImmersiveStory.useCallback[register]"])) {
                 backgroundsRef.current = [
                     ...backgroundsRef.current,
-                    bg
+                    cfg.bg
                 ];
                 setBackgrounds(backgroundsRef.current);
             }
             // La première section enregistrée devient le fond initial
             if (activeKeyRef.current === null) {
-                activate(key);
+                activate(cfg);
             }
             recomputeActive();
             return ({
@@ -1108,7 +1120,7 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
         value: register,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "fixed inset-0 z-0 overflow-hidden bg-black",
+                className: "fixed inset-x-0 top-0 z-0 h-lvh overflow-hidden bg-black",
                 "aria-hidden": "true",
                 children: [
                     backgrounds.map((bg)=>{
@@ -1127,7 +1139,7 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
                             }
                         }, key, false, {
                             fileName: "[project]/src/components/ImmersiveStory.tsx",
-                            lineNumber: 186,
+                            lineNumber: 226,
                             columnNumber: 13
                         }, this);
                     }),
@@ -1135,21 +1147,31 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
                         className: `absolute inset-0 ${scrimClass}`
                     }, void 0, false, {
                         fileName: "[project]/src/components/ImmersiveStory.tsx",
-                        lineNumber: 204,
+                        lineNumber: 244,
                         columnNumber: 24
                     }, this),
+                    VEIL_SIDES.map((side)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: `story-veil story-veil--${side} absolute inset-0 transition-opacity duration-[1000ms] ease-in-out`,
+                            style: {
+                                opacity: activeVeil === side ? activeVeilStr : 0
+                            }
+                        }, side, false, {
+                            fileName: "[project]/src/components/ImmersiveStory.tsx",
+                            lineNumber: 255,
+                            columnNumber: 11
+                        }, this)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: `story-hero-veil absolute inset-0 transition-opacity duration-[1000ms] ease-in-out ${isHeroActive ? "opacity-100" : "opacity-0"}`,
                         "aria-hidden": "true"
                     }, void 0, false, {
                         fileName: "[project]/src/components/ImmersiveStory.tsx",
-                        lineNumber: 207,
+                        lineNumber: 263,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 180,
+                lineNumber: 220,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1157,17 +1179,17 @@ function ImmersiveStory({ children, className = "", scrim = "light" }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 216,
+                lineNumber: 272,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 178,
+        lineNumber: 212,
         columnNumber: 5
     }, this);
 }
-_s(ImmersiveStory, "EjksM9l3QRCDlUVn/6FSnpzCPd0=");
+_s(ImmersiveStory, "mwTRY3WOcKj+XJjWnJnSJt1yixY=");
 _c = ImmersiveStory;
 const HEIGHT_CLASSES = {
     short: "min-h-[100svh]",
@@ -1198,7 +1220,7 @@ const TEXT_ALIGN_CLASSES = {
     center: "text-left md:text-center",
     right: "text-left md:text-right"
 };
-function StorySection({ image, imagePosition, imagePositionMobile, align = "center", height = "normal", width = "medium", textAlign, vAlign = "center", id, className = "", contentClassName = "", children }) {
+function StorySection({ image, imagePosition, imagePositionMobile, veil = "none", veilStr = 1, align = "center", height = "normal", width = "medium", textAlign, vAlign = "center", id, className = "", contentClassName = "", children }) {
     _s1();
     const register = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(StoryContext);
     const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
@@ -1206,16 +1228,22 @@ function StorySection({ image, imagePosition, imagePositionMobile, align = "cent
         "StorySection.useEffect": ()=>{
             if (!register || !ref.current) return;
             return register(ref.current, {
-                src: image,
-                position: imagePosition,
-                positionMobile: imagePositionMobile
+                bg: {
+                    src: image,
+                    position: imagePosition,
+                    positionMobile: imagePositionMobile
+                },
+                veil,
+                veilStr: clampStr(veilStr)
             });
         }
     }["StorySection.useEffect"], [
         register,
         image,
         imagePosition,
-        imagePositionMobile
+        imagePositionMobile,
+        veil,
+        veilStr
     ]);
     const resolvedTextAlign = textAlign ?? (align === "center" ? "center" : "left");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1229,17 +1257,17 @@ function StorySection({ image, imagePosition, imagePositionMobile, align = "cent
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 317,
+                lineNumber: 392,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/ImmersiveStory.tsx",
-            lineNumber: 316,
+            lineNumber: 391,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 311,
+        lineNumber: 386,
         columnNumber: 5
     }, this);
 }
@@ -1254,7 +1282,7 @@ function StoryKicker({ children, className = "" }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 339,
+                lineNumber: 414,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1262,13 +1290,13 @@ function StoryKicker({ children, className = "" }) {
                 "aria-hidden": "true"
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 340,
+                lineNumber: 415,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 338,
+        lineNumber: 413,
         columnNumber: 5
     }, this);
 }
@@ -1279,7 +1307,7 @@ function StoryHeading({ children, className = "" }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 347,
+        lineNumber: 422,
         columnNumber: 10
     }, this);
 }
@@ -1292,7 +1320,7 @@ function ScrollCue({ label = "Faites défiler" }) {
                 children: label
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 357,
+                lineNumber: 432,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
@@ -1308,18 +1336,18 @@ function ScrollCue({ label = "Faites défiler" }) {
                     d: "M12 5v14M19 12l-7 7-7-7"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ImmersiveStory.tsx",
-                    lineNumber: 366,
+                    lineNumber: 441,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/ImmersiveStory.tsx",
-                lineNumber: 358,
+                lineNumber: 433,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/ImmersiveStory.tsx",
-        lineNumber: 356,
+        lineNumber: 431,
         columnNumber: 5
     }, this);
 }

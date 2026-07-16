@@ -1,8 +1,8 @@
 {
   "/favicon.ico/route": "/favicon.ico",
-  "/sitemap.xml/route": "/sitemap.xml",
   "/robots.txt/route": "/robots.txt",
-  "/_not-found/page": "/_not-found",
+  "/sitemap.xml/route": "/sitemap.xml",
   "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
   "/page": "/"
 }

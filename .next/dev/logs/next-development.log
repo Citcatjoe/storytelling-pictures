@@ -1,3 +1,688 @@
 [00:00:01.272] Server  LOG      ✓ Ready in 1090ms
 [00:00:05.739] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [00:07:01.064] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:22.235] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:48.069] Server  LOG      ✓ Compiled in 80ms
+[00:45:12.867] Server  LOG      ✓ Compiled in 42ms
+[00:45:25.282] Server  LOG      ✓ Compiled in 40ms
+[00:45:25.374] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'src')
+[00:45:33.080] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:33.145] Server  LOG      ✓ Compiled in 38ms
+[00:45:33.220] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'src')
+[00:45:33.279] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:33.408] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'src')
+[00:45:38.732] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:38.793] Server  LOG      ✓ Compiled in 40ms
+[00:45:38.915] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:39.054] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'src')
+[00:45:46.001] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:46.066] Server  LOG      ✓ Compiled in 40ms
+[00:45:46.189] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:46.323] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'src')
+[00:45:51.642] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:51.704] Server  LOG      ✓ Compiled in 45ms
+[00:45:51.823] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:51.960] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'src')
+[00:45:54.590] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:54.652] Server  LOG      ✓ Compiled in 41ms
+[00:45:54.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:45:54.909] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'src')
+[00:45:57.962] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:45:58.019] Server  LOG      ✓ Compiled in 42ms
+[00:45:58.136] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:46:14.448] Server  LOG      ✓ Compiled in 159ms
+[00:47:26.527] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:53.413] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:47:57.215] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:00.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:55.417] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:09.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:34.543] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:54.738] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:06.469] Server  LOG      ✓ Compiled in 159ms
+[01:04:18.260] Server  LOG      ✓ Compiled in 157ms
+[01:04:25.434] Server  LOG      ✓ Compiled in 131ms
+[01:04:28.899] Server  LOG      ✓ Compiled in 130ms
+[01:04:36.872] Server  LOG      ✓ Compiled in 138ms
+[01:04:46.049] Server  LOG      ✓ Compiled in 137ms
+[01:04:49.237] Server  LOG      ✓ Compiled in 126ms
+[01:04:59.634] Server  LOG      ✓ Compiled in 132ms
+[01:05:04.269] Server  LOG      ✓ Compiled in 122ms
+[01:05:26.500] Server  LOG      ✓ Compiled in 146ms
+[01:05:48.814] Server  LOG      ✓ Compiled in 145ms
+[01:05:58.202] Server  LOG      ✓ Compiled in 141ms
+[01:06:03.540] Server  LOG      ✓ Compiled in 126ms
+[01:07:30.122] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:07:37.228] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:08:06.342] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:49.268] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:11:05.035] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:39.380] Server  LOG      ✓ Compiled in 40ms
+[01:18:43.379] Server  LOG      ✓ Compiled in 39ms
+[01:18:48.009] Server  LOG      ✓ Compiled in 35ms
+[01:18:57.743] Server  LOG      ✓ Compiled in 38ms
+[01:19:04.100] Server  LOG      ✓ Compiled in 37ms
+[01:19:07.299] Server  LOG      ✓ Compiled in 38ms
+[01:19:12.481] Server  LOG      ✓ Compiled in 38ms
+[01:19:55.541] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:21:00.146] Server  LOG      ✓ Compiled in 155ms
+[01:21:16.935] Server  LOG      ✓ Compiled in 142ms
+[01:27:34.876] Server  LOG      ✓ Compiled in 137ms
+[01:27:55.136] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:28:39.888] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:29:35.619] Server  LOG      ✓ Compiled in 146ms
+[01:29:37.902] Server  LOG      ✓ Compiled in 133ms
+[01:30:20.723] Server  LOG      ✓ Compiled in 143ms
+[01:30:25.262] Server  LOG      ✓ Compiled in 121ms
+[01:31:55.904] Server  LOG      ✓ Compiled in 154ms
+[01:31:58.406] Server  LOG      ✓ Compiled in 129ms
+[01:32:59.989] Server  LOG      ✓ Compiled in 149ms
+[01:36:11.202] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:37:14.900] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:38:38.758] Server  LOG      ✓ Compiled in 157ms
+[01:39:00.105] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:40:41.099] Server  LOG      ✓ Compiled in 143ms
+[01:40:45.977] Server  LOG      ✓ Compiled in 136ms
+[01:41:02.194] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:41:42.098] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:50:33.943] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:33.943] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:33.946] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:33.946] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:44.343] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:44.343] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:44.348] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:44.348] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:46.640] Server  ERROR    ⨯ ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+
+
+
+./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+
+
+[01:50:46.764] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:46.764] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:46.768] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:46.768] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.058] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.058] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.058] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.058] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.069] Browser ERROR   uncaughtError: Error: ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+
+
+[01:50:47.214] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.214] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.214] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.214] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.219] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.219] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.768] Server  ERROR    ⨯ ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+
+
+
+./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+
+
+[01:50:47.819] Browser ERROR   uncaughtError: Error: ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+
+
+[01:50:47.958] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.958] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.958] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.958] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.960] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.960] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.960] Browser ERROR   ./src/app/content.tsx:414:11
+Parsing ecmascript source code failed
+  412 |             veil="left"
+  413 |             veilStr={}
+> 414 |           >
+      |           ^
+  415 |             <p className={P}>
+  416 |               Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui
+  417 |               des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque
+
+Expression expected
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:47.960] Browser ERROR   ./src/app/content.tsx:421:12
+Parsing ecmascript source code failed
+  419 |               les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle.
+  420 |             </p>
+> 421 |           </StorySection>
+      |            ^^^^^^^^^^^^^^
+  422 |
+  423 |           <StorySection
+  424 |             image="images/naika/_F2_0419.webp"
+
+Unterminated regexp literal
+
+Import trace:
+  Server Component:
+    ./src/app/content.tsx
+    ./src/app/page.tsx
+[01:50:57.050] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:57:18.252] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:11:38.540] Server  LOG      ✓ Compiled in 137ms
+[02:11:55.603] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:13:42.426] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:03.464] Server  LOG      ✓ Compiled in 136ms
+[02:15:19.815] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:21.544] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:24.508] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:26.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:15:27.566] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
