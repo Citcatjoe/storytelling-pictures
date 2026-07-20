@@ -191,15 +191,54 @@ function Credits({ items, theme = "light" }) {
     }, []);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: `w-full max-w-[672px] mx-auto text-sm md:text-lg leading-relaxed font-light ${glass ? "text-white/85" : "text-gray-500"}`,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "font-bold",
+                        children: "Un article de «L'illustré» n°29"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Credits.tsx",
+                        lineNumber: 52,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                        fileName: "[project]/src/components/Credits.tsx",
+                        lineNumber: 52,
+                        columnNumber: 75
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                        fileName: "[project]/src/components/Credits.tsx",
+                        lineNumber: 52,
+                        columnNumber: 84
+                    }, this),
+                    "Cet article a été publié initialement dans le ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                        href: "https://www.illustre.ch/",
+                        target: "_blank",
+                        className: "underline",
+                        children: "n°29 de «L'illustré»"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Credits.tsx",
+                        lineNumber: 53,
+                        columnNumber: 55
+                    }, this),
+                    ", paru en kiosque le 16 juillet 2026."
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/Credits.tsx",
+                lineNumber: 47,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("hr", {
-                className: `w-full max-w-[672px] mx-auto mt-16 ${glass ? "border-white/15" : "border-gray-200"}`
+                className: `w-full max-w-[672px] mx-auto mt-6 md:mt-14 ${glass ? "border-white/15" : "border-gray-200"}`
             }, void 0, false, {
                 fileName: "[project]/src/components/Credits.tsx",
-                lineNumber: 40,
+                lineNumber: 55,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: `w-full max-w-[672px] mx-auto mt-16 text-lg p-8 ${glass ? "story-glass text-white" : "bg-gray-50"}`,
+                className: `w-full max-w-[672px] mx-auto mt-8 md:mt-16 text-lg p-8 ${glass ? "story-glass text-white" : "bg-gray-50"}`,
                 children: groupedItems.map((group, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: idx === groupedItems.length - 1 ? "" : "mb-4",
                         children: [
@@ -208,7 +247,7 @@ function Credits({ items, theme = "light" }) {
                                 children: group.produces
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Credits.tsx",
-                                lineNumber: 44,
+                                lineNumber: 59,
                                 columnNumber: 13
                             }, this),
                             group.people.map((person, pIdx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -221,23 +260,23 @@ function Credits({ items, theme = "light" }) {
                                         children: person.name
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Credits.tsx",
-                                        lineNumber: 48,
+                                        lineNumber: 63,
                                         columnNumber: 19
                                     }, this) : person.name
                                 }, pIdx, false, {
                                     fileName: "[project]/src/components/Credits.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 61,
                                     columnNumber: 15
                                 }, this))
                         ]
                     }, idx, true, {
                         fileName: "[project]/src/components/Credits.tsx",
-                        lineNumber: 43,
+                        lineNumber: 58,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/Credits.tsx",
-                lineNumber: 41,
+                lineNumber: 56,
                 columnNumber: 7
             }, this)
         ]
@@ -522,19 +561,19 @@ function Content() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/content.tsx",
-                    lineNumber: 107,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Header"], {
                     theme: "dark"
                 }, void 0, false, {
                     fileName: "[project]/src/app/content.tsx",
-                    lineNumber: 112,
+                    lineNumber: 113,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ReadingProgress$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ReadingProgress"], {}, void 0, false, {
                     fileName: "[project]/src/app/content.tsx",
-                    lineNumber: 113,
+                    lineNumber: 114,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ImmersiveStory"], {
@@ -560,12 +599,12 @@ function Content() {
                                                 children: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$variables$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["STORY"].heroName
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/content.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 137,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/content.tsx",
-                                            lineNumber: 135,
+                                            lineNumber: 136,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -575,13 +614,13 @@ function Content() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/content.tsx",
-                                            lineNumber: 138,
+                                            lineNumber: 139,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 135,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -589,7 +628,7 @@ function Content() {
                                     "aria-hidden": "true"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 145,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -597,7 +636,7 @@ function Content() {
                                     children: "Pendant près de neuf heures, Blick a suivi Naïka dans les coulisses de sa première au Montreux Jazz Festival. Derrière les paillettes, le portrait d’une chanteuse en quête d’un chez-soi. Rencontre intime avec la jeune artiste franco-haïtienne aux millions d’écoutes."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 147,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -611,7 +650,7 @@ function Content() {
                                                     children: "Rencontre exclusive"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/content.tsx",
-                                                    lineNumber: 152,
+                                                    lineNumber: 153,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -619,7 +658,7 @@ function Content() {
                                                     "aria-hidden": "true"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/content.tsx",
-                                                    lineNumber: 153,
+                                                    lineNumber: 154,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -630,30 +669,30 @@ function Content() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/content.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 155,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/content.tsx",
-                                            lineNumber: 151,
+                                            lineNumber: 152,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ScrollCue"], {}, void 0, false, {
                                             fileName: "[project]/src/app/content.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 159,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 150,
+                                    lineNumber: 151,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 124,
+                            lineNumber: 125,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -668,12 +707,12 @@ function Content() {
                                 children: "Le crépuscule enveloppe Montreux. Derrière un rideau noir, un autre soleil s’apprête à se lever. Des cris de joie s’échappent de la loge voisine. Les musiciens de la chanteuse brésilienne Liniker vivent les dernières minutes d’Argentine-Egypte avec la passion du football. A quelques mètres de là, un tout autre rituel se joue."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 173,
+                                lineNumber: 174,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 165,
+                            lineNumber: 166,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -686,12 +725,12 @@ function Content() {
                                 children: "Naïka ferme les yeux. Les voix s’éteignent d’elles-mêmes. Une brève prière avec les siens. Lorsqu’elle les rouvre, son visage s’éclaire. La native de Miami aux lèvres carmin accroche nos doigts dans un check furtif avant de s’éloigner vers la scène, d’où la clameur se fait de plus en plus forte."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 184,
+                                lineNumber: 185,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 178,
+                            lineNumber: 179,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -705,12 +744,12 @@ function Content() {
                                 children: "Juste avant de se présenter à ses fans, deux membres de son équipe ajustent encore sa tenue jaune. Une main défroisse un pan de jupe. Une autre replace délicatement une manchette. Ça y est! Le long manteau tombe de ses épaules. Son bustier constellé de strass s’embrase sous les projecteurs. De longues bandes de tissu dansent autour de jambes interminables tandis que d’impressionnantes bottes frangées remontent jusqu’aux cuisses."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 196,
+                                lineNumber: 197,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 189,
+                            lineNumber: 190,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -726,7 +765,7 @@ function Content() {
                                     children: "Dans les coulisses d’une star"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 215,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -734,13 +773,13 @@ function Content() {
                                     children: "Plus tôt dans l’après-midi, à 15 h 20, elle foulait cette scène en jean bleu, blouse blanche quasi transparente, une longue tresse dans le dos et des tongs aux pieds. Le Montreux Jazz Lab était alors vide. Les musiciens répétaient. Seuls les échos du soundcheck répondaient au clapotis du Léman. Pendant près de neuf heures, ce mardi 7 juillet, du premier accord jusqu’à son retour en loge après le concert, L’illustré a suivi en exclusivité Naïka dans les coulisses de sa première au Montreux Jazz Festival."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 215,
+                                    lineNumber: 216,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 204,
+                            lineNumber: 205,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -754,12 +793,12 @@ function Content() {
                                 children: "A 31 ans, Naïka est un joyau de la pop cosmopolite. Plus de 3,3 millions d’auditrices et d’auditeurs mensuels sur Spotify et 1,3 million de followers sur Instagram. Un premier album, Eclesia, et un tube, One Track Mind, hymne féministe aux accents caribéens devenu viral qui lui a offert une renommée internationale. En français, en anglais comme en créole haïtien, elle chante une identité à l’image de son parcours: multiple. Bien avant de chercher un chez-soi, Naïka a grandi sans véritable port d’attache. Entre Paris, la Guadeloupe, le Kenya, l’Afrique du Sud et le Vanuatu, elle passe son enfance dans un perpétuel ailleurs avant de revenir à Miami à l’adolescence."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 227,
+                                lineNumber: 228,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 220,
+                            lineNumber: 221,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -773,12 +812,12 @@ function Content() {
                                 children: "Au cœur de l’après-midi, cette célébrité mondiale déambule sur les quais comme n’importe quelle festivalière. Mais son nom la précède. «C’est Naïka...» Le murmure court d’une oreille à l’autre avant de s’évanouir. Les regards s’illuminent. Personne ne s’approche. Ni téléphone tendu. Ni autographe réclamé. Seulement cette élégante retenue dont le public suisse semble avoir le secret."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 239,
+                                lineNumber: 240,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 232,
+                            lineNumber: 233,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -792,12 +831,12 @@ function Content() {
                                 children: "L’après-midi s’écoule au rythme des interviews. Radio et presse écrite. Blick lui fait découvrir le thé froid Migros, saveur pêche ou citron. Les deux journalistes filent ensuite lui acheter un carac «pour du réconfort après l’effort». Elle éclate de rire, remercie, puis disparaît déjà vers un autre rendez-vous. A chaque entretien, la même question ressurgit. Qui est Naïka? Pour elle, Eclesia est une manière de dévoiler les différentes facettes d’une femme qui a appris à ne plus choisir entre ses langues, ses cultures et les pays qui l’ont construite."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 251,
+                                lineNumber: 252,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 244,
+                            lineNumber: 245,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -810,12 +849,12 @@ function Content() {
                                 poster: "images/naika/vignette.png"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 265,
+                                lineNumber: 266,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 259,
+                            lineNumber: 260,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -830,12 +869,12 @@ function Content() {
                                 children: "Sa loge n’a rien de spectaculaire: des miroirs cerclés d’ampoules, des portants de costumes, un canapé, un fauteuil, un frigo et des flight-cases empilés contre les murs. Pourtant, cette pièce impersonnelle devient peu à peu une maison de fortune. La porte s’ouvre. «Salut!» Mathieu Jaton vient saluer l’étoile avant son concert. Une accolade, quelques mots, des remerciements. Puis le directeur du Montreux Jazz Festival s’éclipse aussi discrètement qu’il est arrivé. Autour de Naïka, une dizaine de personnes poursuivent leurs préparatifs. Ou plutôt... veillent sur elle."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 279,
+                                lineNumber: 280,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 271,
+                            lineNumber: 272,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -849,12 +888,12 @@ function Content() {
                                 children: "Marta, sa manageuse, anticipe le moindre besoin. Raf orchestre les déplacements avec un calme désarmant. Plus loin, Lorr et Mateus peaufinent une dernière fois la scénographie pendant que Lucas affine les lumières. Dans un coin de la loge, Alix fait rebondir distraitement ses baguettes sur sa cuisse, Emile gratte des accords, Sami pianote machinalement sur un clavier éteint. Clément plaisante avec Tibo. Noémie, caméra à la main, immortalise ces instants que le public ne peut vivre qu’à bonne distance."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 291,
+                                lineNumber: 292,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 284,
+                            lineNumber: 285,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -868,12 +907,12 @@ function Content() {
                                 children: "Ici, personne n’a l’air de diriger. Pourtant, chacun connaît sa place. Le repas arrive, la concentration cède la place aux rires. Un steak bien cuit. Du riz. Naïka observe son assiette. «Je ne veux pas voir le sang de l’animal. J’aime la viande comme un pneu!» Elle aperçoit des carottes. «Lorr sait pourtant que je n’aime pas les légumes...» Noémie pouffe: «C’est moi! Je pensais que ça te ferait du bien.»"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 303,
+                                lineNumber: 304,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 296,
+                            lineNumber: 297,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -889,7 +928,7 @@ function Content() {
                                     children: "À la recherche de son chez-soi"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 321,
+                                    lineNumber: 322,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -897,13 +936,13 @@ function Content() {
                                     children: "Une maquilleuse s’approche. «Tu veux des paillettes?» Les yeux de Naïka brillent. «Bien sûr! On est à Montreux.» Cette «hypersensible» aux hautes murailles ne tarde pourtant pas à se confier à nous. Son soutien à la Palestine, explique-t-elle, naît de l’effroi que lui inspire la violence du monde. Une phrase s’impose sans qu’elle y pense: «Chez moi, ce sont les autres.» Sa mère haïtienne d’origine libanaise et palestino-syrienne lui a transmis le goût de la mode."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 322,
+                                    lineNumber: 323,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 311,
+                            lineNumber: 312,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -917,12 +956,12 @@ function Content() {
                                 children: "Créatrice de vêtements, elle l’emmenait chaque jour après l’école dans sa boutique. Les tissus devenaient des terrains de jeu, les cabines d’essayage des coulisses avant l’heure. Plus loin encore, en Haïti, ses grands-parents tenaient un magasin de tissus. Entre les rouleaux d’étoffe, la petite fille découpait, assemblait, imaginait des costumes avant d’organiser des défilés et de petits concerts devant toute la famille."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 334,
+                                lineNumber: 335,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 327,
+                            lineNumber: 328,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -937,12 +976,12 @@ function Content() {
                                 children: "Son père, un Français né et élevé à Madagascar, parlait un autre langage: celui des chiffres. Ancien professionnel de la finance, il a quitté son métier lorsque la musique a commencé à prendre toute la place. Aujourd’hui, il veille sur les comptes de sa fille. «Il a le plus grand cœur que je connaisse», souffle-t-elle."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 347,
+                                lineNumber: 348,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 339,
+                            lineNumber: 340,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -956,12 +995,12 @@ function Content() {
                                 children: "La trentaine entamée, les rêves sont restés ceux de l’enfant qu’elle était. «Je veux gagner un Grammy.» L’aveu fuse avec une simplicité désarmante. Puis viennent les autres envies: le cinéma, une griffe en hommage à sa mère, une fondation pour Haïti. Lorsqu’on oriente la discussion vers sa sphère privée et qu’on lui demande si elle partage sa vie avec quelqu’un, elle botte en touche: «Aujourd’hui, mon couple, c’est ma carrière.»"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 359,
+                                lineNumber: 360,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 352,
+                            lineNumber: 353,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -975,12 +1014,12 @@ function Content() {
                                 children: "Casablanca il y a deux jours. Montreux aujourd’hui. Paris dès demain. Les semaines finissent par se confondre. «J’avoue que je ne sais même pas quel jour on est…» Son ton se fait plus discret. Elle lâche: «Un jour, j’aimerais fonder une famille. Mais je ne sais même pas où je vivrai.» Elle qui enchaîne désormais les concerts à guichets fermés aux quatre coins du monde ignore dans quel pays elle bâtira son foyer."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 371,
+                                lineNumber: 372,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 364,
+                            lineNumber: 365,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -996,7 +1035,7 @@ function Content() {
                                     children: "Avant le succès, la galère"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 394,
+                                    lineNumber: 395,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1004,13 +1043,13 @@ function Content() {
                                     children: "Casablanca il y a deux jours. Montreux aujourd’hui. Paris dès demain. Les semaines finissent par se confondre. «J’avoue que je ne sais même pas quel jour on est...» Son ton se fait plus discret. Elle lâche: «Un jour, j’aimerais fonder une famille. Mais je ne sais même pas où je vivrai.» Elle qui enchaîne désormais les concerts à guichets fermés aux quatre coins du monde ignore dans quel pays elle bâtira son foyer."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/content.tsx",
-                                    lineNumber: 395,
+                                    lineNumber: 396,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 384,
+                            lineNumber: 385,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -1024,12 +1063,12 @@ function Content() {
                                 children: "Avant les salles combles, il y eut les bars presque vides. Les mariages. Les casinos. Les soirées d’entreprise. Un soir, à Los Angeles, elles étaient deux dans le public. Ses deux colocataires. «On était plus nombreux sur scène que dans la salle.» Elle en rit aujourd’hui. Ce soir-là pourtant, elle a chanté comme si une foule immense se dressait devant elle. Sur son avant-bras, trois lettres résument cette époque. «DIY». Do it yourself, autrement dit «fais-le toi-même». Elle tourne ses clips, fabrique ses décors, imagine ses costumes. Pour sa première tournée, elle peint pendant trois jours la vaste toile qui servira d’écrin à son univers. «Franchir toutes ces étapes, ça m’a rendue plus forte et plus déterminée», appuie-t-elle."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 407,
+                                lineNumber: 408,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 400,
+                            lineNumber: 401,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -1043,12 +1082,12 @@ function Content() {
                                 children: "Le déclic? Son titre Sauce, sorti en 2021, est repéré par Apple qui l’utilise dans une publicité pour l’iPhone 12. Cette visibilité la fait décoller. L’argent gagné grâce au géant lui permet d’investir dans son projet. Des millions d’écoutes plus tard, quand on lui demande ce qui a changé son destin, elle ne cite ni la marque à la pomme ni Spotify, mais sa garde rapprochée. Un noyau dur qui l’accompagne partout depuis les bancs du Berklee College of Music, à Boston."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 419,
+                                lineNumber: 420,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 412,
+                            lineNumber: 413,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -1062,12 +1101,12 @@ function Content() {
                                 children: "«Si on ne s’aimait pas, ce métier serait insupportable de sauter constamment d’un endroit à un autre.» Les mots flottent encore lorsqu’un régisseur annonce que le concert de Liniker touche à sa fin. La loge se vide d’un seul mouvement. Les musiciens rejoignent leurs instruments. Les derniers réglages s’enchaînent. On entend des vocalises puis le silence s’installe. Le noir se fait."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 431,
+                                lineNumber: 432,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 424,
+                            lineNumber: 425,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -1081,12 +1120,12 @@ function Content() {
                                 children: "Derrière son micro habillé de fleurs tropicales, il ne reste plus que Naïka. Les premières notes résonnent. Le Lab, plein à craquer, chavire avec elle. Une bonne heure passe. Les applaudissements s’éteignent à leur tour. Le manteau jaune retrouve le dossier d’une chaise. Les bottes vertigineuses sont retirées. Marta l’enlace et lui apporte un drapeau rouge à croix blanche ainsi qu’une montagne de photos et de vinyles à dédicacer. Les conversations reprennent exactement là où elles s’étaient arrêtées. Comme si les 2000 spectateurs n’avaient été qu’une parenthèse."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 443,
+                                lineNumber: 444,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 436,
+                            lineNumber: 437,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -1101,12 +1140,12 @@ function Content() {
                                 children: "Après une courte nuit, plusieurs jours de repos. Avant un autre avion. Une autre affiche. Une autre ville. «J’ai tellement de chance... Mais si je ne m’arrête jamais, je finirai par casser», glisse-t-elle. Dehors, la nuit a repris ses droits sur la perle de la Riviera. Le soleil qui étincelait, une poignée d’heures plus tôt, sous les spots, s’est éteint. Pas celui de Naïka. Celui-là ne se lève ni dans un ciel ni sur une scène. Il éclaire les visages familiers qui s’engouffrent avec elle dans les aéroports, traversent les halls d’hôtel et l’accueillent chaque soir, au retour des applaudissements. Elle rêve d’un jour poser ses valises. Sa vie lui apprend, chaque matin, à les refaire."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/content.tsx",
-                                lineNumber: 459,
+                                lineNumber: 460,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 451,
+                            lineNumber: 452,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ImmersiveStory$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["StorySection"], {
@@ -1119,13 +1158,13 @@ function Content() {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {}, void 0, false)
                         }, void 0, false, {
                             fileName: "[project]/src/app/content.tsx",
-                            lineNumber: 467,
+                            lineNumber: 468,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/content.tsx",
-                    lineNumber: 115,
+                    lineNumber: 116,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1135,18 +1174,18 @@ function Content() {
                         items: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$config$2f$variables$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["STORY"].credits.filter((credit)=>credit.inCredits)
                     }, void 0, false, {
                         fileName: "[project]/src/app/content.tsx",
-                        lineNumber: 484,
+                        lineNumber: 485,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/content.tsx",
-                    lineNumber: 483,
+                    lineNumber: 484,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/content.tsx",
-            lineNumber: 105,
+            lineNumber: 106,
             columnNumber: 7
         }, this)
     }, void 0, false);

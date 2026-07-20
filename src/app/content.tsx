@@ -11,6 +11,7 @@ import {
   StoryHeading,
   ScrollCue,
 } from "@/components/ImmersiveStory";
+import { SpotifyEmbed } from "@/components/SpotifyEmbed";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -215,6 +216,16 @@ export default function Content() {
             <p className={P}>
               Plus tôt dans l’après-midi, à 15 h 20, elle foulait cette scène en jean bleu, blouse blanche quasi transparente, une longue tresse dans le dos et des tongs aux pieds. Le Montreux Jazz Lab était alors vide. Les musiciens répétaient. Seuls les échos du soundcheck répondaient au clapotis du Léman. Pendant près de neuf heures, ce mardi 7 juillet, du premier accord jusqu’à son retour en loge après le concert, L’illustré a suivi en exclusivité Naïka dans les coulisses de sa première au Montreux Jazz Festival.
             </p>
+          </StorySection>
+
+          <StorySection
+            image="images/naika/_F3_4543.webp"
+            imagePosition="center 35%"
+            imagePositionMobile="65% 35%"
+            align="left"
+            veil="left"
+          >
+            <SpotifyEmbed url="https://open.spotify.com/track/34BzcgDQc4mnP8A2umJiu9?si=gD1LeOZjQOe5lfdgu1GYHA&utm_source=copy-link" />
           </StorySection>
 
           <StorySection
